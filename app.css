@@ -1036,27 +1036,41 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
    --------------------------- */
 
 /* ให้ header ขยายเต็ม viewport (พื้นหลังเต็มจอ) แต่คอนเทนต์ยังอยู่ใน .container */
-header.nav {
+/* ---------------------------
+   NAVBAR: full-bleed & polish
+   --------------------------- */
+
+/* NAV - เต็มจอ ไม่มีช่องว่างข้าง */
+.nav {
   position: sticky;
   top: 0;
-  width: 100%;
   left: 0;
+  right: 0;
+  width: 100vw;
   z-index: 999;
-  background: linear-gradient(90deg, rgba(10,15,44,0.96), rgba(21,28,75,0.88));
-  backdrop-filter: saturate(160%) blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: saturate(180%) blur(12px);
+  background: rgba(7,11,26,.6);
+  border-bottom: 1px solid var(--line);
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
-/* ทำให้ภายในอยู่ตรงกลางเหมือนเดิม */
-header.nav .nav-inner {
+/* nav-inner จัดตรงกลาง */
+.nav-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 24px;
+  padding: 0 24px;
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+}
+
+/* ส่วนขวา: Links + Theme Toggle */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* หาก .container ถูกใช้ทั่วไปแล้วกระทบหลายที่ ให้จำกัดผลเฉพาะ header */
