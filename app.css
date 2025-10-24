@@ -765,8 +765,10 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .kw{ color:#e11d48; } .theme-light .id{ color:#b45309; } .theme-light .fn{ color:#0f766e; }
 .theme-light .foot{ background:rgba(255,255,255,.55); color:#4b5563; }
 
-/* Theme toggle button */
+/* Theme toggle button - FIX */
 .theme-toggle{
+  min-width:40px;
+  min-height:40px;
   width:40px;
   height:40px;
   border-radius:10px;
@@ -778,8 +780,11 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color:var(--ink);
   transition: transform .2s ease, box-shadow .2s ease;
   padding:0;
-  font-size:18px;
+  margin-left:8px;
+  font-size:20px;
   line-height:1;
+  cursor:pointer;
+  overflow:hidden;
 }
 .theme-toggle:hover{
   transform: translateY(-2px);
