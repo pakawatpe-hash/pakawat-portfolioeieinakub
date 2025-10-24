@@ -1136,15 +1136,20 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background-image: none !important;
 }
 
-/* เส้นกลาง - สีขาว */
+/* เส้นกลาง + ลูกบอลเรืองแสง - ให้เหมือน Dark Mode */
 :root.theme-light .edu-timeline::before {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)) !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* ลูกบอลเรืองแสง - สีน้ำเงิน */
 :root.theme-light .edu-timeline::after {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(120, 160, 255, 0.7) 50%, transparent 70%) !important;
   box-shadow: 0 0 18px rgba(120, 160, 255, 0.8), 0 0 30px rgba(120, 160, 255, 0.5) !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* ปิด animation text shine ทั้งหมด */
