@@ -1162,14 +1162,14 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   padding: 0 !important;
   border-radius: 0 !important;
   font-weight: 800 !important;
-  margin-bottom: 6px !important;  /* ลดจาก 10px เหลือ 6px */
+  margin-bottom: 10px !important;  /* ลดจาก 10px เหลือ 6px */
   border: none !important;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* ปรับหัวข้อให้ชิดขึ้น */
 :root.theme-light .edu-title {
-  margin: 6px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
+  margin: 12px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
 }
 
 /* ปิด animation text shine ทั้งหมด */
