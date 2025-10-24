@@ -1031,3 +1031,400 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border-color: rgba(0,0,0,.08);
   color:#1e293b;
 }
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theme Fix Guide - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      color: #2563eb;
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #1e40af;
+      margin-top: 30px;
+    }
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 15px 0;
+      border-left: 4px solid #3b82f6;
+    }
+    .important {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .success {
+      background: #d1fae5;
+      border-left: 4px solid #10b981;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    code {
+      background: #e5e7eb;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #dc2626;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 แก้ไขปัญหาธีมสว่าง (Light Mode)</h1>
+  
+  <div class="important">
+    <strong>⚠️ ปัญหาที่พบ:</strong> เมื่อเปลี่ยนเป็นโหมดสว่าง (🌙) ข้อความหายไปเพราะสีตัวอักษรกับพื้นหลังเป็นสีเดียวกัน
+  </div>
+
+  <h2>📝 วิธีแก้ไข - เพิ่ม CSS สำหรับ Light Mode</h2>
+  
+  <p>เพิ่มโค้ด CSS นี้ลงในไฟล์ <code>app.css</code> ของคุณ (ท้ายสุดของไฟล์):</p>
+
+  <div class="code-block">
+<pre>/* ===== LIGHT THEME FIXES ===== */
+:root.theme-light {
+  /* พื้นหลังหลัก */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  
+  /* ข้อความ */
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  /* Accent colors */
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  
+  /* Borders */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-glass: rgba(0, 0, 0, 0.15);
+}
+
+/* Background colors */
+:root.theme-light body {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Navigation */
+:root.theme-light .nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--border-color);
+}
+
+:root.theme-light .nav .brand {
+  color: var(--text-primary);
+}
+
+:root.theme-light .nav .links a {
+  color: var(--text-secondary);
+}
+
+:root.theme-light .nav .links a:hover,
+:root.theme-light .nav .links a.active {
+  color: var(--accent-primary);
+}
+
+/* Glass elements */
+:root.theme-light .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(12px);
+}
+
+/* Hero section */
+:root.theme-light .hero-copy .pill {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-primary);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+:root.theme-light .headline {
+  color: var(--text-primary);
+}
+
+:root.theme-light .headline span {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:root.theme-light .sub {
+  color: var(--text-secondary);
+}
+
+/* Code window */
+:root.theme-light .code-window {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+:root.theme-light .code-window code {
+  color: #e2e8f0;
+}
+
+/* Buttons */
+:root.theme-light .btn.primary {
+  background: var(--accent-primary);
+  color: white;
+}
+
+:root.theme-light .btn.primary:hover {
+  background: #2563eb;
+}
+
+:root.theme-light .btn.ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+:root.theme-light .btn.ghost:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* Marquee skills */
+:root.theme-light .marquee {
+  background: linear-gradient(to right, #f1f5f9, #ffffff, #f1f5f9);
+}
+
+:root.theme-light .mk-set span {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* About section */
+:root.theme-light .about-section h2,
+:root.theme-light .about-section h3 {
+  color: var(--text-primary);
+}
+
+:root.theme-light .about-desc p {
+  color: var(--text-secondary);
+}
+
+:root.theme-light .about-desc strong {
+  color: var(--text-primary);
+}
+
+:root.theme-light .eyebrow {
+  color: var(--accent-primary);
+}
+
+/* Stats cards */
+:root.theme-light .stat-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border-glass);
+}
+
+:root.theme-light .stat-card .icon {
+  color: var(--accent-primary);
+}
+
+:root.theme-light .stat-card .num {
+  color: var(--text-primary);
+}
+
+:root.theme-light .stat-card .label {
+  color: var(--text-secondary);
+}
+
+/* Education timeline */
+:root.theme-light .edu-title {
+  color: var(--text-primary);
+}
+
+:root.theme-light .edu-desc {
+  color: var(--text-secondary);
+}
+
+:root.theme-light .edu-chip {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-primary);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Project cards */
+:root.theme-light .card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border-glass);
+}
+
+:root.theme-light .card-head h3 {
+  color: var(--text-primary);
+}
+
+:root.theme-light .card p {
+  color: var(--text-secondary);
+}
+
+/* Tabs */
+:root.theme-light .tab {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+:root.theme-light .tab.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+:root.theme-light .tab:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-primary);
+}
+
+/* Tech stack chips */
+:root.theme-light .stack-chip {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+:root.theme-light .stack-chip:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--accent-primary);
+}
+
+/* Certificate cards */
+:root.theme-light .cert-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border-glass);
+}
+
+:root.theme-light .cert-title {
+  color: var(--text-primary);
+}
+
+:root.theme-light .cert-filters .chip {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+:root.theme-light .cert-filters .chip.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+/* Contact cards */
+:root.theme-light .contact-card {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+}
+
+:root.theme-light .contact-card:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--accent-primary);
+}
+
+/* Footer */
+:root.theme-light .foot {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Section titles */
+:root.theme-light .section-title,
+:root.theme-light h2 {
+  color: var(--text-primary);
+}
+
+:root.theme-light .section-sub {
+  color: var(--text-secondary);
+}
+
+/* Lightbox */
+:root.theme-light .cert-lightbox .clb-inner {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-glass);
+}
+
+/* Progress bar */
+:root.theme-light .progress span {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+/* Floating blobs - ปรับความโปร่งใสให้เห็นชัดในโหมดสว่าง */
+:root.theme-light .bg-blob {
+  opacity: 0.15;
+}
+
+:root.theme-light .bg-blob.b1 {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent);
+}
+
+:root.theme-light .bg-blob.b2 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent);
+}
+
+:root.theme-light .bg-blob.b3 {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent);
+}
+</pre>
+  </div>
+
+  <div class="success">
+    <strong>✅ ผลลัพธ์:</strong>
+    <ul>
+      <li>ข้อความทั้งหมดจะมีสีที่เห็นชัดเจนในโหมดสว่าง</li>
+      <li>พื้นหลังเป็นสีขาว/เทาอ่อน</li>
+      <li>ข้อความเป็นสีเข้ม (เทา/ดำ)</li>
+      <li>Accent color เป็นสีน้ำเงินสวย</li>
+      <li>Card และ glass effect ยังคงสวยงาม</li>
+    </ul>
+  </div>
+
+  <h2>🎨 สีหลักที่ใช้ในโหมดสว่าง</h2>
+  <ul>
+    <li><strong>พื้นหลัง:</strong> #ffffff, #f8fafc (ขาว/เทาอ่อนมาก)</li>
+    <li><strong>ข้อความหลัก:</strong> #1e293b (เทาเข้ม)</li>
+    <li><strong>ข้อความรอง:</strong> #475569 (เทากลาง)</li>
+    <li><strong>Accent:</strong> #3b82f6 (น้ำเงิน), #8b5cf6 (ม่วง)</li>
+  </ul>
+
+  <h2>📱 วิธีทดสอบ</h2>
+  <ol>
+    <li>คัดลอกโค้ด CSS ด้านบนทั้งหมด</li>
+    <li>เปิดไฟล์ <code>app.css</code></li>
+    <li>วางโค้ดที่ท้ายสุดของไฟล์</li>
+    <li>Save แล้ว Refresh หน้าเว็บ</li>
+    <li>คลิกปุ่ม 🌙/☀️ เพื่อสลับธีม</li>
+    <li>ตรวจสอบว่าข้อความทั้งหมดมองเห็นได้ชัดเจน</li>
+  </ol>
+
+  <div class="important">
+    <strong>💡 Tips:</strong> ถ้ายังมีข้อความส่วนไหนหาย ให้ตรวจสอบว่าส่วนนั้นมีการกำหนดสีใน Light Mode หรือยัง หรือบอกผมมาได้เลยครับจะช่วยเพิ่มเติมให้
+  </div>
+
+</body>
+</html>
