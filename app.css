@@ -1036,41 +1036,31 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
    --------------------------- */
 
 /* ให้ header ขยายเต็ม viewport (พื้นหลังเต็มจอ) แต่คอนเทนต์ยังอยู่ใน .container */
-/* ---------------------------
-   NAVBAR: full-bleed & polish
-   --------------------------- */
-
-/* NAV - เต็มจอ ไม่มีช่องว่างข้าง */
-.nav {
-  position: sticky;
-  top: 0;
+header.nav {
+  width: 100vw; /* full viewport width */
+  margin-left: calc(50% - 50vw); /* center the full-bleed bar */
+  margin-right: calc(50% - 50vw);
   left: 0;
-  right: 0;
-  width: 100vw;
-  z-index: 999;
-  backdrop-filter: saturate(180%) blur(12px);
-  background: rgba(7,11,26,.6);
+  top: 0;
+  position: sticky; /* keep original behavior */
+  z-index: 1000;
+  border-radius: 0 0 18px 18px; /* ถ้าต้องการขอบล่างโค้ง ให้คงไว้ — ปรับเป็น 0 ถ้าไม่เอาโค้ง */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+  /* ถ้าต้องการใช้ same .glass background ให้คงไว้ */
+  background: linear-gradient(90deg, rgba(10,15,44,0.96), rgba(21,28,75,0.88));
+  backdrop-filter: saturate(160%) blur(8px);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
-/* nav-inner จัดตรงกลาง */
-.nav-inner {
-  max-width: 1200px;
+/* ให้พื้นที่ภายใน (nav-inner) จัดตำแหน่งเหมือนเดิม แต่มี padding สมดุลกับหน้า */
+header.nav .nav-inner {
+  max-width: 1100px; /* ขนาดเดียวกับ .container เพื่อสอดคล้อง */
   margin: 0 auto;
-  padding: 0 24px;
-  min-height: 64px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-}
-
-/* ส่วนขวา: Links + Theme Toggle */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
 /* หาก .container ถูกใช้ทั่วไปแล้วกระทบหลายที่ ให้จำกัดผลเฉพาะ header */
