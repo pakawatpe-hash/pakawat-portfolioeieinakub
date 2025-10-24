@@ -1172,14 +1172,43 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   margin: 12px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
 }
 
-/* ปิด animation text shine ทั้งหมด */
+/* เปิด animation text shine สำหรับ Light Mode */
 :root.theme-light .edu-row h3,
 :root.theme-light .edu-row p,
 :root.theme-light #education h3,
 :root.theme-light #education p,
-:root.theme-light .edu-chip,
-:root.theme-light .edu-chip span {
-  animation: none !important;
+:root.theme-light .edu-title,
+:root.theme-light .edu-desc {
+  background: linear-gradient(90deg, 
+    rgba(15,23,42,0.3) 0%, 
+    rgba(15,23,42,0.6) 25%, 
+    #0f172a 48%, 
+    #1e3a8a 60%, 
+    rgba(15,23,42,0.6) 75%, 
+    rgba(15,23,42,0.3) 100%) !important;
+  background-size: 260% 100% !important;
+  background-repeat: no-repeat !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: eduTextShine 2.8s linear infinite !important;
+  will-change: background-position !important;
+}
+
+:root.theme-light .edu-chip {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.2) 0%,
+    rgba(255,255,255,0.5) 25%,
+    #ffffff 48%,
+    #e0e7ff 60%,
+    rgba(255,255,255,0.5) 75%,
+    rgba(255,255,255,0.2) 100%) !important;
+  background-size: 260% 100% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: eduTextShine 2.8s linear infinite !important;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.4) !important;
 }
 
 /* ============== แก้ส่วนอื่นๆ ============== */
