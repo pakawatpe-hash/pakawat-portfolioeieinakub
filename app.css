@@ -1169,7 +1169,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 /* ปรับหัวข้อให้ชิดขึ้น */
 :root.theme-light .edu-title {
-  margin: 6px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
+  margin: 2px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
 }
 
 /* ปิด animation text shine ทั้งหมด */
