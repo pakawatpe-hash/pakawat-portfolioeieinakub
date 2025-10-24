@@ -1070,26 +1070,35 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   padding: 0 !important;
 }
 
-/* ชิปปี - ต้องแสดงชัด */
+/* ชิปปี - ไม่มีพื้นหลัง แค่ข้อความ */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
-:root.theme-light .edu-chip span {
-  background: linear-gradient(135deg, #6a9cff, #a777ff) !important;
+:root.theme-light .edu-section .edu-chip {
+  background: none !important;
   color: #ffffff !important;
+  box-shadow: none !important;
   display: inline-block !important;
-  padding: 7px 16px !important;
-  border-radius: 999px !important;
+  padding: 0 0 10px 0 !important;
+  border-radius: 0 !important;
   font-weight: 800 !important;
   margin-bottom: 10px !important;
   border: none !important;
-  box-shadow: none !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+:root.theme-light .edu-chip span {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
   -webkit-text-fill-color: #ffffff !important;
   animation: none !important;
   text-shadow: none !important;
   filter: none !important;
-  background-image: linear-gradient(135deg, #6a9cff, #a777ff) !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* หัวข้อ - สีดำเหมือน About section */
