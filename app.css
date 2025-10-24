@@ -1092,36 +1092,36 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background-clip: unset !important;
 }
 
-/* หัวข้อ - สีขาว มีเงา */
+/* หัวข้อ - สีดำเหมือน About section */
 :root.theme-light .edu-title,
 :root.theme-light #education .edu-title,
 :root.theme-light #education .edu-row .edu-title {
-  color: #ffffff !important;
+  color: #0f172a !important;
   font-weight: 800 !important;
   background: none !important;
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
-  -webkit-text-fill-color: #ffffff !important;
+  -webkit-text-fill-color: #0f172a !important;
   animation: none !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+  text-shadow: none !important;
   filter: none !important;
   margin: 12px 0 4px !important;
   font-size: 22px !important;
   background-image: none !important;
 }
 
-/* คำอธิบาย - สีขาวนวล มีเงา */
+/* คำอธิบาย - สีเทาเข้มเหมือน About section */
 :root.theme-light .edu-desc,
 :root.theme-light #education .edu-desc,
 :root.theme-light #education .edu-row p {
-  color: #cfdaf3 !important;
+  color: #334155 !important;
   opacity: 0.92 !important;
   background: none !important;
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
-  -webkit-text-fill-color: #cfdaf3 !important;
+  -webkit-text-fill-color: #334155 !important;
   animation: none !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+  text-shadow: none !important;
   filter: none !important;
   margin: 0 !important;
   background-image: none !important;
