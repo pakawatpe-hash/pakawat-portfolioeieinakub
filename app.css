@@ -767,11 +767,24 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 /* Theme toggle button */
 .theme-toggle{
-  width:38px;height:38px;border-radius:10px; display:grid;place-items:center;
-  border:1px solid var(--line); background:var(--card); color:var(--ink);
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--ink);
   transition: transform .2s ease, box-shadow .2s ease;
+  padding:0;
+  font-size:18px;
+  line-height:1;
 }
-.theme-toggle:hover{ transform: translateY(-2px); box-shadow: 0 0 14px rgba(120,150,255,.25); }
+.theme-toggle:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(120,150,255,.25);
+}
 /* =========================================================
    LIGHT MODE — SITE-WIDE POLISH (sections, cards, tabs, belt)
    ========================================================= */
