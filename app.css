@@ -1031,139 +1031,71 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border-color: rgba(0,0,0,.08);
   color:#1e293b;
 }
-/* ============== แก้ไข Light Mode ให้แสดงผลถูกต้อง ============== */
+/* ============== แก้ Light Mode Education - ลบกรอบออกทั้งหมด ============== */
 
-/* 1. แก้ Hero - ข้อความสีจาง */
-.theme-light .headline.gradient {
-  background: linear-gradient(90deg, #0f172a 0%, #1e293b 45%, #334155 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: none; /* ปิด glow ใน light mode */
+/* CRITICAL: ต้องวางโค้ดนี้ท้ายสุดของไฟล์ app.css */
+
+/* ลบกรอบทั้งหมดออกจาก Education Timeline ใน Light Mode */
+:root.theme-light .edu-item,
+:root.theme-light .edu-content,
+:root.theme-light #education .edu-item,
+:root.theme-light #education .edu-content,
+:root.theme-light .edu-section .edu-item,
+:root.theme-light .edu-section .edu-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
 }
 
-.theme-light .headline span {
-  font-weight: 800;
-  color: #0f172a;
+/* ปรับ padding ให้เท่ากับ Dark Mode */
+:root.theme-light .edu-item {
+  padding: 0 !important;
+  margin: 120px 0 !important;
 }
 
-.theme-light .pill {
-  background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.25);
-  color: #1e40af;
+:root.theme-light .edu-item.left {
+  text-align: right !important;
+  padding-right: 120px !important;
+  padding-left: 0 !important;
 }
 
-.theme-light .sub {
-  color: #334155;
-  opacity: 1;
+:root.theme-light .edu-item.right {
+  text-align: left !important;
+  padding-left: 120px !important;
+  padding-right: 0 !important;
 }
 
-/* 2. แก้ About - เนื้อหาหายไป */
-.theme-light .about-text {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 20px 22px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+:root.theme-light .edu-content {
+  padding: 0 !important;
 }
 
-.theme-light .about-name {
-  background: linear-gradient(90deg, #0f172a, #1e293b);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.theme-light .about-desc {
-  color: #1e293b;
-  opacity: 1;
-  line-height: 1.9;
-}
-
-.theme-light .about-desc p {
-  color: #334155;
-  margin: 0.4rem 0 1rem;
-  opacity: 1;
-}
-
-.theme-light .about-desc strong {
-  color: #0f172a;
-  font-weight: 700;
-}
-
-.theme-light .about-text .eyebrow {
-  color: #1e40af;
-  opacity: 1;
-}
-
-/* 3. แก้ Stats - กรอบหด */
-.theme-light .stat-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 16px 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
-  min-height: 90px; /* บังคับความสูงขั้นต่ำ */
-}
-
-.theme-light .stat-card .icon {
-  background: rgba(59, 130, 246, 0.10);
-  border: 1px solid rgba(59, 130, 246, 0.20);
-  color: #1e40af;
-  width: 36px;
-  height: 36px;
-}
-
-.theme-light .stat-card .num {
-  color: #0f172a;
-  font-size: 26px;
-  font-weight: 800;
-}
-
-.theme-light .stat-card .label {
-  color: #475569;
-  opacity: 1;
-}
-
-/* 4. แก้ Education - ไม่มีกรอบ เหมือนรูป 1 */
-.theme-light .edu-chip {
+/* ชิปปี - ต้องแสดงชัด */
+:root.theme-light .edu-chip,
+:root.theme-light #education .edu-chip,
+:root.theme-light .edu-chip span {
   background: linear-gradient(135deg, #6a9cff, #a777ff) !important;
   color: #ffffff !important;
-  box-shadow: none !important;
   display: inline-block !important;
   padding: 7px 16px !important;
   border-radius: 999px !important;
   font-weight: 800 !important;
   margin-bottom: 10px !important;
   border: none !important;
-}
-
-.theme-light .edu-chip span {
-  color: #ffffff !important;
-  opacity: 1 !important;
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
+  box-shadow: none !important;
   -webkit-text-fill-color: #ffffff !important;
   animation: none !important;
   text-shadow: none !important;
   filter: none !important;
+  background-image: linear-gradient(135deg, #6a9cff, #a777ff) !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
 }
 
-/* ไม่มีกรอบ - โปร่งใส */
-.theme-light .edu-content {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-
-.theme-light .edu-item {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.theme-light .edu-title {
+/* หัวข้อ - สีขาว มีเงา */
+:root.theme-light .edu-title,
+:root.theme-light #education .edu-title,
+:root.theme-light #education .edu-row .edu-title {
   color: #ffffff !important;
   font-weight: 800 !important;
   background: none !important;
@@ -1171,13 +1103,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background-clip: unset !important;
   -webkit-text-fill-color: #ffffff !important;
   animation: none !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
   filter: none !important;
   margin: 12px 0 4px !important;
   font-size: 22px !important;
+  background-image: none !important;
 }
 
-.theme-light .edu-desc {
+/* คำอธิบาย - สีขาวนวล มีเงา */
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-desc,
+:root.theme-light #education .edu-row p {
   color: #cfdaf3 !important;
   opacity: 0.92 !important;
   background: none !important;
@@ -1185,96 +1121,114 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background-clip: unset !important;
   -webkit-text-fill-color: #cfdaf3 !important;
   animation: none !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
   filter: none !important;
   margin: 0 !important;
-}
-
-/* เส้นกลาง + ลูกบอลเรืองแสง */
-.theme-light .edu-timeline::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
-}
-
-.theme-light .edu-timeline::after {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(120, 160, 255, 0.7) 50%, transparent 70%);
-  box-shadow: 0 0 18px rgba(120, 160, 255, 0.8), 0 0 30px rgba(120, 160, 255, 0.5);
-}
-
-/* ระยะห่าง - เท่ารูป 1 */
-.theme-light .edu-item.left {
-  padding-right: 120px !important;
-}
-
-.theme-light .edu-item.right {
-  padding-left: 120px !important;
-}
-
-/* ปิด animation/effect ทั้งหมด */
-.theme-light .edu-row h3,
-.theme-light .edu-row p,
-.theme-light #education .edu-row .edu-title,
-.theme-light #education .edu-row p {
-  animation: none !important;
   background-image: none !important;
-  -webkit-text-fill-color: unset !important;
-  background-clip: unset !important;
-  -webkit-background-clip: unset !important;
-  text-shadow: none !important;
+}
+
+/* เส้นกลาง - สีขาว */
+:root.theme-light .edu-timeline::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)) !important;
+}
+
+/* ลูกบอลเรืองแสง - สีน้ำเงิน */
+:root.theme-light .edu-timeline::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(120, 160, 255, 0.7) 50%, transparent 70%) !important;
+  box-shadow: 0 0 18px rgba(120, 160, 255, 0.8), 0 0 30px rgba(120, 160, 255, 0.5) !important;
+}
+
+/* ปิด animation text shine ทั้งหมด */
+:root.theme-light .edu-row h3,
+:root.theme-light .edu-row p,
+:root.theme-light #education h3,
+:root.theme-light #education p,
+:root.theme-light .edu-chip,
+:root.theme-light .edu-chip span {
+  animation: none !important;
+}
+
+/* ============== แก้ส่วนอื่นๆ ============== */
+
+/* 1. Hero */
+:root.theme-light .headline.gradient {
+  background: linear-gradient(90deg, #0f172a 0%, #1e293b 45%, #334155 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
   filter: none !important;
 }
 
-/* 5. แก้ Contact - กรอบเล็ก */
-.theme-light .contact-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 18px 16px; /* เพิ่ม padding */
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  min-height: 70px; /* บังคับความสูงขั้นต่ำ */
+:root.theme-light .pill {
+  background: rgba(59, 130, 246, 0.12) !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+  color: #1e40af !important;
 }
 
-.theme-light .contact-card i {
-  font-size: 22px;
-  color: #1e40af;
+:root.theme-light .sub {
+  color: #334155 !important;
+  opacity: 1 !important;
 }
 
-.theme-light .contact-card span {
-  color: #1e293b;
-  font-weight: 500;
-  opacity: 1;
+/* 2. About */
+:root.theme-light .about-text {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding: 20px 22px !important;
 }
 
-/* แก้เพิ่มเติม - Section titles */
-.theme-light .section-title,
-.theme-light h2 {
+:root.theme-light .about-desc {
+  color: #1e293b !important;
+  opacity: 1 !important;
+}
+
+:root.theme-light .about-desc p {
+  color: #334155 !important;
+  opacity: 1 !important;
+}
+
+:root.theme-light .about-desc strong {
   color: #0f172a !important;
-  font-weight: 800;
 }
 
-.theme-light .section-sub {
+/* 3. Stats */
+:root.theme-light .stat-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding: 16px 14px !important;
+  min-height: 90px !important;
+}
+
+:root.theme-light .stat-card .num {
+  color: #0f172a !important;
+}
+
+:root.theme-light .stat-card .label {
   color: #475569 !important;
-  opacity: 1;
 }
 
-/* แก้ Card titles */
-.theme-light .card .card-head h3 {
-  color: #0f172a;
+/* 5. Contact */
+:root.theme-light .contact-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding: 18px 16px !important;
+  min-height: 70px !important;
 }
 
-.theme-light .card p {
-  color: #475569;
-  opacity: 1;
+:root.theme-light .contact-card span {
+  color: #1e293b !important;
 }
 
-/* ปิด animation ที่ทำให้ text หาย */
-.theme-light .edu-chip,
-.theme-light .edu-chip span,
-.theme-light .edu-title,
-.theme-light .edu-desc,
-.theme-light .edu-row h3,
-.theme-light .edu-row p {
-  animation: none !important;
-  background-image: none !important;
-  -webkit-text-fill-color: unset !important;
-  background-clip: unset !important;
-  -webkit-background-clip: unset !important;
+/* Section titles */
+:root.theme-light .section-title,
+:root.theme-light h2 {
+  color: #0f172a !important;
+}
+
+:root.theme-light .section-sub {
+  color: #475569 !important;
+}
+
+:root.theme-light .card p {
+  color: #475569 !important;
 }
