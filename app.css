@@ -1123,16 +1123,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   opacity: 1;
 }
 
-/* 4. แก้ Education - ให้เหมือน Dark Mode */
+/* 4. แก้ Education - ไม่มีกรอบ เหมือนรูป 1 */
 .theme-light .edu-chip {
   background: linear-gradient(135deg, #6a9cff, #a777ff) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(106, 156, 255, 0.4);
+  box-shadow: none !important;
   display: inline-block !important;
   padding: 7px 16px !important;
   border-radius: 999px !important;
   font-weight: 800 !important;
   margin-bottom: 10px !important;
+  border: none !important;
 }
 
 .theme-light .edu-chip span {
@@ -1147,13 +1148,19 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   filter: none !important;
 }
 
+/* ไม่มีกรอบ - โปร่งใส */
 .theme-light .edu-content {
-  background: rgba(15, 23, 45, 0.85) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  padding: 18px 22px !important;
-  border-radius: 16px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(10px);
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.theme-light .edu-item {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .theme-light .edu-title {
@@ -1164,8 +1171,10 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background-clip: unset !important;
   -webkit-text-fill-color: #ffffff !important;
   animation: none !important;
-  text-shadow: none !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
   filter: none !important;
+  margin: 12px 0 4px !important;
+  font-size: 22px !important;
 }
 
 .theme-light .edu-desc {
@@ -1176,10 +1185,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background-clip: unset !important;
   -webkit-text-fill-color: #cfdaf3 !important;
   animation: none !important;
-  text-shadow: none !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
   filter: none !important;
+  margin: 0 !important;
 }
 
+/* เส้นกลาง + ลูกบอลเรืองแสง */
 .theme-light .edu-timeline::before {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
 }
@@ -1189,7 +1200,16 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   box-shadow: 0 0 18px rgba(120, 160, 255, 0.8), 0 0 30px rgba(120, 160, 255, 0.5);
 }
 
-/* ปิด animation/effect ทั้งหมดใน edu section */
+/* ระยะห่าง - เท่ารูป 1 */
+.theme-light .edu-item.left {
+  padding-right: 120px !important;
+}
+
+.theme-light .edu-item.right {
+  padding-left: 120px !important;
+}
+
+/* ปิด animation/effect ทั้งหมด */
 .theme-light .edu-row h3,
 .theme-light .edu-row p,
 .theme-light #education .edu-row .edu-title,
