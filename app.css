@@ -195,23 +195,24 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   radial-gradient(880px 420px at 100% -10%, rgba(155,140,255,.18), transparent 60%),
   linear-gradient(180deg,#070b1a,#0b1737);transition:opacity .6s ease, transform .6s ease}
 .intro-inner{text-align:center;animation:intro-pop .6s ease both}
-.intro .icons{display:flex;gap:12px;justify-content:center;margin-bottom:16px}
+.intro .icons{display:flex;gap:12px;justify-content:center;margin-bottom:12px}
 .intro .tile{
   width:46px;
   height:46px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position:relative;
   border:1px solid var(--line);
   border-radius:12px;
   background:rgba(255,255,255,.08);
   color:#cfe4ff;
-  box-shadow:0 6px 20px rgba(0,0,0,.3)
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
 }
 .intro .tile i{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
   font-size:22px;
   line-height:1;
-  display:block;
 }
 .intro-title{margin:.25rem 0 0;line-height:1.1;display:flex;flex-direction:column;gap:4px}
 .intro-title .line-1{font-size:28px;font-weight:800;color:#fff;letter-spacing:.3px;opacity:0;transform:translateY(10px);animation:fadeInUp .8s ease forwards .3s}
