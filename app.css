@@ -1308,3 +1308,82 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 :root.theme-light .card p {
   color: #475569 !important;
 }
+/* ============== EDUCATION: Light Mode Text Shine (ปรับให้เหมือน Dark Mode) ============== */
+
+/* ชิปปีใน Light Mode — เรืองแสงเหมือน Dark Mode */
+:root.theme-light .edu-chip,
+:root.theme-light #education .edu-chip,
+:root.theme-light .edu-section .edu-chip {
+  display: inline-block !important;
+  padding: 7px 16px !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  margin-bottom: 12px !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  
+  background: linear-gradient(90deg,
+    rgba(15,23,42,0.35) 0%,
+    rgba(15,23,42,0.65) 25%,
+    #0f172a 48%,
+    #3b82f6 60%,
+    rgba(15,23,42,0.65) 75%,
+    rgba(15,23,42,0.35) 100%) !important;
+  background-size: 260% 100% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: eduTextShine 2.8s linear infinite !important;
+}
+
+/* หัวข้อ + คำอธิบาย — เรืองแสงเหมือน Dark Mode */
+:root.theme-light .edu-title,
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-title,
+:root.theme-light #education .edu-desc,
+:root.theme-light #education .edu-row .edu-title,
+:root.theme-light #education .edu-row p {
+  background: linear-gradient(90deg,
+    rgba(15,23,42,0.3) 0%,
+    rgba(15,23,42,0.6) 25%,
+    #0f172a 48%,
+    #1e3a8a 60%,
+    rgba(15,23,42,0.6) 75%,
+    rgba(15,23,42,0.3) 100%) !important;
+  background-size: 260% 100% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: eduTextShine 2.8s linear infinite !important;
+  will-change: background-position !important;
+}
+
+/* จัดระยะห่างให้เท่ากับ Dark Mode */
+:root.theme-light .edu-item {
+  margin: 120px 0 !important;
+  padding: 0 !important;
+}
+
+:root.theme-light .edu-item.left {
+  text-align: right !important;
+  padding-right: 120px !important;
+  padding-left: 0 !important;
+}
+
+:root.theme-light .edu-item.right {
+  text-align: left !important;
+  padding-left: 120px !important;
+  padding-right: 0 !important;
+}
+
+:root.theme-light .edu-title {
+  margin: 12px 0 4px !important;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+}
+
+:root.theme-light .edu-desc {
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
