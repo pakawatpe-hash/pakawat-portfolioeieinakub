@@ -1136,20 +1136,40 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background-image: none !important;
 }
 
-/* เส้นกลาง + ลูกบอลเรืองแสง - ให้เหมือน Dark Mode */
+/* เส้นกลาง - เปลี่ยนเป็นสีดำ */
 :root.theme-light .edu-timeline::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)) !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.08)) !important;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
 
+/* ลูกบอลเรืองแสง - สีน้ำเงิน */
 :root.theme-light .edu-timeline::after {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(120, 160, 255, 0.7) 50%, transparent 70%) !important;
-  box-shadow: 0 0 18px rgba(120, 160, 255, 0.8), 0 0 30px rgba(120, 160, 255, 0.5) !important;
+  background: radial-gradient(circle, #3b82f6 0%, rgba(59, 130, 246, 0.6) 50%, transparent 70%) !important;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.7), 0 0 28px rgba(59, 130, 246, 0.4) !important;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+/* ลดระยะห่างระหว่างชิปปีกับหัวข้อ */
+:root.theme-light .edu-chip {
+  background: none !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  display: inline-block !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-weight: 800 !important;
+  margin-bottom: 6px !important;  /* ลดจาก 10px เหลือ 6px */
+  border: none !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ปรับหัวข้อให้ชิดขึ้น */
+:root.theme-light .edu-title {
+  margin: 6px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
 }
 
 /* ปิด animation text shine ทั้งหมด */
@@ -1240,6 +1260,10 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 :root.theme-light .section-sub {
+  color: #475569 !important;
+}
+
+:root.theme-light .card p {
   color: #475569 !important;
 }
 
