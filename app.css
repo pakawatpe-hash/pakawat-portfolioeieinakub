@@ -580,6 +580,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 #education .edu-row:nth-of-type(2) .edu-title,#education .edu-row:nth-of-type(2) p{ animation-delay:1.0s; }
 #education .edu-row:nth-of-type(3) .edu-title,#education .edu-row:nth-of-type(3) p{ animation-delay:1.85s; }
 
+
 /* ===================== Certificates (Consolidated) ===================== */
 .cert-filters{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
 .cert-filters .chip{
@@ -603,6 +604,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.2);
   transition:transform .28s cubic-bezier(.19,1,.22,1), box-shadow .28s cubic-bezier(.19,1,.22,1);
   display:flex;flex-direction:column;justify-content:space-between;
+  min-height:420px; /* ← เพิ่มบรรทัดนี้ */
 }
 .cert-card:hover{ transform:translateY(-6px) scale(1.02); box-shadow:0 16px 36px rgba(0,0,0,.42); }
 .cert-card::before{
@@ -622,6 +624,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .cert-title{
   font-weight:700;color:var(--ink);line-height:1.35;font-size:.95rem;
   display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  min-height:52px; /* ← เพิ่มบรรทัดนี้ */
+  align-items:flex-start; /* ← เพิ่มบรรทัดนี้ */
 }
 .cert-actions{ display:flex; gap:.5rem; flex-wrap:wrap; }
 .cert-actions .btn.tiny{ font-size:.8rem; padding:.3rem .6rem; border-radius:10px; }
