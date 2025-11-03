@@ -472,3 +472,134 @@ if (isFinePointer) {
     }, {passive:true});
   }
 })();
+/* ===== Projects Detail System ===== */
+(function(){
+  const projectData = {
+    'roblox-game': {
+      title: 'Roblox Game - Computer Mystery',
+      description: 'เกมแนวไขปริศนาที่เกี่ยวข้องกับระบบคอมพิวเตอร์ พัฒนาด้วย Roblox Studio',
+      features: [
+        '🎮 ระบบไขปริศนาแบบมัลติเพลเยอร์',
+        '💻 เนื้อเรื่องเกี่ยวกับระบบคอมพิวเตอร์',
+        '🏆 ระบบ Achievement และ Leaderboard',
+        '🎨 3D Environment Design',
+        '⚡ Optimized Performance'
+      ],
+      tech: ['Roblox Studio', 'Lua', 'Game Design', '3D Modeling'],
+      images: [
+        'assets/projects/roblox-1.jpg',
+        'assets/projects/roblox-2.jpg',
+        'assets/projects/roblox-3.jpg'
+      ]
+    },
+    'stock-app': {
+      title: 'Stock Management App',
+      description: 'แอปพลิเคชัน Android สำหรับจัดการสต็อกสินค้า พร้อมระบบสแกน Barcode',
+      features: [
+        '📱 UI/UX ที่ใช้งานง่าย',
+        '📷 Barcode Scanner ด้วยกล้อง',
+        '📊 Dashboard สรุปข้อมูล',
+        '🔍 ค้นหาสินค้าแบบ Real-time',
+        '☁️ Sync ข้อมูลกับ Google Sheets'
+      ],
+      tech: ['Flutter', 'Dart', 'Google Sheets API', 'Barcode Scanner'],
+      images: [
+        'assets/projects/stock-1.jpg',
+        'assets/projects/stock-2.jpg',
+        'assets/projects/stock-3.jpg'
+      ]
+    },
+    'drpharma': {
+      title: 'Dr.Pharma E-Commerce',
+      description: 'เว็บไซต์ E-Commerce สำหรับขายสินค้าเภสัชภัณฑ์ออนไลน์',
+      features: [
+        '🛒 ระบบตะกร้าสินค้า',
+        '💳 ระบบชำระเงินออนไลน์',
+        '📦 ติดตามสถานะการจัดส่ง',
+        '👤 ระบบสมาชิก',
+        '📱 Responsive Design'
+      ],
+      tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+      images: [
+        'assets/projects/pharma-1.jpg',
+        'assets/projects/pharma-2.jpg',
+        'assets/projects/pharma-3.jpg'
+      ]
+    }
+  };
+
+  // Modal Elements
+  const projectModal = document.getElementById('projectModal');
+  const galleryModal = document.getElementById('galleryModal');
+  const modalContent = document.getElementById('modalContent');
+  const galleryTitle = document.getElementById('galleryTitle');
+  const galleryGrid = document.getElementById('galleryGrid');
+
+  // Open Project Detail Modal
+  window.openProjectDetail = function(projectId) {
+    const project = projectData[projectId];
+    if (!project) return;
+
+    modalContent.innerHTML = `
+      <h2 style="margin: 0 0 10px; color: var(--ink);">${project.title}</h2>
+      <p style="color: var(--muted); margin: 0 0 20px;">${project.description}</p>
+      
+      <h3 style="margin: 20px 0 10px; color: var(--ink);">✨ Features</h3>
+      <ul style="color: var(--ink); line-height: 1.8;">
+        ${project.features.map(f => `<li>${f}</li>`).join('')}
+      </ul>
+      
+      <h3 style="margin: 20px 0 10px; color: var(--ink);">🛠️ Tech Stack</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        ${project.tech.map(t => `
+          <span style="padding: 6px 12px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; font-size: 13px;">
+            ${t}
+          </span>
+        `).join('')}
+      </div>
+    `;
+
+    projectModal.classList.add('open');
+    projectModal.setAttribute('aria-hidden', 'false');
+  };
+
+  // Open Image Gallery Modal
+  window.openProjectGallery = function(projectId) {
+    const project = projectData[projectId];
+    if (!project) return;
+
+    galleryTitle.textContent = project.title + ' - Gallery';
+    galleryGrid.innerHTML = project.images.map(img => `
+      <img src="${img}" 
+           alt="${project.title}" 
+           style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; cursor: pointer; border: 1px solid var(--line);"
+           onclick="window.open('${img}', '_blank')"
+           onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div style=\\'width:100%; height:200px; display:grid; place-items:center; background:var(--card); border-radius:12px; border:1px solid var(--line);\\'>📷 รูปยังไม่พร้อม</div>')">
+    `).join('');
+
+    galleryModal.classList.add('open');
+    galleryModal.setAttribute('aria-hidden', 'false');
+  };
+
+  // Close Modals
+  function closeModal(modal) {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelectorAll('[data-close-modal]').forEach(el => {
+    el.addEventListener('click', () => closeModal(projectModal));
+  });
+
+  document.querySelectorAll('[data-close-gallery]').forEach(el => {
+    el.addEventListener('click', () => closeModal(galleryModal));
+  });
+
+  // ESC key to close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (projectModal.classList.contains('open')) closeModal(projectModal);
+      if (galleryModal.classList.contains('open')) closeModal(galleryModal);
+    }
+  });
+})();
