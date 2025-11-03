@@ -490,6 +490,7 @@ if (isFinePointer) {
         'assets/projects/roblox-1.jpg',
         'assets/projects/roblox-2.jpg',
         'assets/projects/roblox-3.jpg'
+        'assets/projects/roblox-4.jpg'
       ]
     },
     'stock-app': {
@@ -507,6 +508,7 @@ if (isFinePointer) {
         'assets/projects/stock-1.jpg',
         'assets/projects/stock-2.jpg',
         'assets/projects/stock-3.jpg'
+        'assets/projects/stock-4.jpg'
       ]
     },
     'drpharma': {
@@ -524,6 +526,7 @@ if (isFinePointer) {
         'assets/projects/pharma-1.jpg',
         'assets/projects/pharma-2.jpg',
         'assets/projects/pharma-3.jpg'
+        'assets/projects/pharma-4.jpg'
       ]
     }
   };
