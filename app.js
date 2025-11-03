@@ -566,22 +566,22 @@ if (isFinePointer) {
     projectModal.setAttribute('aria-hidden', 'false');
   };
 
-  // Open Image Gallery Modal
+// Open Image Gallery Modal
 window.openProjectGallery = function(projectId) {
   const project = projectData[projectId];
   if (!project) return;
 
   galleryTitle.textContent = project.title + ' - Gallery';
   
-  // ✅ แก้ Grid เป็น 2 คอลัมน์แบบรูปที่ 2
-  galleryGrid.innerHTML = project.images.map(img => `
-    <img src="${img}" 
-         alt="${project.title}" 
-         style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; cursor: pointer; border: 1px solid var(--line); transition: transform .2s ease;"
-         onclick="window.open('${img}', '_blank')"
-         onmouseover="this.style.transform='scale(1.02)'"
-         onmouseout="this.style.transform='scale(1)'"
-         onerror="this.style.aspectRatio='16/9'; this.style.display='grid'; this.style.placeItems='center'; this.style.background='var(--card)'; this.style.fontSize='48px'; this.textContent='📷'; this.onclick=null; this.style.cursor='default';">
+  galleryGrid.innerHTML = project.images.map((img, index) => `
+    <div style="width: 100%; height: 180px; border-radius: 10px; border: 1px solid var(--line); overflow: hidden; position: relative; cursor: pointer; background: var(--card);" 
+         onclick="window.open('${img}', '_blank')">
+      <img src="${img}" 
+           alt="" 
+           style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .2s ease;"
+           onload="this.parentElement.style.background='transparent'"
+           onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%; height:100%; display:grid; place-items:center; background:linear-gradient(135deg, rgba(106,165,255,0.15), rgba(155,140,255,0.15)); color:var(--muted); font-size:14px; flex-direction:column; gap:8px;\\'>📷<br><span style=\\'font-size:12px;\\'>รูปที่ ${index + 1}</span></div>'; this.parentElement.style.cursor='default'; this.parentElement.onclick=null;">
+    </div>
   `).join('');
 
   galleryModal.classList.add('open');
