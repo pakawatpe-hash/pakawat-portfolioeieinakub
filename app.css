@@ -592,19 +592,16 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background:linear-gradient(90deg,var(--primary),var(--primary-2));
   color:#0b1022;border:none;box-shadow:0 0 12px rgba(106,165,255,.35);
 }
-
 .cert-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-  gap:16px;margin-top:10px;justify-items:stretch;
+  gap:16px;margin-top:10px;align-items:stretch;
 }
-
 .cert-card{
   position:relative;background:var(--card);border:1px solid var(--line);
   border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.2);
   transition:transform .28s cubic-bezier(.19,1,.22,1), box-shadow .28s cubic-bezier(.19,1,.22,1);
-  display:flex;flex-direction:column;justify-content:space-between;
-  min-height:420px; /* ← เพิ่มบรรทัดนี้ */
+  display:flex;flex-direction:column;height:100%;
 }
 .cert-card:hover{ transform:translateY(-6px) scale(1.02); box-shadow:0 16px 36px rgba(0,0,0,.42); }
 .cert-card::before{
@@ -613,21 +610,18 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform:skewX(-20deg); transition: left .75s; pointer-events:none;
 }
 .cert-card:hover::before{ left:130%; }
-
 .cert-thumb{
   width:100%; aspect-ratio:4/3; object-fit:cover; object-position: top center;
   display:block; border-bottom:1px solid var(--line); transition:transform .35s ease;
 }
 .cert-card:hover .cert-thumb{ transform: scale(1.015); }
-
-.cert-meta{ padding:12px 12px 14px; display:flex; flex-direction:column; gap:.6rem; }
+.cert-meta{ padding:12px 12px 14px; display:flex; flex-direction:column; gap:.6rem; flex-grow:1; }
 .cert-title{
   font-weight:700;color:var(--ink);line-height:1.35;font-size:.95rem;
   display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
-  min-height:52px; /* ← เพิ่มบรรทัดนี้ */
-  align-items:flex-start; /* ← เพิ่มบรรทัดนี้ */
+  min-height:52px;
 }
-.cert-actions{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.cert-actions{ display:flex; gap:.5rem; flex-wrap:wrap; margin-top:auto; }
 .cert-actions .btn.tiny{ font-size:.8rem; padding:.3rem .6rem; border-radius:10px; }
 
 /* Lightbox */
