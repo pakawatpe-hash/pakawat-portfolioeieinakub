@@ -133,7 +133,7 @@
 
       <div class="about-layout">
         <article class="about-text glass reveal">
-          <p class="eyebrow"><i class='bx bx-sparkles'></i> Hello, I’m</p>
+          <p class="eyebrow"><i class='bx bx-sparkles'></i> Hello, I'm</p>
           <h3 class="about-name split">Pakawat</h3>
 
           <div class="about-desc">
@@ -185,9 +185,7 @@
       <div class="edu-timeline">
         <div class="edu-item left reveal">
           <div class="edu-content">
-            <span class="edu-chip">
-              <span class="edu-chip">2010–2019</span>
-            </span>
+            <span class="edu-chip">2010–2019</span>
             <h3 class="edu-title">โรงเรียนหงสประภาสประสิทธิ์</h3>
             <p class="edu-desc">ศึกษาตั้งแต่ อนุบาล 3 ถึง มัธยมศึกษาปีที่ 3</p>
           </div>
@@ -195,9 +193,7 @@
 
         <div class="edu-item right reveal">
           <div class="edu-content">
-            <span class="edu-chip">
-              <span class="edu-chip">2020–2023</span>
-            </span>
+            <span class="edu-chip">2020–2023</span>
             <h3 class="edu-title">วิทยาลัยเทคนิคนนทบุรี</h3>
             <p class="edu-desc">ระดับ ปวช. 1–3 สาขา คอมพิวเตอร์ธุรกิจ — จบการศึกษา</p>
           </div>
@@ -205,9 +201,7 @@
 
         <div class="edu-item left reveal">
           <div class="edu-content">
-            <span class="edu-chip">
-              <span class="edu-chip">2024–ปัจจุบัน</span>
-            </span>
+            <span class="edu-chip">2024–ปัจจุบัน</span>
             <h3 class="edu-title">วิทยาลัยเทคนิคนนทบุรี</h3>
             <p class="edu-desc">ระดับ ปวส. 1 สาขา เทคโนโลยีธุรกิจดิจิทัล — ระดับ ปวส. 2 สาขา เทคโนโลยีธุรกิจดิจิทัล</p>
           </div>
@@ -228,71 +222,77 @@
         <button class="tab magnetic" data-tab="stack" role="tab" aria-selected="false" aria-controls="panel-stack" id="tab-stack">Tech Stack</button>
       </div>
 
-      <div class="cards">
-  <!-- Project 1: Roblox Game -->
-  <article class="card glass reveal tilt glare">
-    <div class="thumb gradient-1 parallax" data-depth="0.15"></div>
-    <div class="card-head"><i class='bx bx-joystick'></i><h3>Roblox Game</h3></div>
-    <p>เกมแนวไขปริศนา ที่เกี่ยวกับระบบคอมพิวเตอร์</p>
-    <div class="card-actions">
-      <button class="btn tiny magnetic" onclick="openProjectGallery('roblox-game')">ดูรูปภาพ</button>
-      <button class="btn tiny ghost magnetic" onclick="openProjectDetail('roblox-game')">รายละเอียด</button>
-    </div>
-    <span class="glare-spot"></span>
-  </article>
+      <div class="tab-panels">
+        <!-- Projects Panel -->
+        <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
+          <div class="cards">
+            <!-- Project 1: Roblox Game -->
+            <article class="card glass reveal tilt glare">
+              <div class="thumb gradient-1 parallax" data-depth="0.15"></div>
+              <div class="card-head"><i class='bx bx-joystick'></i><h3>Roblox Game</h3></div>
+              <p>เกมแนวไขปริศนา ที่เกี่ยวกับระบบคอมพิวเตอร์</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('roblox-game')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('roblox-game')">รายละเอียด</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
 
-  <!-- Project 2: Stock App -->
-  <article class="card glass reveal tilt glare">
-    <div class="thumb gradient-2 parallax" data-depth="0.12"></div>
-    <div class="card-head"><i class='bx bxl-android'></i><h3>Stock App</h3></div>
-    <p>แอประบบ Android สำหรับนับสต็อกสินค้า พร้อมระบบ Barcode Scanner</p>
-    <div class="card-actions">
-      <button class="btn tiny magnetic" onclick="openProjectGallery('stock-app')">ดูรูปภาพ</button>
-      <button class="btn tiny ghost magnetic" onclick="openProjectDetail('stock-app')">รายละเอียด</button>
-    </div>
-    <span class="glare-spot"></span>
-  </article>
+            <!-- Project 2: Stock App -->
+            <article class="card glass reveal tilt glare">
+              <div class="thumb gradient-2 parallax" data-depth="0.12"></div>
+              <div class="card-head"><i class='bx bxl-android'></i><h3>Stock App</h3></div>
+              <p>แอประบบ Android สำหรับนับสต็อกสินค้า พร้อมระบบ Barcode Scanner</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('stock-app')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('stock-app')">รายละเอียด</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
 
-  <!-- Project 3: Dr.Pharma -->
-  <article class="card glass reveal tilt glare">
-    <div class="thumb gradient-3 parallax" data-depth="0.1"></div>
-    <div class="card-head"><i class='bx bx-store'></i><h3>Dr.Pharma Shop</h3></div>
-    <p>เว็บไซต์ E-Commerce สำหรับขายสินค้าเภสัชภัณฑ์ออนไลน์</p>
-    <div class="card-actions">
-      <button class="btn tiny magnetic" onclick="openProjectGallery('drpharma')">ดูรูปภาพ</button>
-      <button class="btn tiny ghost magnetic" onclick="openProjectDetail('drpharma')">รายละเอียด</button>
-    </div>
-    <span class="glare-spot"></span>
-  </article>
-</div>
+            <!-- Project 3: Dr.Pharma -->
+            <article class="card glass reveal tilt glare">
+              <div class="thumb gradient-3 parallax" data-depth="0.1"></div>
+              <div class="card-head"><i class='bx bx-store'></i><h3>Dr.Pharma Shop</h3></div>
+              <p>เว็บไซต์ E-Commerce สำหรับขายสินค้าเภสัชภัณฑ์ออนไลน์</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('drpharma')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('drpharma')">รายละเอียด</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
+          </div>
+
           <!-- Project Detail Modal -->
-<div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="clb-backdrop" data-close-modal></div>
-  <div class="clb-inner glass" style="max-width: 800px;">
-    <button class="clb-close btn tiny" aria-label="ปิด" data-close-modal>
-      <i class='bx bx-x'></i>
-    </button>
-    
-    <div id="modalContent" style="padding: 20px; max-height: 70vh; overflow-y: auto;">
-      <!-- เนื้อหาจะถูกแทรกด้วย JavaScript -->
-    </div>
-  </div>
-</div>
+          <div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-modal></div>
+            <div class="clb-inner glass" style="max-width: 800px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-modal>
+                <i class='bx bx-x'></i>
+              </button>
+              
+              <div id="modalContent" style="padding: 20px; max-height: 70vh; overflow-y: auto;">
+                <!-- เนื้อหาจะถูกแทรกด้วย JavaScript -->
+              </div>
+            </div>
+          </div>
 
-<!-- Image Gallery Modal -->
-<div id="galleryModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="clb-backdrop" data-close-gallery></div>
-<div class="clb-inner glass" style="max-width: 680px; padding: 16px;">
-    <button class="clb-close btn tiny" aria-label="ปิด" data-close-gallery>
-      <i class='bx bx-x'></i>
-    </button>
-    
-    <div id="galleryContent" style="padding: 20px;">
-      <h3 id="galleryTitle" style="margin: 0 0 20px; text-align: center;"></h3>
-      <div id="galleryGrid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;"></div>
-    </div>
-  </div>
-</div>
+          <!-- Image Gallery Modal -->
+          <div id="galleryModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-gallery></div>
+            <div class="clb-inner glass" style="max-width: 680px; padding: 16px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-gallery>
+                <i class='bx bx-x'></i>
+              </button>
+              
+              <div id="galleryContent" style="padding: 20px;">
+                <h3 id="galleryTitle" style="margin: 0 0 20px; text-align: center;"></h3>
+                <div id="galleryGrid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Certificates panel (JPG) -->
         <div class="panel" id="panel-certs" role="tabpanel" aria-labelledby="tab-certs" hidden>
           <div class="cert-filters">
@@ -301,6 +301,7 @@
           <div id="certGrid" class="cert-grid" aria-live="polite"></div>
         </div>
 
+        <!-- Tech Stack Panel -->
         <div class="panel" id="panel-stack" role="tabpanel" aria-labelledby="tab-stack" hidden>
           <div class="stack-grid">
             <div class="stack-chip glass"><i class='bx bxl-flutter'></i><span>Flutter</span></div>
