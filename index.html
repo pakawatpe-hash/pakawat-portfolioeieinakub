@@ -267,6 +267,34 @@
     <span class="glare-spot"></span>
   </article>
 </div>
+          <!-- Project Detail Modal -->
+<div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="clb-backdrop" data-close-modal></div>
+  <div class="clb-inner glass" style="max-width: 800px;">
+    <button class="clb-close btn tiny" aria-label="ปิด" data-close-modal>
+      <i class='bx bx-x'></i>
+    </button>
+    
+    <div id="modalContent" style="padding: 20px; max-height: 70vh; overflow-y: auto;">
+      <!-- เนื้อหาจะถูกแทรกด้วย JavaScript -->
+    </div>
+  </div>
+</div>
+
+<!-- Image Gallery Modal -->
+<div id="galleryModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="clb-backdrop" data-close-gallery></div>
+  <div class="clb-inner glass" style="max-width: 900px;">
+    <button class="clb-close btn tiny" aria-label="ปิด" data-close-gallery>
+      <i class='bx bx-x'></i>
+    </button>
+    
+    <div id="galleryContent" style="padding: 20px;">
+      <h3 id="galleryTitle" style="margin: 0 0 20px; text-align: center;"></h3>
+      <div id="galleryGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;"></div>
+    </div>
+  </div>
+</div>
         <!-- Certificates panel (JPG) -->
         <div class="panel" id="panel-certs" role="tabpanel" aria-labelledby="tab-certs" hidden>
           <div class="cert-filters">
