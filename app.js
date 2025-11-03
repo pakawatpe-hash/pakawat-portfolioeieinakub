@@ -489,7 +489,7 @@ if (isFinePointer) {
       images: [
         'assets/projects/roblox-1.jpg',
         'assets/projects/roblox-2.jpg',
-        'assets/projects/roblox-3.jpg'
+        'assets/projects/roblox-3.jpg',
         'assets/projects/roblox-4.jpg'
       ]
     },
@@ -507,7 +507,7 @@ if (isFinePointer) {
       images: [
         'assets/projects/stock-1.jpg',
         'assets/projects/stock-2.jpg',
-        'assets/projects/stock-3.jpg'
+        'assets/projects/stock-3.jpg',
         'assets/projects/stock-4.jpg'
       ]
     },
@@ -525,7 +525,7 @@ if (isFinePointer) {
       images: [
         'assets/projects/pharma-1.jpg',
         'assets/projects/pharma-2.jpg',
-        'assets/projects/pharma-3.jpg'
+        'assets/projects/pharma-3.jpg',
         'assets/projects/pharma-4.jpg'
       ]
     }
