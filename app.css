@@ -1387,3 +1387,25 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   margin: 0 !important;
   line-height: 1.6 !important;
 }
+/* Gallery Grid - 2 columns desktop, 1 column mobile */
+#galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  #galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gallery image hover effect */
+#galleryGrid img {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#galleryGrid img:hover {
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
