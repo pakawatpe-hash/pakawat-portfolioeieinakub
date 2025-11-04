@@ -154,6 +154,100 @@
           </div>
         </aside>
       </div>
+      <!-- เพิ่มหลัง </section> ของ About -->
+
+<!-- About Me Detail Modal -->
+<div id="aboutModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="clb-backdrop" data-close-about></div>
+  <div class="clb-inner glass" style="max-width: 700px;">
+    <button class="clb-close btn tiny" aria-label="ปิด" data-close-about>
+      <i class='bx bx-x'></i>
+    </button>
+    
+    <div id="aboutDetailContent" style="padding: 24px;">
+      <!-- Avatar Section -->
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="width: 180px; height: 180px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 3px solid var(--primary); box-shadow: 0 8px 32px rgba(106,165,255,.35);">
+          <img src="me.jpg" alt="Pakawat" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <h2 style="margin: 16px 0 4px; font-size: 28px; color: var(--ink);">ภควัฒน์ เกตุนิธี</h2>
+        <p style="color: var(--muted); margin: 0;">นาย ภควัฒน์ เกตุนิธี (เปเปอร์)</p>
+      </div>
+
+      <!-- Personal Info Grid -->
+      <div style="display: grid; gap: 16px;">
+        <!-- Info Item -->
+        <div class="info-item glass" style="padding: 14px 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), var(--primary-2)); display: grid; place-items: center; color: #fff; font-size: 20px;">
+            <i class='bx bx-user'></i>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 2px;">ชื่อเล่น</div>
+            <div style="font-weight: 700; color: var(--ink);">เปเปอร์ (Paper)</div>
+          </div>
+        </div>
+
+        <div class="info-item glass" style="padding: 14px 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #6aa5ff, #4dd4ff); display: grid; place-items: center; color: #fff; font-size: 20px;">
+            <i class='bx bx-cake'></i>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 2px;">วันเกิด</div>
+            <div style="font-weight: 700; color: var(--ink);">12 มกราคม 2548 (20 ปี)</div>
+          </div>
+        </div>
+
+        <div class="info-item glass" style="padding: 14px 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #9b8cff, #c084fc); display: grid; place-items: center; color: #fff; font-size: 20px;">
+            <i class='bx bx-map'></i>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 2px;">ภูมิลำเนา</div>
+            <div style="font-weight: 700; color: var(--ink);">นนทบุรี, ประเทศไทย</div>
+          </div>
+        </div>
+
+        <div class="info-item glass" style="padding: 14px 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #4dd4ff, #6aa5ff); display: grid; place-items: center; color: #fff; font-size: 20px;">
+            <i class='bx bx-book-open'></i>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 2px;">การศึกษา</div>
+            <div style="font-weight: 700; color: var(--ink);">วิทยาลัยเทคนิคนนทบุรี</div>
+            <div style="font-size: 13px; color: var(--muted);">ปวส. 2 เทคโนโลยีธุรกิจดิจิทัล</div>
+          </div>
+        </div>
+
+        <div class="info-item glass" style="padding: 14px 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #ff6b6b, #ff8787); display: grid; place-items: center; color: #fff; font-size: 20px;">
+            <i class='bx bx-heart'></i>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 2px;">งานอดิเรก</div>
+            <div style="font-weight: 700; color: var(--ink);">เขียนโค้ด, เล่นเกม, เรียนรู้เทคโนโลยีใหม่</div>
+          </div>
+        </div>
+
+        <div class="info-item glass" style="padding: 14px 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #ffd93d, #ffed4e); display: grid; place-items: center; color: #333; font-size: 20px;">
+            <i class='bx bx-target-lock'></i>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 2px;">เป้าหมาย</div>
+            <div style="font-weight: 700; color: var(--ink);">วิศวกรรมคอมพิวเตอร์ @ KMUTNB</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Section -->
+      <div style="margin-top: 24px; padding: 16px; background: linear-gradient(135deg, rgba(106,165,255,.1), rgba(155,140,255,.1)); border-radius: 12px; border-left: 4px solid var(--primary);">
+        <p style="margin: 0; font-style: italic; color: var(--ink); line-height: 1.6;">
+          "ผมเป็นคนเรียนรู้ด้วยตัวเอง อดทน รู้จักแก้ปัญหา และไม่หนีปัญหา พร้อมที่จะพัฒนาตนเองให้ก้าวไปสู่ความสำเร็จ"
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
       <!-- STATS -->
       <div class="stats-row">
