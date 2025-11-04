@@ -1443,3 +1443,36 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 #galleryGrid > div img[src*="assets"][onload] {
   animation: none;
 }
+/* ===== About Modal Info Items ===== */
+.info-item {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
+}
+
+/* Avatar ใน About Modal */
+#aboutModal img {
+  transition: transform .3s ease, filter .3s ease;
+}
+
+#aboutModal img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Light Mode Support */
+.theme-light .info-item {
+  background: rgba(255, 255, 255, .95);
+  border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.theme-light #aboutDetailContent h2 {
+  color: #0f172a;
+}
+
+.theme-light .info-item div {
+  color: #0f172a;
+}
