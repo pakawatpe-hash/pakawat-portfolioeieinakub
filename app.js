@@ -589,18 +589,30 @@ window.openProjectGallery = function(projectId) {
 };
 
   // Close Modals
+
   function closeModal(modal) {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
   }
 
+  // Close buttons
   document.querySelectorAll('[data-close-modal]').forEach(el => {
-    el.addEventListener('click', () => closeModal(projectModal));
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeModal(projectModal);
+    });
   });
 
   document.querySelectorAll('[data-close-gallery]').forEach(el => {
-    el.addEventListener('click', () => closeModal(galleryModal));
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeModal(galleryModal);
+    });
   });
+
+  // Click backdrop to close
+  projectModal.querySelector('.clb-backdrop').addEventListener('click', () => closeModal(projectModal));
+  galleryModal.querySelector('.clb-backdrop').addEventListener('click', () => closeModal(galleryModal));
 
   // ESC key to close
   document.addEventListener('keydown', function(e) {
