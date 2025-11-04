@@ -610,3 +610,36 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })();
+/* ===== About Me Modal ===== */
+(function(){
+  const avatarGlow = document.querySelector('.about-photo .avatar-glow');
+  const aboutModal = document.getElementById('aboutModal');
+  
+  if(!avatarGlow || !aboutModal) return;
+
+  // เปิด Modal เมื่อคลิกที่รูป
+  avatarGlow.addEventListener('click', function(){
+    aboutModal.classList.add('open');
+    aboutModal.setAttribute('aria-hidden', 'false');
+  });
+
+  // ปิด Modal
+  function closeAboutModal(){
+    aboutModal.classList.remove('open');
+    aboutModal.setAttribute('aria-hidden', 'true');
+  }
+
+  // ปิดเมื่อคลิกปุ่มหรือ backdrop
+  aboutModal.addEventListener('click', function(e){
+    if(e.target.hasAttribute('data-close-about')){
+      closeAboutModal();
+    }
+  });
+
+  // ปิดด้วย ESC
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && aboutModal.classList.contains('open')){
+      closeAboutModal();
+    }
+  });
+})();
