@@ -237,12 +237,30 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   .nav-inner{flex-wrap:wrap;gap:10px;padding:10px 20px}
   .links{display:flex;flex-wrap:wrap;gap:8px;width:100%}
   .links a{font-size:14px;padding:6px 10px}
-  .edu-item.left,.edu-item.right{padding-left:70px;padding-right:20px}
+  .edu-item{ width:100%; left:0; text-align:left; padding-left:80px; margin:100px 0; } /* Base mobile timeline */
+  .edu-item.left,.edu-item.right{padding-left:80px;padding-right:20px} /* Override desktop vals */
   .cards{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
   .edu-timeline::before,.edu-timeline::after{left:26px;transform:none}
   /* About Modal - แสดง 1 คอลัมน์ */
   #aboutDetailContent{grid-template-columns:1fr !important;gap:16px !important}
   #aboutDetailContent > div:first-child{max-width:200px;margin:0 auto}
+
+  /* ✅ FIX: Force mobile timeline layout in light mode (tablet) */
+  :root.theme-light .edu-item,
+  :root.theme-light .edu-item.left,
+  :root.theme-light .edu-item.right {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: left !important;
+    padding-right: 20px !important; /* Reset desktop padding */
+    padding-left: 80px !important; /* Mobile padding */
+    margin: 100px 0 !important;
+  }
+  :root.theme-light .edu-timeline::before,
+  :root.theme-light .edu-timeline::after {
+    left: 26px !important;
+    transform: none !important;
+  }
 }
 @media (max-width:640px){
   .headline{font-size:38px}
@@ -274,7 +292,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   .cert-grid{grid-template-columns:1fr}
   .intro-title .line-1{font-size:22px}
   .intro-title .line-2{font-size:28px}
-  .edu-item{margin:60px 0;width:100%;left:0;text-align:left;padding-left:60px}
+  .edu-item{margin:60px 0;width:100%;left:0;text-align:left;padding-left:60px} /* Base small mobile timeline */
   .edu-section{padding:60px 0}
   /* Nav mobile */
   .nav-inner{padding:12px 16px;gap:8px}
@@ -302,7 +320,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   .stack-chip{padding:12px;font-size:14px}
   .stack-chip i{font-size:20px}
   /* Education timeline mobile */
-  .edu-item{padding-left:50px !important;margin:50px 0 !important}
+  .edu-item{padding-left:50px !important;margin:50px 0 !important} /* Refined small mobile timeline */
   .edu-chip{font-size:13px;padding:6px 14px}
   .edu-title{font-size:18px !important}
   .edu-desc{font-size:13px}
@@ -320,6 +338,19 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   #aboutDetailContent .info-item{padding:8px 10px !important;font-size:12px}
   #aboutDetailContent .info-item > div:first-child{width:30px;height:30px;font-size:14px}
   #aboutDetailContent .info-item > div > div:last-child{font-size:12px}
+
+  /* ✅ FIX: Force smaller mobile timeline layout in light mode (phone) */
+  :root.theme-light .edu-item,
+  :root.theme-light .edu-item.left,
+  :root.theme-light .edu-item.right {
+    padding-left: 50px !important;
+    padding-right: 0 !important;
+    margin: 50px 0 !important;
+  }
+  :root.theme-light .edu-timeline::before,
+  :root.theme-light .edu-timeline::after {
+    left: 20px !important;
+  }
 }
 /* ============== แก้บัคธีม - กันสีกระโดด ============== */
 .glass,
@@ -395,7 +426,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   height: 240px;
   border-radius: 50%;
   position: relative;
-  overflow: hidden;              /* ตัดส่วนเกิน */
+  overflow: hidden;         /* ตัดส่วนเกิน */
   background: rgba(255,255,255,.04);
   border: 1px solid var(--line);
   box-shadow: 0 30px 60px rgba(0,0,0,.35);
@@ -607,8 +638,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .edu-item.reveal.in{ opacity:1; transform:none; transition:.6s ease; }
 
 @media (max-width:900px){
-  .edu-item{ width:100%; left:0; text-align:left; padding-left:80px; margin:100px 0; }
-  .edu-timeline::before, .edu-timeline::after{ left:26px; transform:none; }
+  /* This block is now handled in the main 900px query */
+  /* .edu-item{ width:100%; left:0; text-align:left; padding-left:80px; margin:100px 0; } */
+  /* .edu-timeline::before, .edu-timeline::after{ left:26px; transform:none; } */
 }
 
 /* ===== EDU Text Shine ===== */
@@ -858,8 +890,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   box-shadow: 0 0 14px rgba(120,150,255,.25);
 }
 /* =========================================================
-   LIGHT MODE — SITE-WIDE POLISH (sections, cards, tabs, belt)
-   ========================================================= */
+    LIGHT MODE — SITE-WIDE POLISH (sections, cards, tabs, belt)
+    ========================================================= */
 
 /* --- Typography across sections --- */
 .theme-light body{ color:#0f172a; }
@@ -910,7 +942,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border-top-color:rgba(0,0,0,.08);
   border-bottom-color:rgba(0,0,0,.08);
 }
-.theme-light .mk-set span{ color:#1f2937; }      /* ข้อความใน belt เข้มขึ้น */
+.theme-light .mk-set span{ color:#1f2937; }       /* ข้อความใน belt เข้มขึ้น */
 .theme-light .mk-set span i{ opacity:.9; color:#1f2937; }
 
 /* --- About avatar rim a bit softer in light --- */
@@ -950,8 +982,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .card .thumb.gradient-2{ background:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%); }
 .theme-light .card .thumb.gradient-3{ background:linear-gradient(135deg,#22d3ee 0%,#3b82f6 100%); }
 /* =========================================================
-   🌞 LIGHT MODE FULL PAGE FIX — About / Stats / Education
-   ========================================================= */
+    🌞 LIGHT MODE FULL PAGE FIX — About / Stats / Education
+    ========================================================= */
 
 /* === 1. ABOUT BOX === */
 .theme-light .about-text{
@@ -986,11 +1018,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 /* === 3. EDUCATION TIMELINE === */
 .theme-light .edu-section{ background:transparent; }
 .theme-light .edu-item{
-  background:rgba(255,255,255,.88);
-  border:1px solid rgba(0,0,0,.06);
-  border-radius:16px;
-  padding:18px 22px;
-  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  /* This block is now overridden by the mobile-fix blocks */
+  /* background:rgba(255,255,255,.88); */
+  /* border:1px solid rgba(0,0,0,.06); */
+  /* border-radius:16px; */
+  /* padding:18px 22px; */
+  /* box-shadow:0 8px 22px rgba(0,0,0,.08); */
 }
 .theme-light .edu-title{ color:#0c1426; }
 .theme-light .edu-desc{ color:#334155; opacity:.95; }
@@ -1073,6 +1106,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 /* NOTE: ถ้า base ของบางตัว “มี” padding อยู่ ให้คืนค่าเท่ากันที่นี่แทน 0  */
 /* ตัวอย่าง: about-text ใน base ใช้ padding: 20px 22px;  -> คืนค่าแบบนี้: */
 .theme-light .about-text { padding: 20px 22px; }
+.theme-light .stat-card { padding: 16px 14px; }
+.theme-light .contact-card { padding: 14px; }
+
 
 /* 3) เปลี่ยนเฉพาะ “สี/เงา” ไม่แตะขนาด */
 .theme-light .about-text,
@@ -1090,7 +1126,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 /* 4) Education: ห้ามเพิ่ม padding ที่กล่อง (เหตุผลหลักที่เคลื่อน) */
 .theme-light .edu-item { padding: 0; background: rgba(255,255,255,.9); }
 /* ถ้าอยากมีช่องว่าง ให้ใส่ที่ .edu-content ภายในแทน (ไม่กระทบกรอบนอก) */
-.edu-item .edu-content { padding: 18px 22px; }   /* ใช้ได้ทั้งสองธีม มิติคงที่ */
+.edu-item .edu-content { padding: 0; } /* Base: No padding on content */
 
 /* 5) ไอคอน/ป้าย ฯลฯ — สีอย่างเดียว ไม่แตะขนาด */
 .theme-light .stat-card .icon{
@@ -1115,7 +1151,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   backdrop-filter: none !important;
 }
 
-/* ปรับ padding ให้เท่ากับ Dark Mode */
+/* ปรับ padding ให้เท่ากับ Dark Mode (Desktop) */
 :root.theme-light .edu-item {
   padding: 0 !important;
   margin: 120px 0 !important;
@@ -1426,24 +1462,16 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   will-change: background-position !important;
 }
 
-/* จัดระยะห่างให้เท่ากับ Dark Mode */
-:root.theme-light .edu-item {
-  margin: 120px 0 !important;
-  padding: 0 !important;
-}
+/* ✅ FIX: 
+  ลบ Block ที่บังคับ Layout Desktop ใน Light Mode ออกจากส่วนนี้
+  (ย้ายไปใส่ใน Media Query ด้านบนแล้ว)
+*/
+/* :root.theme-light .edu-item { ... }
+:root.theme-light .edu-item.left { ... }
+:root.theme-light .edu-item.right { ... }
+*/
 
-:root.theme-light .edu-item.left {
-  text-align: right !important;
-  padding-right: 120px !important;
-  padding-left: 0 !important;
-}
-
-:root.theme-light .edu-item.right {
-  text-align: left !important;
-  padding-left: 120px !important;
-  padding-right: 0 !important;
-}
-
+/* จัดระยะห่างให้เท่ากับ Dark Mode (Desktop) */
 :root.theme-light .edu-title {
   margin: 12px 0 4px !important;
   font-size: 22px !important;
