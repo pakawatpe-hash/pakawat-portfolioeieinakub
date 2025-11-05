@@ -240,6 +240,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   .edu-item.left,.edu-item.right{padding-left:70px;padding-right:20px}
   .cards{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
   .edu-timeline::before,.edu-timeline::after{left:26px;transform:none}
+  /* About Modal - แสดง 1 คอลัมน์ */
+  #aboutDetailContent{grid-template-columns:1fr !important;gap:16px !important}
+  #aboutDetailContent > div:first-child{max-width:200px;margin:0 auto}
 }
 @media (max-width:640px){
   .headline{font-size:38px}
@@ -252,6 +255,15 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   .stack-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
   .cert-grid{grid-template-columns:repeat(2,1fr)}
   .mk-set span{font-size:14px}
+  /* Modal padding */
+  .clb-inner{padding:14px !important;max-width:95vw !important}
+  #modalContent,#galleryContent,#aboutDetailContent{padding:16px !important}
+  /* Gallery grid */
+  #galleryGrid{grid-template-columns:1fr !important;gap:10px !important}
+  #galleryGrid > div{height:200px !important}
+  /* Project cards */
+  .cards{grid-template-columns:1fr !important;gap:12px}
+  .card .thumb{height:180px}
 }
 @media (max-width:520px){
   .headline{font-size:32px}
@@ -264,11 +276,50 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   .intro-title .line-2{font-size:28px}
   .edu-item{margin:60px 0;width:100%;left:0;text-align:left;padding-left:60px}
   .edu-section{padding:60px 0}
-}
-@media (pointer:coarse){
-  body{background-attachment:scroll}
-  .cursor-blob,.cursor-dot{display:none}
-  .bg-blob{filter:blur(60px);opacity:.28}
+  /* Nav mobile */
+  .nav-inner{padding:12px 16px;gap:8px}
+  .brand{font-size:18px}
+  .theme-toggle{margin-left:auto}
+  .links{order:3;width:100%;justify-content:center;margin-top:8px}
+  .links a{padding:8px 12px;font-size:13px}
+  /* About text padding */
+  .about-text{padding:16px 18px !important}
+  .about-desc{font-size:14px;line-height:1.7}
+  /* Stat cards */
+  .stat-card{padding:12px !important}
+  .stat-card .num{font-size:22px}
+  .stat-card .label{font-size:13px}
+  /* Contact cards */
+  .contact-card{padding:14px !important;font-size:14px}
+  /* Modal improvements */
+  .clb-inner{border-radius:12px;max-height:90vh}
+  #modalContent h2{font-size:20px}
+  #modalContent h3{font-size:16px;margin-top:16px !important}
+  #modalContent p,#modalContent li{font-size:14px}
+  /* Certificate lightbox */
+  #clbImg{max-height:60vh !important;border-radius:8px}
+  /* Stack chips */
+  .stack-chip{padding:12px;font-size:14px}
+  .stack-chip i{font-size:20px}
+  /* Education timeline mobile */
+  .edu-item{padding-left:50px !important;margin:50px 0 !important}
+  .edu-chip{font-size:13px;padding:6px 14px}
+  .edu-title{font-size:18px !important}
+  .edu-desc{font-size:13px}
+  .edu-timeline::before{left:20px !important}
+  .edu-timeline::after{left:20px !important;width:20px;height:20px}
+  /* Hero illustration */
+  .code-window pre{font-size:12px;padding:10px}
+  .code-window::after{width:50px;height:50px;right:20px;bottom:20px}
+  /* Footer */
+  .foot{padding:16px 0;font-size:13px;text-align:center}
+  /* About Modal mobile */
+  #aboutModal .clb-inner{max-height:92vh;overflow-y:auto}
+  #aboutDetailContent{padding:12px !important}
+  #aboutDetailContent h2{font-size:20px !important}
+  #aboutDetailContent .info-item{padding:8px 10px !important;font-size:12px}
+  #aboutDetailContent .info-item > div:first-child{width:30px;height:30px;font-size:14px}
+  #aboutDetailContent .info-item > div > div:last-child{font-size:12px}
 }
 /* ============== แก้บัคธีม - กันสีกระโดด ============== */
 .glass,
