@@ -5,36 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pakawat — Portfolio</title>
 
-  <!-- SEO -->
   <meta name="description" content="Pakawat Portfolio — Frontend/Mobile Dev • Flutter • Python • Roblox • Web. Projects, Certificates & Contact.">
   <meta name="theme-color" content="#070b1a">
 
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="app.css?v=27" />
 </head>
 <body>
   <div id="particles-bg"></div>
 
-  <!-- Cursor Glow + Dot -->
   <div class="cursor-blob" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
 
-  <!-- Scroll progress -->
   <div class="progress" aria-hidden="true"><span></span></div>
 
-  <!-- Floating background blobs -->
   <div class="bg-blob b1" aria-hidden="true"></div>
   <div class="bg-blob b2" aria-hidden="true"></div>
   <div class="bg-blob b3" aria-hidden="true"></div>
 
-  <!-- INTRO / SPLASH -->
   <div id="intro" class="intro" aria-label="Intro">
     <div class="intro-inner">
       <div class="icons" aria-hidden="true">
@@ -59,12 +52,10 @@
         <a href="#contact" class="btn small magnetic">Contact</a>
       </nav>
 
-      <!-- 🌙/☀️ Theme toggle -->
       <button id="themeToggle" class="btn small theme-toggle magnetic" aria-label="Toggle theme">☀️</button>
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="home" class="hero" aria-label="Home">
     <div class="container hero-grid">
       <div class="hero-copy reveal">
@@ -77,7 +68,6 @@
         </div>
       </div>
 
-      <!-- Illustration -->
       <div class="hero-art glass tilt glare reveal" aria-hidden="true">
         <div class="code-window">
           <div class="dots"><span></span><span></span><span></span></div>
@@ -92,7 +82,6 @@
     </div>
   </section>
 
-  <!-- ================= Skills Marquee ================= -->
   <section id="skillsBelt" class="marquee full-bleed" aria-label="Skills ticker">
     <div class="mk-row mk-a">
       <div class="mk-track">
@@ -125,7 +114,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" class="section about-section lazy" aria-label="About">
     <div class="container">
       <h2 class="section-title center">About Me</h2>
@@ -156,7 +144,6 @@
       </div>
     
 
-      <!-- STATS -->
       <div class="stats-row">
         <div class="stat-card glass reveal" data-count="5">
           <div class="icon"><i class='bx bx-folder'></i></div>
@@ -175,8 +162,7 @@
         </div>
       </div>
     </div>
-    <!-- About Me Detail Modal -->
-<div id="aboutModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div id="aboutModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="clb-backdrop" data-close-about></div>
   <div class="clb-inner glass" style="max-width: 720px; max-height: 85vh; overflow-y: auto;">
     <button class="clb-close btn tiny" aria-label="ปิด" data-close-about>
@@ -185,13 +171,11 @@
     
     <div id="aboutDetailContent" style="padding: 24px; display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start;">
       
-      <!-- ซ้าย: Avatar + รูป 2 รูป -->
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <div style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 3px solid var(--primary); box-shadow: 0 8px 32px rgba(106,165,255,.35);">
           <img src="me.jpg" alt="Pakawat" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         
-        <!-- รูป 2 รูปด้านล่าง Avatar -->
         <div style="width: 100%; height: 90px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 4px 12px rgba(0,0,0,.2);">
           <img src="assets/extra-1.jpg" alt="Extra 1" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
@@ -200,12 +184,10 @@
         </div>
       </div>
 
-      <!-- ขวา: ข้อมูล -->
       <div>
         <h2 style="margin: 0 0 4px; font-size: 24px; color: var(--ink);">ภควัฒน์ เกตุนิธี</h2>
         <p style="color: var(--muted); margin: 0 0 16px; font-size: 14px;">นาย ภควัฒน์ เกตุนิธี (เปเปอร์)</p>
 
-        <!-- Info Items -->
         <div style="display: grid; gap: 8px;">
           <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
             <div style="width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #6aa5ff, #9b8cff); display: grid; place-items: center; color: #fff; font-size: 16px; flex-shrink: 0;">
@@ -248,7 +230,6 @@
             </div>
           </div>
 
-          <!-- เกรดเฉลี่ย -->
           <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
             <div style="width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #ff6b6b, #ff8787); display: grid; place-items: center; color: #fff; font-size: 16px; flex-shrink: 0;">
               <i class='bx bx-trophy'></i>
@@ -260,7 +241,6 @@
           </div>
         </div>
 
-        <!-- Quote -->
         <div style="margin-top: 14px; padding: 12px; background: linear-gradient(135deg, rgba(106,165,255,.08), rgba(155,140,255,.08)); border-radius: 8px; border-left: 3px solid var(--primary);">
           <p style="margin: 0; font-style: italic; color: var(--ink); line-height: 1.4; font-size: 12px;">
             "ผมเป็นคนที่ชอบเรียนรู้ด้วยตัวเอง อดทน รู้จักแก้ปัญหา และไม่หนีปัญหา"
@@ -273,7 +253,6 @@
 </div>
   </section>
 
-  <!-- EDUCATION -->
   <section id="education" class="section edu-section">
     <div class="container">
       <h2 class="section-title center">Education</h2>
@@ -307,7 +286,6 @@
     </div>
   </section>
 
-  <!-- WORK -->
   <section id="work" class="section lazy" aria-label="Portfolio">
     <div class="container">
       <h2 class="center reveal">Portfolio Showcase</h2>
@@ -320,10 +298,8 @@
       </div>
 
       <div class="tab-panels">
-        <!-- Projects Panel -->
         <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
           <div class="cards">
-            <!-- Project 1: Roblox Game -->
             <article class="card glass reveal tilt glare">
               <div class="thumb gradient-1 parallax" data-depth="0.15"></div>
               <div class="card-head"><i class='bx bx-joystick'></i><h3>Roblox Game</h3></div>
@@ -335,7 +311,6 @@
               <span class="glare-spot"></span>
             </article>
 
-            <!-- Project 2: Stock App -->
             <article class="card glass reveal tilt glare">
               <div class="thumb gradient-2 parallax" data-depth="0.12"></div>
               <div class="card-head"><i class='bx bxl-android'></i><h3>Stock App</h3></div>
@@ -347,7 +322,6 @@
               <span class="glare-spot"></span>
             </article>
 
-            <!-- Project 3: Dr.Pharma -->
             <article class="card glass reveal tilt glare">
               <div class="thumb gradient-3 parallax" data-depth="0.1"></div>
               <div class="card-head"><i class='bx bx-store'></i><h3>Dr.Pharma Shop</h3></div>
@@ -360,7 +334,6 @@
             </article>
           </div>
 
-          <!-- Project Detail Modal -->
           <div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
             <div class="clb-backdrop" data-close-modal></div>
             <div class="clb-inner glass" style="max-width: 800px;">
@@ -369,12 +342,10 @@
               </button>
               
               <div id="modalContent" style="padding: 24px; max-height: 68vh; overflow-y: auto;">
-                <!-- เนื้อหาจะถูกแทรกด้วย JavaScript -->
-              </div>
+                </div>
             </div>
           </div>
 
-          <!-- Image Gallery Modal -->
           <div id="galleryModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
             <div class="clb-backdrop" data-close-gallery></div>
             <div class="clb-inner glass" style="max-width: 680px; padding: 16px;">
@@ -390,7 +361,6 @@
           </div>
         </div>
 
-        <!-- Certificates panel (JPG) -->
         <div class="panel" id="panel-certs" role="tabpanel" aria-labelledby="tab-certs" hidden>
           <div class="cert-filters">
             <button class="chip active" data-filter="all">ทั้งหมด</button>
@@ -398,7 +368,6 @@
           <div id="certGrid" class="cert-grid" aria-live="polite"></div>
         </div>
 
-        <!-- Tech Stack Panel -->
         <div class="panel" id="panel-stack" role="tabpanel" aria-labelledby="tab-stack" hidden>
           <div class="stack-grid">
             <div class="stack-chip glass"><i class='bx bxl-flutter'></i><span>Flutter</span></div>
@@ -427,7 +396,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section lazy" aria-label="Contact">
     <div class="container">
       <h2 class="center reveal">Contact</h2>
@@ -441,7 +409,6 @@
 
   <footer class="foot"><div class="container">© 2025 Pakawat — Portfolio</div></footer>
 
-  <!-- Lightbox -->
   <div id="certLightbox" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="clb-backdrop" data-close></div>
     <div class="clb-inner glass">
@@ -457,10 +424,8 @@
     </div>
   </div>
 
-  <!-- JS -->
   <script src="app.js?v=27" defer></script>
 
-  <!-- Theme Toggle boot -->
   <script>
     (function(){
       const root = document.documentElement;
