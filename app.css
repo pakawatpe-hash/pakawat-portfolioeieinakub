@@ -701,7 +701,25 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   display:block; max-width:min(560px, 76vw); max-height:min(420px, 70vh);
   width:auto; height:auto; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:#0f152d;
 }
-@media (pointer:coarse){ .cert-hover{ display:none !important; } }
+@media (pointer:coarse){
+  body{background-attachment:scroll}
+  .cursor-blob,.cursor-dot{display:none}
+  .bg-blob{filter:blur(60px);opacity:.28}
+  .cert-hover{display:none !important}
+  
+  .tilt{transform:none !important}
+  .glare-spot{display:none !important}
+  
+  .btn{min-height:44px;padding:12px 16px}
+  .btn.tiny{min-height:40px;padding:9px 14px}
+  .btn.small{min-height:42px}
+  .tab{min-height:42px}
+  .stack-chip{min-height:50px}
+  .contact-card{min-height:56px}
+  
+  .btn:active{transform:scale(0.96)}
+  .card:active,.contact-card:active{transform:scale(0.98)}
+}
 
 @media(max-width:600px){ .cert-grid{grid-template-columns:repeat(2,1fr);} .clb-inner{padding:10px;} }
 @media(max-width:420px){ .cert-grid{grid-template-columns:1fr;} }
