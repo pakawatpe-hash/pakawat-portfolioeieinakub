@@ -1632,3 +1632,43 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .info-item div {
   color: #0f172a;
 }
+/* 🚨 [FIX] โค้ดแก้บัค Education Timeline บนมือถือ 🚨 */
+/* วางโค้ดนี้ไว้ท้ายสุดของไฟล์ CSS ของคุณครับ */
+
+@media (max-width: 900px) {
+  /* บังคับให้ .edu-item ทุกตัว (ทั้ง left และ right)
+    ขยายเต็มความกว้าง 100% และชิดซ้าย 
+  */
+  .edu-item,
+  .edu-item.left,
+  .edu-item.right {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: left !important;
+    padding-left: 70px !important;  /* ระยะห่างจากเส้น timeline ด้านซ้าย */
+    padding-right: 20px !important; /* ระยะห่างจากขอบขวา */
+    margin: 80px 0 !important;
+  }
+
+  /* บังคับให้ข้อความ .edu-title และ .edu-desc
+    ตัดคำขึ้นบรรทัดใหม่เมื่อชนขอบ
+  */
+  .edu-title,
+  .edu-desc {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  /* ปรับระยะห่างสำหรับจอมือถือที่เล็กมากๆ */
+  .edu-item,
+  .edu-item.left,
+  .edu-item.right {
+    padding-left: 50px !important;
+    padding-right: 15px !important;
+    margin: 60px 0 !important;
+  }
+}
