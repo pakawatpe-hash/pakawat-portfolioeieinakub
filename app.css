@@ -1641,3 +1641,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     margin: 60px 0 !important;
   }
 }
+/* [FIX] บังคับแก้ About Me ล้นจอมือถือ */
+.about-desc p {
+  white-space: normal !important;
+  word-break: break-word !important;
+}
