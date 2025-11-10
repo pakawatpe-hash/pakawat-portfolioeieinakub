@@ -1757,7 +1757,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box i {
-  color: #1e3a8a !important;  /* สีน้ำเงินเข้ม */
+  color: #000000 !important;  /* สีน้ำเงินเข้ม */
   filter: drop-shadow(0 2px 4px rgba(30,58,138,.25));
   font-weight: 600;
 }
@@ -1769,7 +1769,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box:nth-child(2) i {
-  color: #6b21a8 !important;  /* สีม่วงเข้ม */
+  color: #000000 !important;  /* สีม่วงเข้ม */
 }
 
 /* Shine effect - ปรับให้เห็นชัดใน Light Mode */
