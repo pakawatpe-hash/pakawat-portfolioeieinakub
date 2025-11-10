@@ -1768,7 +1768,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box:nth-child(2) i {
-  color: #5b21b6 !important;  /* สีม่วงเข้ม */
+  color: #000000 !important;  /* สีม่วงเข้ม */
 }
 
 /* Hover effect */
