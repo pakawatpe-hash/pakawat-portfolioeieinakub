@@ -1742,7 +1742,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 .icon-shine-box i {
   font-size: 48px;
-  color: #6aa5ff;
+  color: #000000;
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(106,165,255,.3));
@@ -1756,7 +1756,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box i {
-  color: #1e3a8a !important;  /* สีน้ำเงินเข้ม */
+  color: #000000 !important;  /* สีน้ำเงินเข้ม */
   filter: drop-shadow(0 2px 4px rgba(30,58,138,.3));
   font-weight: 600;
 }
