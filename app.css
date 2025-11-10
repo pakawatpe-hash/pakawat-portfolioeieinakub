@@ -1817,3 +1817,74 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform: scale(1.08);
   transition: transform .25s ease;
 }
+/* ===== Fix 1: ชื่อลอย - ป้องกัน text gradient ทับ watermark ===== */
+.headline.gradient {
+  position: relative;
+  z-index: 2;  /* ให้อยู่ใต้ watermark */
+}
+
+/* ซ่อน watermark ถ้ามี */
+body::before,
+body::after,
+.hero::before,
+.hero::after {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ===== Fix 2: ไอคอนสีน้ำเงินให้เป็นสีเดียว (ไม่มีขาว) ===== */
+
+/* Dark Mode - ไอคอนสีน้ำเงินล้วน */
+.icon-shine-box {
+  background: linear-gradient(135deg, #4a7bc8, #6b93d6) !important;
+  border: 2px solid #5b8dd9 !important;
+  box-shadow: 0 6px 18px rgba(74, 123, 200, .35);
+}
+
+.icon-shine-box i {
+  color: #ffffff !important;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .4));
+}
+
+/* ไอคอนตัวที่ 2 (laptop) - สีม่วงล้วน */
+.icon-shine-box:nth-child(2) {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+  border: 2px solid #9b8cff !important;
+}
+
+/* Light Mode - ไอคอนสีน้ำเงินเข้มล้วน */
+.theme-light .icon-shine-box {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa) !important;
+  border: 2px solid #3b82f6 !important;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, .25);
+}
+
+.theme-light .icon-shine-box i {
+  color: #ffffff !important;
+  filter: drop-shadow(0 2px 5px rgba(59, 130, 246, .4));
+}
+
+.theme-light .icon-shine-box:nth-child(2) {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+  border: 2px solid #8b5cf6 !important;
+}
+
+.theme-light .icon-shine-box:nth-child(2) i {
+  color: #ffffff !important;
+}
+
+/* ลบ shine effect ที่ทำให้เห็นสีขาว */
+.shine-effect {
+  display: none !important;
+}
+
+/* Hover - เพิ่มความสวย */
+.icon-shine-box:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(74, 123, 200, .45);
+  transition: all .3s ease;
+}
+
+.theme-light .icon-shine-box:hover {
+  box-shadow: 0 12px 28px rgba(59, 130, 246, .35);
+}
