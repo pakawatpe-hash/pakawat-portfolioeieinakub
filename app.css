@@ -1771,37 +1771,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: #5b21b6 !important;  /* สีม่วงเข้ม */
 }
 
-/* Shine effect - ปรับให้เห็นชัดใน Light Mode */
-.shine-effect {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255,255,255,.25) 50%,
-    transparent 70%
-  );
-  transform: translateX(-100%) translateY(-100%) rotate(45deg);
-  animation: shine 3s ease-in-out infinite;
-}
-
-.theme-light .shine-effect {
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(59,130,246,.35) 50%,
-    transparent 70%
-  ) !important;
-}
-
-@keyframes shine {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-}
-
 /* Hover effect */
 .icon-shine-box:hover {
   transform: translateY(-2px) scale(1.03);
