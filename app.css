@@ -1686,3 +1686,45 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   animation: iconGlow 2s ease-in-out infinite;
 }
 /* ... ส่วนที่เหลือ ... */
+/* ===== About Modal Display Fix ===== */
+#aboutModal {
+  display: none;
+}
+
+#aboutModal.open {
+  display: flex !important;
+}
+
+/* Ensure backdrop and inner are visible when open */
+#aboutModal.open .clb-backdrop,
+#aboutModal.open .clb-inner {
+  display: block;
+}
+
+/* Animation for modal */
+#aboutModal.open .clb-inner {
+  animation: fadeInZoom .35s ease both;
+}
+
+/* Close button hover effect */
+#aboutModal .clb-close:hover {
+  background: rgba(255, 100, 100, .85);
+  border-color: rgba(255, 100, 100, .4);
+  transform: scale(1.1) rotate(90deg);
+  transition: all .25s ease;
+}
+
+/* Light mode support */
+.theme-light #aboutModal .clb-backdrop {
+  background: rgba(0, 0, 0, .5);
+}
+
+.theme-light #aboutModal .clb-inner {
+  background: rgba(255, 255, 255, .98);
+  border-color: rgba(0, 0, 0, .12);
+}
+
+.theme-light #aboutModal .clb-close {
+  background: rgba(0, 0, 0, .06);
+  border-color: rgba(0, 0, 0, .12);
+}
