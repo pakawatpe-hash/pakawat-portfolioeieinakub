@@ -1728,3 +1728,92 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background: rgba(0, 0, 0, .06);
   border-color: rgba(0, 0, 0, .12);
 }
+/* ===== About Modal: Icon Boxes - Light Mode Fix ===== */
+
+/* Dark Mode - เดิม (ปกติ) */
+.icon-shine-box {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(106,165,255,.08), rgba(155,140,255,.08));
+  border: 2px solid rgba(106,165,255,.3);
+  overflow: hidden;
+}
+
+.icon-shine-box i {
+  font-size: 48px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Light Mode - เพิ่มความเข้มให้ไอคอน */
+.theme-light .icon-shine-box {
+  background: linear-gradient(135deg, rgba(59,130,246,.18), rgba(139,92,246,.18)) !important;
+  border: 2px solid rgba(59,130,246,.45) !important;
+  box-shadow: 0 4px 12px rgba(59,130,246,.15);
+}
+
+.theme-light .icon-shine-box i {
+  color: #1e3a8a !important;  /* สีน้ำเงินเข้ม */
+  filter: drop-shadow(0 2px 4px rgba(30,58,138,.25));
+  font-weight: 600;
+}
+
+/* ไอคอนตัวที่ 2 (laptop) - สีม่วง */
+.theme-light .icon-shine-box:nth-child(2) {
+  background: linear-gradient(135deg, rgba(139,92,246,.18), rgba(77,212,255,.18)) !important;
+  border: 2px solid rgba(139,92,246,.45) !important;
+}
+
+.theme-light .icon-shine-box:nth-child(2) i {
+  color: #6b21a8 !important;  /* สีม่วงเข้ม */
+}
+
+/* Shine effect - ปรับให้เห็นชัดใน Light Mode */
+.shine-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255,255,255,.25) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+.theme-light .shine-effect {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(59,130,246,.35) 50%,
+    transparent 70%
+  ) !important;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Hover effect */
+.icon-shine-box:hover {
+  transform: translateY(-2px) scale(1.03);
+  transition: all .25s ease;
+}
+
+.theme-light .icon-shine-box:hover {
+  box-shadow: 0 8px 20px rgba(59,130,246,.25);
+}
+
+.theme-light .icon-shine-box:hover i {
+  transform: scale(1.08);
+  transition: transform .25s ease;
+}
