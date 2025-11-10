@@ -1672,3 +1672,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     margin: 60px 0 !important;
   }
 }
+/* ... CSS เดิมของคุณ ... */
+
+/* ===== Enhanced Icon Boxes ===== */
+.icon-shine-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.icon-shine-box i {
+  font-size: 72px !important;
+  animation: iconGlow 2s ease-in-out infinite;
+}
+/* ... ส่วนที่เหลือ ... */
