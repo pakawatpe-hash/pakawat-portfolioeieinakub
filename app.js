@@ -622,32 +622,52 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })();
-/* ===== About Me Modal ===== */
+/* ===== About Me Modal (Fixed) ===== */
 (function(){
   var avatarGlow = document.querySelector('.about-photo .avatar-glow');
   var aboutModal = document.getElementById('aboutModal');
   
   if(!avatarGlow || !aboutModal) return;
 
+  // เปิด modal เมื่อคลิกรูป
   avatarGlow.addEventListener('click', function(){
     aboutModal.classList.add('open');
     aboutModal.setAttribute('aria-hidden', 'false');
-  }, {passive:true});
+    aboutModal.style.display = 'flex';
+  });
 
+  // ฟังก์ชันปิด modal
   function closeAboutModal(){
     aboutModal.classList.remove('open');
     aboutModal.setAttribute('aria-hidden', 'true');
+    aboutModal.style.display = 'none';
   }
 
+  // ปิดเมื่อคลิกปุ่ม X หรือ backdrop
   aboutModal.addEventListener('click', function(e){
-    if(e.target.hasAttribute('data-close-about')){
+    // ถ้าคลิกที่ปุ่มปิดหรือ backdrop
+    if(e.target.hasAttribute('data-close-about') || 
+       e.target.classList.contains('clb-backdrop')){
+      e.preventDefault();
+      e.stopPropagation();
       closeAboutModal();
     }
-  }, {passive:true});
+  });
 
+  // ปิดด้วยปุ่ม ESC
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && aboutModal.classList.contains('open')){
       closeAboutModal();
     }
   });
+
+  // เพิ่มการปิดเมื่อคลิกปุ่ม X โดยตรง (backup)
+  var closeBtn = aboutModal.querySelector('.clb-close');
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      closeAboutModal();
+    });
+  }
 })();
