@@ -1737,39 +1737,41 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   place-items: center;
   position: relative;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(106,165,255,.08), rgba(155,140,255,.08));
-  border: 2px solid rgba(106,165,255,.3);
+  background: linear-gradient(135deg, rgba(106,165,255,.15), rgba(155,140,255,.15));
+  border: 2px solid rgba(106,165,255,.4);
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(106,165,255,.2);
 }
 
 .icon-shine-box i {
   font-size: 48px;
-  color: #ffffff;
+  color: #6aa5ff;
   position: relative;
   z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(106,165,255,.3));
 }
 
 /* Light Mode - เพิ่มความเข้มให้ไอคอน */
 .theme-light .icon-shine-box {
-  background: linear-gradient(135deg, rgba(59,130,246,.18), rgba(139,92,246,.18)) !important;
-  border: 2px solid rgba(59,130,246,.45) !important;
-  box-shadow: 0 4px 12px rgba(59,130,246,.15);
+  background: linear-gradient(135deg, rgba(59,130,246,.2), rgba(139,92,246,.2)) !important;
+  border: 2px solid rgba(59,130,246,.5) !important;
+  box-shadow: 0 4px 12px rgba(59,130,246,.18);
 }
 
 .theme-light .icon-shine-box i {
-  color: #000000 !important;  /* สีน้ำเงินเข้ม */
-  filter: drop-shadow(0 2px 4px rgba(30,58,138,.25));
+  color: #1e3a8a !important;  /* สีน้ำเงินเข้ม */
+  filter: drop-shadow(0 2px 4px rgba(30,58,138,.3));
   font-weight: 600;
 }
 
 /* ไอคอนตัวที่ 2 (laptop) - สีม่วง */
 .theme-light .icon-shine-box:nth-child(2) {
-  background: linear-gradient(135deg, rgba(139,92,246,.18), rgba(77,212,255,.18)) !important;
-  border: 2px solid rgba(139,92,246,.45) !important;
+  background: linear-gradient(135deg, rgba(139,92,246,.2), rgba(77,212,255,.2)) !important;
+  border: 2px solid rgba(139,92,246,.5) !important;
 }
 
 .theme-light .icon-shine-box:nth-child(2) i {
-  color: #000000 !important;  /* สีม่วงเข้ม */
+  color: #5b21b6 !important;  /* สีม่วงเข้ม */
 }
 
 /* Shine effect - ปรับให้เห็นชัดใน Light Mode */
