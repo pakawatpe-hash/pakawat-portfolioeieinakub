@@ -671,3 +671,50 @@ window.openProjectGallery = function(projectId) {
     });
   }
 })();
+})();
+
+/* ===== GPA Modal (เพิ่มใหม่ตรงนี้) ===== */
+(function(){
+  window.openGPAModal = function(){
+    var modal = document.getElementById('gpaModal');
+    if(!modal) return;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    modal.style.display = 'flex';
+  };
+
+  function closeGPAModal(){
+    var modal = document.getElementById('gpaModal');
+    if(!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.style.display = 'none';
+  }
+
+  var gpaModal = document.getElementById('gpaModal');
+  if(gpaModal){
+    gpaModal.addEventListener('click', function(e){
+      if(e.target.hasAttribute('data-close-gpa') || 
+         e.target.classList.contains('clb-backdrop')){
+        e.preventDefault();
+        e.stopPropagation();
+        closeGPAModal();
+      }
+    });
+
+    var closeBtn = gpaModal.querySelector('.clb-close');
+    if(closeBtn){
+      closeBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        closeGPAModal();
+      });
+    }
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && gpaModal && gpaModal.classList.contains('open')){
+      closeGPAModal();
+    }
+  });
+})();
