@@ -664,7 +664,7 @@ window.openProjectGallery = function(projectId) {
       closeAboutModal();
     });
   }
-})(); // ← ปิดแค่ที่นี่ ไม่ต้องมีอีกบรรทัด
+})(); 
 
 /* ===== GPA Modal ===== */
 (function(){
@@ -710,4 +710,4 @@ window.openProjectGallery = function(projectId) {
       closeGPAModal();
     }
   });
-})(); // ← ปิดที่นี่และจบไฟล์
+})(); 
