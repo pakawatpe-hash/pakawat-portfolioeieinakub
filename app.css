@@ -1490,6 +1490,31 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for gallery */
+#galleryGrid::-webkit-scrollbar {
+  width: 8px;
+}
+
+#galleryGrid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#galleryGrid::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), var(--primary-2));
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+#galleryGrid::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary-2), var(--primary));
 }
 
 @media (max-width: 640px) {
@@ -1606,7 +1631,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background: rgba(0, 0, 0, .06);
   border-color: rgba(0, 0, 0, .12);
 }
+.theme-light #galleryGrid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
 
+.theme-light #galleryGrid::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+}
+
+.theme-light #galleryGrid::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8b5cf6, #3b82f6);
+}
 .theme-light .clb-close:hover {
   background: rgba(239, 68, 68, .9);
   border-color: rgba(239, 68, 68, .3);
