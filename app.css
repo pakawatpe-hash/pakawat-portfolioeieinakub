@@ -1820,3 +1820,31 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform: scale(1.08);
   transition: transform .25s ease;
 }
+/* GPA Modal - Responsive */
+@media (max-width: 768px) {
+  #gpaModal .clb-inner {
+    max-width: 95vw !important;
+    padding: 12px !important;
+  }
+  
+  #gpaImages {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    max-height: 65vh !important;
+  }
+  
+  #gpaModal h2 {
+    font-size: 18px !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #gpaModal .clb-inner {
+    max-height: 88vh !important;
+  }
+  
+  #gpaImages {
+    max-height: 60vh !important;
+  }
+}
