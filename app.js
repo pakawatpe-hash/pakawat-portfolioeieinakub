@@ -629,23 +629,19 @@ window.openProjectGallery = function(projectId) {
   
   if(!avatarGlow || !aboutModal) return;
 
-  // เปิด modal เมื่อคลิกรูป
   avatarGlow.addEventListener('click', function(){
     aboutModal.classList.add('open');
     aboutModal.setAttribute('aria-hidden', 'false');
     aboutModal.style.display = 'flex';
   });
 
-  // ฟังก์ชันปิด modal
   function closeAboutModal(){
     aboutModal.classList.remove('open');
     aboutModal.setAttribute('aria-hidden', 'true');
     aboutModal.style.display = 'none';
   }
 
-  // ปิดเมื่อคลิกปุ่ม X หรือ backdrop
   aboutModal.addEventListener('click', function(e){
-    // ถ้าคลิกที่ปุ่มปิดหรือ backdrop
     if(e.target.hasAttribute('data-close-about') || 
        e.target.classList.contains('clb-backdrop')){
       e.preventDefault();
@@ -654,14 +650,12 @@ window.openProjectGallery = function(projectId) {
     }
   });
 
-  // ปิดด้วยปุ่ม ESC
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && aboutModal.classList.contains('open')){
       closeAboutModal();
     }
   });
 
-  // เพิ่มการปิดเมื่อคลิกปุ่ม X โดยตรง (backup)
   var closeBtn = aboutModal.querySelector('.clb-close');
   if(closeBtn){
     closeBtn.addEventListener('click', function(e){
@@ -670,10 +664,9 @@ window.openProjectGallery = function(projectId) {
       closeAboutModal();
     });
   }
-})();
-})();
+})(); // ← ปิดแค่ที่นี่ ไม่ต้องมีอีกบรรทัด
 
-/* ===== GPA Modal (เพิ่มใหม่ตรงนี้) ===== */
+/* ===== GPA Modal ===== */
 (function(){
   window.openGPAModal = function(){
     var modal = document.getElementById('gpaModal');
@@ -717,4 +710,4 @@ window.openProjectGallery = function(projectId) {
       closeGPAModal();
     }
   });
-})();
+})(); // ← ปิดที่นี่และจบไฟล์
