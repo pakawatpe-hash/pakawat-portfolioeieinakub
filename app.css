@@ -1756,3 +1756,31 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     padding: 0 16px;
   }
 }
+/* =================== RIPPLE EFFECT =================== */
+
+.about-photo .avatar-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  opacity: 0;
+  animation: ripple 3s ease-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% { 
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
