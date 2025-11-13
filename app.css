@@ -1794,19 +1794,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
 }
 
-/* 3. Click Hint Icon (ลูกศร/มือ) - ย้ายมุมล่างซ้าย */
-.avatar-click-hint {
-  position: absolute;
-  bottom: -18px;
-  left: -18px;
-  width: 46px;
-  height: 46px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  box-shadow: 
-    0 6px 18px rgba(106, 165, 255, 0.5),
+0.5),
     0 0 0 0 rgba(106, 165, 255, 0.6),
     inset 0 2px 4px rgba(255, 255, 255, 0.2);
   animation: hintPulse 2s ease-in-out infinite;
