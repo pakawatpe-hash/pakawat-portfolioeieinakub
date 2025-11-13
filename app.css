@@ -1104,11 +1104,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 .theme-light .edu-title{ color:#0c1426; }
 .theme-light .edu-desc{ color:#334155; opacity:.95; }
-.theme-light .edu-chip{
-  background:linear-gradient(135deg,#3b82f6,#8b5cf6);
-  color:#fff;
-  box-shadow:0 3px 10px rgba(59,130,246,.35);
-}
 .theme-light .edu-timeline::before{
   background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.05));
 }
