@@ -1852,3 +1852,10 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
+.edu-chip:focus,
+.edu-chip:active,
+.edu-chip:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
