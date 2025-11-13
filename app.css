@@ -1756,3 +1756,37 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     padding: 0 16px;
   }
 }
+/* =================== SUBTLE GLOW HINT =================== */
+
+.about-photo .avatar-glow {
+  cursor: pointer;
+  position: relative;
+}
+
+.about-photo .avatar-glow::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    transparent 60%,
+    rgba(59, 130, 246, 0.3) 70%,
+    rgba(139, 92, 246, 0.2) 80%,
+    transparent 90%
+  );
+  opacity: 0;
+  animation: subtleGlow 3s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes subtleGlow {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.about-photo .avatar-glow:hover::before {
+  animation: none;
+  opacity: 0;
+}
