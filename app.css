@@ -1904,26 +1904,27 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     transform: rotateY(180deg);
   }
 
-/* =================== EDUCATION TIMELINE: LIGHT MODE - มี Animation =================== */
+/* =================== EDUCATION TIMELINE: LIGHT MODE - Animation วิ่ง =================== */
 
-/* โหมดสว่าง - ใช้สีดำแทนสีขาว */
+/* โหมดสว่าง - gradient สีเข้ม */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
 :root.theme-light .edu-item .edu-chip {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(15,23,42,0.3) 0%, 
-    rgba(15,23,42,0.6) 25%, 
-    #0f172a 48%, 
-    #3b82f6 60%, 
-    rgba(15,23,42,0.6) 75%, 
-    rgba(15,23,42,0.3) 100%) !important;
-  background-size: 180% 100% !important;
+    rgba(15,23,42,0.4) 0%, 
+    rgba(15,23,42,0.7) 20%, 
+    #0f172a 45%, 
+    #3b82f6 55%, 
+    rgba(15,23,42,0.7) 80%, 
+    rgba(15,23,42,0.4) 100%) !important;
+  background-size: 200% 100% !important;
   background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  animation: eduTextShine 1.8s linear infinite !important;
+  animation: eduLightShine 2s linear infinite !important;
   will-change: background-position !important;
   display: inline-block !important;
   padding: 7px 16px !important;
@@ -1932,7 +1933,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   margin-bottom: 12px !important;
 }
 
-/* หัวข้อและคำอธิบาย - มี Animation */
+/* หัวข้อและคำอธิบาย */
 :root.theme-light .edu-title,
 :root.theme-light .edu-desc,
 :root.theme-light #education .edu-title,
@@ -1941,21 +1942,32 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 :root.theme-light #education .edu-row p,
 :root.theme-light .edu-item .edu-title,
 :root.theme-light .edu-item .edu-desc {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(15,23,42,0.3) 0%, 
-    rgba(15,23,42,0.6) 25%, 
-    #0f172a 48%, 
-    #1e3a8a 60%, 
-    rgba(15,23,42,0.6) 75%, 
-    rgba(15,23,42,0.3) 100%) !important;
-  background-size: 180% 100% !important;
+    rgba(15,23,42,0.35) 0%, 
+    rgba(15,23,42,0.65) 20%, 
+    #0f172a 45%, 
+    #1e40af 55%, 
+    rgba(15,23,42,0.65) 80%, 
+    rgba(15,23,42,0.35) 100%) !important;
+  background-size: 200% 100% !important;
   background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  animation: eduTextShine 1.8s linear infinite !important;
+  animation: eduLightShine 2s linear infinite !important;
   will-change: background-position !important;
   opacity: 1 !important;
+}
+
+/* Animation สำหรับโหมดสว่าง */
+@keyframes eduLightShine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* ปรับ spacing */
@@ -1975,5 +1987,4 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 :root.theme-light .edu-item .edu-desc {
   margin: 0 !important;
   line-height: 1.6 !important;
-  opacity: 0.92 !important;
 }
