@@ -1772,8 +1772,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .about-photo::after {
   content: "🖱️";
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+
+  bottom: -15px;
+  left: 15px;  
   width: 36px;
   height: 36px;
   display: flex;
@@ -1782,8 +1783,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   border-radius: 50%;
   font-size: 18px;
-  box-shadow: 
-    0 4px 12px rgba(59, 130, 246, 0.5),
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5),
     0 0 0 4px rgba(59, 130, 246, 0.2);
   cursor: pointer;
   animation: eyePulse 2s ease-in-out infinite;
