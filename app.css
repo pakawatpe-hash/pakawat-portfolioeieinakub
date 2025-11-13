@@ -719,7 +719,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .edu-item.right { left:50%; text-align:left;  padding-left:120px; }
 .edu-chip{
   display:inline-block; padding:7px 16px; background:linear-gradient(135deg,#6a9cff,#a777ff);
-  color:#fff; border-radius:999px; font-weight:800; margin-bottom:10px;
+  color:#fff; border-radius:999px; font-weight:800; margin-bottom:10px; border:none;
 }
 .edu-title{ margin:12px 0 4px; font-weight:800; font-size:22px; color:#fff; }
 .edu-desc{ margin:0; color:#cfdaf3; opacity:.92; }}
@@ -1662,6 +1662,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
   border-radius: 999px !important;
   margin-bottom: 10px !important;
   font-weight: 800 !important;
