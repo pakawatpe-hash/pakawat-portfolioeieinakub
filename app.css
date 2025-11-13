@@ -1094,19 +1094,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .stat-card .label{ color:#475569; }
 
 /* === 3. EDUCATION TIMELINE === */
-:root.theme-light .edu-content {
-  background: rgba(255, 255, 255, .92); /* หรือใช้ var(--card) */
-  border: 1px solid rgba(0,0,0,.08); /* หรือใช้ var(--line) */
-  border-radius: 16px;
-  padding: 18px 22px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
-  transition: all .25s ease;
-}
-
-:root.theme-light .edu-item:hover .edu-content {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(0,0,0,.12);
-}
 .theme-light .edu-section{ background:transparent; }
 .theme-light .edu-item{
   /* This block is now overridden by the mobile-fix blocks */
@@ -1219,6 +1206,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border-color: rgba(0,0,0,.08);
   color:#1e293b;
 }
+
 
 
 :root.theme-light .edu-item {
