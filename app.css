@@ -1636,7 +1636,19 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
-  padding: 0 !important;
+}
+
+/* ปรับ padding ให้ห่างจากเส้น timeline มากขึ้น */
+:root.theme-light .edu-item.left,
+:root.theme-light #education .edu-item.left {
+  padding-right: 140px !important;
+  padding-left: 0 !important;
+}
+
+:root.theme-light .edu-item.right,
+:root.theme-light #education .edu-item.right {
+  padding-left: 140px !important;
+  padding-right: 0 !important;
 }
 
 /* Badge - gradient เหมือนโหมดมืด */
@@ -1690,4 +1702,20 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 :root.theme-light #education .edu-desc,
 :root.theme-light #education .edu-item .edu-desc {
   margin: 0 !important;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 900px) {
+  :root.theme-light .edu-item,
+  :root.theme-light .edu-item.left,
+  :root.theme-light .edu-item.right,
+  :root.theme-light #education .edu-item,
+  :root.theme-light #education .edu-item.left,
+  :root.theme-light #education .edu-item.right {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: left !important;
+    padding-left: 70px !important;
+    padding-right: 20px !important;
+  }
 }
