@@ -729,8 +729,10 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 
 
-/* ===== EDU Text Shine ===== */
-.edu-row h3,.edu-row p,.edu-chip{
+/* ===== EDU Text Shine - เฉพาะโหมดมืด ===== */
+:root:not(.theme-light) .edu-row h3,
+:root:not(.theme-light) .edu-row p,
+:root:not(.theme-light) .edu-chip{
   position: relative; display: inline-block;
   background: linear-gradient(90deg, rgba(255,255,255,0.15) 0%, #fff 40%, #9cf 60%, rgba(255,255,255,0.15) 100%);
   background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -738,20 +740,22 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 @keyframes textShine{ 0%{background-position:-200% center;} 100%{background-position:200% center;} }
 
-#education .edu-row .edu-title,
-#education .edu-row p,
-#education .edu-item .edu-title,
-#education .edu-item .edu-desc{
+:root:not(.theme-light) #education .edu-row .edu-title,
+:root:not(.theme-light) #education .edu-row p,
+:root:not(.theme-light) #education .edu-item .edu-title,
+:root:not(.theme-light) #education .edu-item .edu-desc{
   color: transparent !important; -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.12) 25%, #ffffff 48%, #b8ccff 60%, rgba(255,255,255,0.12) 75%, rgba(255,255,255,0.05) 100%);
   background-size: 180% 100%; background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text;
   animation: eduTextShine 1.8s linear infinite; opacity: .98; will-change: background-position;
 }
 @keyframes eduTextShine{ 0%{background-position:-160% 0;} 100%{background-position:160% 0;} }
-#education .edu-row:nth-of-type(1) .edu-title,#education .edu-row:nth-of-type(1) p{ animation-delay:.15s; }
-#education .edu-row:nth-of-type(2) .edu-title,#education .edu-row:nth-of-type(2) p{ animation-delay:1.0s; }
-#education .edu-row:nth-of-type(3) .edu-title,#education .edu-row:nth-of-type(3) p{ animation-delay:1.85s; }
-
+:root:not(.theme-light) #education .edu-row:nth-of-type(1) .edu-title,
+:root:not(.theme-light) #education .edu-row:nth-of-type(1) p{ animation-delay:.15s; }
+:root:not(.theme-light) #education .edu-row:nth-of-type(2) .edu-title,
+:root:not(.theme-light) #education .edu-row:nth-of-type(2) p{ animation-delay:1.0s; }
+:root:not(.theme-light) #education .edu-row:nth-of-type(3) .edu-title,
+:root:not(.theme-light) #education .edu-row:nth-of-type(3) p{ animation-delay:1.85s; }
 
 /* ===================== Certificates (Consolidated) ===================== */
 .cert-filters{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
@@ -1770,7 +1774,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 /* =================== EDUCATION TIMELINE: LIGHT MODE - Animation สีดำ =================== */
 
-/* ตัวเลขปี - ไม่มีกรอบ + animation สีดำ */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
@@ -1781,85 +1784,42 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(0,0,0,0.3) 0%, 
-    rgba(0,0,0,0.6) 20%, 
+    rgba(0,0,0,0.4) 0%, 
+    rgba(0,0,0,0.7) 20%, 
     #000000 45%, 
-    #1a1a1a 55%, 
-    rgba(0,0,0,0.6) 80%, 
-    rgba(0,0,0,0.3) 100%) !important;
+    #000000 55%, 
+    rgba(0,0,0,0.7) 80%, 
+    rgba(0,0,0,0.4) 100%) !important;
   background-size: 200% 100% !important;
-  background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   animation: eduBlackShine 1.8s linear infinite !important;
   border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  font-weight: 800 !important;
   margin-bottom: 10px !important;
 }
 
-/* หัวข้อและคำอธิบาย - animation สีดำ */
 :root.theme-light .edu-title,
 :root.theme-light .edu-desc,
 :root.theme-light #education .edu-title,
 :root.theme-light #education .edu-desc,
-:root.theme-light #education .edu-row .edu-title,
-:root.theme-light #education .edu-row p,
-:root.theme-light .edu-item .edu-title,
-:root.theme-light .edu-item .edu-desc {
+:root.theme-light #education .edu-item .edu-title,
+:root.theme-light #education .edu-item .edu-desc {
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(0,0,0,0.35) 0%, 
-    rgba(0,0,0,0.65) 20%, 
+    rgba(0,0,0,0.45) 0%, 
+    rgba(0,0,0,0.75) 20%, 
     #000000 45%, 
-    #1a1a1a 55%, 
-    rgba(0,0,0,0.65) 80%, 
-    rgba(0,0,0,0.35) 100%) !important;
+    #000000 55%, 
+    rgba(0,0,0,0.75) 80%, 
+    rgba(0,0,0,0.45) 100%) !important;
   background-size: 200% 100% !important;
-  background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   animation: eduBlackShine 1.8s linear infinite !important;
-  will-change: background-position !important;
-  opacity: 1 !important;
 }
 
-/* Animation สำหรับโหมดสว่าง */
 @keyframes eduBlackShine {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-/* ปรับ spacing */
-:root.theme-light .edu-title,
-:root.theme-light #education .edu-title,
-:root.theme-light .edu-item .edu-title {
-  margin: 12px 0 4px !important;
-  font-size: 22px !important;
-  line-height: 1.2 !important;
-  font-weight: 800 !important;
-}
-
-:root.theme-light .edu-desc,
-:root.theme-light #education .edu-desc,
-:root.theme-light .edu-item .edu-desc {
-  margin: 0 !important;
-  line-height: 1.6 !important;
-  font-size: 15px !important;
-}
-
-/* Animation สำหรับโหมดสว่าง */
-@keyframes eduLightShine {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
