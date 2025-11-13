@@ -1207,6 +1207,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color:#1e293b;
 }
 
+:root.theme-light .edu-item,
+:root.theme-light .edu-content,
+:root.theme-light #education .edu-item,
+:root.theme-light #education .edu-content,
+:root.theme-light .edu-section .edu-item,
+:root.theme-light .edu-section .edu-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
 
 
 :root.theme-light .edu-item {
