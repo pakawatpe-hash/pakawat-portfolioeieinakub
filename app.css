@@ -1784,3 +1784,37 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     opacity: 0;
   }
 }
+.avatar-click-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background: rgba(59, 130, 246, 0.9);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 16px;
+  z-index: 10;
+  animation: pulseHint 2s ease-in-out infinite;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+}
+
+@keyframes pulseHint {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+/* ซ่อน hint เมื่อ hover */
+.about-photo .avatar-glow:hover .avatar-click-hint {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
