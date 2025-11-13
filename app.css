@@ -1890,3 +1890,80 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     transform: rotateY(180deg);
   }
 }
+/* Mobile: disable flip on touch devices */
+@media (pointer: coarse) {
+  .about-photo .avatar-glow {
+    cursor: default;
+  }
+  .about-photo .avatar-glow:hover .avatar-img {
+    opacity: 1;
+    transform: none;
+  }
+  .about-photo .avatar-glow:hover::after {
+    opacity: 0;
+    transform: rotateY(180deg);
+  }
+}
+
+/* =================== EDUCATION TIMELINE: LIGHT MODE FIX =================== */
+
+/* ปิด animation ทั้งหมดในโหมดสว่าง */
+:root.theme-light .edu-chip,
+:root.theme-light #education .edu-chip,
+:root.theme-light .edu-section .edu-chip,
+:root.theme-light .edu-item .edu-chip,
+:root.theme-light .edu-title,
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-title,
+:root.theme-light #education .edu-desc,
+:root.theme-light #education .edu-row .edu-title,
+:root.theme-light #education .edu-row p,
+:root.theme-light .edu-item .edu-title,
+:root.theme-light .edu-item .edu-desc {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  animation: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  will-change: auto !important;
+}
+
+/* ชิปปี - สีดำชัด */
+:root.theme-light .edu-chip,
+:root.theme-light #education .edu-chip,
+:root.theme-light .edu-section .edu-chip,
+:root.theme-light .edu-item .edu-chip {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  padding: 7px 16px !important;
+  border-radius: 999px !important;
+  margin-bottom: 12px !important;
+  display: inline-block !important;
+}
+
+/* หัวข้อ - สีดำเข้ม */
+:root.theme-light .edu-title,
+:root.theme-light #education .edu-title,
+:root.theme-light #education .edu-row .edu-title,
+:root.theme-light .edu-item .edu-title {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  margin: 12px 0 4px !important;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+}
+
+/* คำอธิบาย - สีเทาเข้ม */
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-desc,
+:root.theme-light #education .edu-row p,
+:root.theme-light .edu-item .edu-desc {
+  color: #334155 !important;
+  opacity: 0.92 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
