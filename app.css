@@ -719,7 +719,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .edu-item.right { left:50%; text-align:left;  padding-left:120px; }
 .edu-chip{
   display:inline-block; padding:7px 16px; background:linear-gradient(135deg,#6a9cff,#a777ff);
-  color:#fff; border-radius:999px; font-weight:800; margin-bottom:10px; border:none;
+  color:#fff; border-radius:999px; font-weight:800; margin-bottom:10px; border:none !important;
 }
 .edu-title{ margin:12px 0 4px; font-weight:800; font-size:22px; color:#fff; }
 .edu-desc{ margin:0; color:#cfdaf3; opacity:.92; }}
@@ -1677,14 +1677,13 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 :root.theme-light #education .edu-desc,
 :root.theme-light #education .edu-item .edu-desc {
   color: transparent !important;
-  -webkit-text-fill-color: transparent !important;
-  background-image: linear-gradient(90deg, 
-    rgba(255,255,255,0.05) 0%, 
-    rgba(255,255,255,0.12) 25%, 
-    #ffffff 48%, 
-    #b8ccff 60%, 
-    rgba(255,255,255,0.12) 75%, 
-    rgba(255,255,255,0.05) 100%) !important;
+ background-image: linear-gradient(90deg, 
+    rgba(15,23,42,0.4) 0%, 
+    rgba(15,23,42,0.7) 25%, 
+    #0f172a 48%, 
+    #334155 60%, 
+    rgba(15,23,42,0.7) 75%, 
+    rgba(15,23,42,0.4) 100%) !important;
   background-size: 180% 100% !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
