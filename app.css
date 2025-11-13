@@ -1779,44 +1779,66 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 :root.theme-light .edu-section .edu-chip,
 :root.theme-light .edu-item .edu-chip {
   display: inline-block !important;
-  padding: 0 !important;
+  padding: 7px 16px !important;
   background: transparent !important;
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(0,0,0,0.4) 0%, 
-    rgba(0,0,0,0.7) 20%, 
-    #000000 45%, 
-    #000000 55%, 
-    rgba(0,0,0,0.7) 80%, 
-    rgba(0,0,0,0.4) 100%) !important;
+    rgba(0,0,0,0.35) 0%, 
+    rgba(0,0,0,0.65) 25%, 
+    #000000 48%, 
+    #1a1a1a 52%, 
+    rgba(0,0,0,0.65) 75%, 
+    rgba(0,0,0,0.35) 100%) !important;
   background-size: 200% 100% !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   animation: eduBlackShine 1.8s linear infinite !important;
   border: none !important;
+  border-radius: 999px !important;
   margin-bottom: 10px !important;
+  font-weight: 800 !important;
 }
 
 :root.theme-light .edu-title,
-:root.theme-light .edu-desc,
 :root.theme-light #education .edu-title,
+:root.theme-light #education .edu-item .edu-title {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  background-image: linear-gradient(90deg, 
+    rgba(0,0,0,0.4) 0%, 
+    rgba(0,0,0,0.7) 25%, 
+    #000000 48%, 
+    #1a1a1a 52%, 
+    rgba(0,0,0,0.7) 75%, 
+    rgba(0,0,0,0.4) 100%) !important;
+  background-size: 200% 100% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  animation: eduBlackShine 1.8s linear infinite !important;
+  margin: 12px 0 4px !important;
+  font-weight: 800 !important;
+  font-size: 22px !important;
+}
+
+:root.theme-light .edu-desc,
 :root.theme-light #education .edu-desc,
-:root.theme-light #education .edu-item .edu-title,
 :root.theme-light #education .edu-item .edu-desc {
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
     rgba(0,0,0,0.45) 0%, 
-    rgba(0,0,0,0.75) 20%, 
-    #000000 45%, 
-    #000000 55%, 
-    rgba(0,0,0,0.75) 80%, 
+    rgba(0,0,0,0.7) 25%, 
+    #2d2d2d 48%, 
+    #1a1a1a 52%, 
+    rgba(0,0,0,0.7) 75%, 
     rgba(0,0,0,0.45) 100%) !important;
   background-size: 200% 100% !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   animation: eduBlackShine 1.8s linear infinite !important;
+  margin: 0 !important;
+  opacity: 1 !important;
 }
 
 @keyframes eduBlackShine {
