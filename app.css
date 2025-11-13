@@ -1502,6 +1502,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border: 2px solid rgba(106, 165, 255, 0.4);
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(106, 165, 255, 0.2);
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
 .icon-shine-box i {
@@ -1510,6 +1513,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-shine-box:hover {
