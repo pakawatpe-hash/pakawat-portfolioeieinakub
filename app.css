@@ -567,24 +567,66 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   filter: saturate(1.15);
 }
 
-/* === Avatar shine sweep + subtle zoom on hover === */
+/* === Avatar shine sweep + flip card effect === */
 .about-photo .avatar-glow{
   position: relative;
   overflow: hidden;
   cursor: pointer;
   transition: box-shadow .3s ease, transform .25s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
+
+.about-photo .avatar-glow .avatar-img {
+  transition: opacity .6s ease, transform .6s ease;
+  backface-visibility: hidden;
+}
+
+/* Logo overlay - initially hidden */
 .about-photo .avatar-glow::after{
   content:"";
   position:absolute;
-  top:-20%; left:-60%;
-  width:40%; height:140%;
-  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.18) 45%, rgba(255,255,255,0) 100%);
-  filter: blur(0.5px);
-  transform: skewX(-20deg) translateX(-120%);
+  inset: 5%;
+  background-image: url('logo-ku.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
-  pointer-events:none;
-  transition: transform .9s ease, opacity .25s ease;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: opacity .6s ease, transform .6s ease;
+  z-index: 3;
+  filter: drop-shadow(0 4px 12px rgba(0,128,109,.5));
+}
+
+.about-photo .avatar-glow:hover { 
+  box-shadow: 0 34px 70px rgba(0,0,0,.42); 
+  transform: translateY(-2px);
+}
+
+.about-photo .avatar-glow:hover .avatar-img{ 
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+.about-photo .avatar-glow:hover::after{
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.about-photo .avatar-glow:focus-visible{ 
+  outline: 2px solid rgba(146,180,255,.9); 
+  outline-offset: 4px; 
+}
+
+.about-photo .avatar-glow:focus-visible .avatar-img{
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+.about-photo .avatar-glow:focus-visible::after{
+  opacity: 1;
+  transform: rotateY(0deg);
 }
 .about-photo .avatar-glow:hover{ box-shadow: 0 34px 70px rgba(0,0,0,.42); transform: translateY(-2px); }
 .about-photo .avatar-glow:hover::after{ opacity: 1; transform: skewX(-20deg) translateX(320%); }
@@ -1816,4 +1858,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   #gpaImages {
     max-height: 60vh !important;
   }
+}
+/* ===== Avatar Flip Card: Light Mode Support ===== */
+.theme-light .about-photo .avatar-glow::after{
+  filter: drop-shadow(0 4px 16px rgba(0,128,109,.6));
+}
+
+.theme-light .about-photo .avatar-glow:hover::after{
+  filter: drop-shadow(0 6px 20px rgba(0,128,109,.75));
 }
