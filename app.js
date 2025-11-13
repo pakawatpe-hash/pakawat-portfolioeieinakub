@@ -338,7 +338,7 @@ if (isFinePointer) {
     return m2 ? 'rgba('+m2[1]+','+m2[2]+','+m2[3]+','+a+')' : 'rgba(255,255,255,'+a+')';
   }
 
-  var TRAIL = 4, STEP = 80, idx = 0, timer;
+  var TRAIL = 4, STEP = 180, idx = 0, timer;
   function setGlow(el, on){
     if (!el) return;
     if (on){
