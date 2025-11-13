@@ -141,7 +141,11 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .about-text .eyebrow{margin:0;color:#cfe4ff;display:flex;align-items:center;gap:6px;opacity:.9}
 .about-name{margin:.2rem 0 .6rem 0;font-size:28px;font-weight:800;background:linear-gradient(90deg,#fff,#cbd8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .about-desc{color:#d9e4ff;opacity:.92}
-.about-photo{display:grid;place-items:center}
+.about-photo {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
 
 
 .avatar-glow{
