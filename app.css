@@ -379,7 +379,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .card,.theme-light .contact-card,.theme-light .cert-card{border-color:rgba(0,0,0,.08)}
 .theme-light .card .card-head i{color:#475569}
 .theme-light .card p,.theme-light .contact-card span{color:#475569}
-.theme-light .edu-chip{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
 .theme-light .edu-title{color:#0c1426}
 .theme-light .edu-desc{color:#475569}
 .theme-light .edu-content{background:rgba(255,255,255,.92);border-color:rgba(0,0,0,.08)}
@@ -1035,9 +1034,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .edu-timeline::before{
   background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.06));
 }
-.theme-light .edu-chip{
-  background:linear-gradient(135deg,#3b82f6,#8b5cf6); color:#fff;
-}
+
 .theme-light .edu-title{ color:#0c1426; }
 .theme-light .edu-desc{ color:#475569; }
 
