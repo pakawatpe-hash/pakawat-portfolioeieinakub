@@ -1765,3 +1765,171 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     <span class="glare-spot" aria-hidden="true"></span>
   </div>
 </aside>
+/* =================== AVATAR CLICK HINT =================== */
+
+/* 1. Cursor Pointer + Transform */
+.about-photo .avatar-glow {
+  cursor: pointer;
+  position: relative;
+}
+
+.about-photo .avatar-glow:hover {
+  transform: scale(1.05) translateY(-4px);
+  transition: all .35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 2. Pulse Border Animation */
+.about-photo .avatar-glow::before {
+  animation: avatarPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes avatarPulse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.08);
+  }
+}
+
+/* 3. Click Hint Icon (ลูกศร/มือ) */
+.avatar-click-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 
+    0 4px 12px rgba(106, 165, 255, 0.4),
+    0 0 0 0 rgba(106, 165, 255, 0.6);
+  animation: hintPulse 2s ease-in-out infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.avatar-click-hint i {
+  font-size: 18px;
+  color: #fff;
+  animation: hintBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% {
+    box-shadow: 
+      0 4px 12px rgba(106, 165, 255, 0.4),
+      0 0 0 0 rgba(106, 165, 255, 0.6);
+  }
+  50% {
+    box-shadow: 
+      0 4px 12px rgba(106, 165, 255, 0.4),
+      0 0 0 12px rgba(106, 165, 255, 0);
+  }
+}
+
+@keyframes hintBounce {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, -2px);
+  }
+  75% {
+    transform: translate(2px, 2px);
+  }
+}
+
+/* 4. Glow Effect เมื่อ Hover */
+.about-photo .avatar-glow:hover::before {
+  opacity: 0.65;
+  filter: blur(28px);
+  animation: none;
+}
+
+.about-photo .avatar-glow:hover .avatar-click-hint {
+  transform: scale(1.15);
+  box-shadow: 
+    0 6px 18px rgba(106, 165, 255, 0.6),
+    0 0 0 8px rgba(106, 165, 255, 0);
+}
+
+/* 5. Accessibility - Focus Visible */
+.about-photo .avatar-glow:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+.about-photo .avatar-glow:focus-visible::before {
+  opacity: 0.65;
+  animation: none;
+}
+
+/* 6. ซ่อน hint เมื่อ flip */
+.about-photo .avatar-glow:hover .avatar-click-hint,
+.about-photo .avatar-glow:focus-visible .avatar-click-hint {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all .3s ease;
+}
+
+/* 7. Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .about-photo .avatar-glow::before,
+  .avatar-click-hint,
+  .avatar-click-hint i {
+    animation: none !important;
+  }
+  
+  .about-photo .avatar-glow:hover {
+    transform: none;
+  }
+}
+
+/* 8. Light Theme */
+.theme-light .avatar-click-hint {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 
+    0 4px 12px rgba(59, 130, 246, 0.5),
+    0 0 0 0 rgba(59, 130, 246, 0.7);
+}
+
+@keyframes hintPulseLightMode {
+  0%, 100% {
+    box-shadow: 
+      0 4px 12px rgba(59, 130, 246, 0.5),
+      0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    box-shadow: 
+      0 4px 12px rgba(59, 130, 246, 0.5),
+      0 0 0 12px rgba(59, 130, 246, 0);
+  }
+}
+
+.theme-light .avatar-click-hint {
+  animation-name: hintPulseLightMode;
+}
+
+/* 9. Mobile/Touch - ปรับขนาด touch target */
+@media (pointer: coarse) {
+  .avatar-click-hint {
+    width: 44px;
+    height: 44px;
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .avatar-click-hint i {
+    font-size: 22px;
+  }
+  
+  .about-photo .avatar-glow:active {
+    transform: scale(0.98);
+  }
+}
