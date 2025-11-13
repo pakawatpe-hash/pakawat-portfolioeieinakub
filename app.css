@@ -1827,7 +1827,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 /* =================== EDUCATION TIMELINE: LIGHT MODE - Animation วิ่ง =================== */
 
-/* โหมดสว่าง - gradient สีเข้ม */
+/* โหมดสว่าง - gradient สีเข้ม สำหรับ chip */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
@@ -1908,4 +1908,33 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 :root.theme-light .edu-item .edu-desc {
   margin: 0 !important;
   line-height: 1.6 !important;
+}
+
+/* Desktop: จัดตำแหน่ง timeline */
+@media (min-width: 901px) {
+  :root.theme-light .edu-timeline::before {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  :root.theme-light .edu-timeline::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  :root.theme-light .edu-item.left {
+    width: 50% !important;
+    left: 0 !important;
+    text-align: right !important;
+    padding-right: 120px !important;
+    padding-left: 0 !important;
+  }
+  
+  :root.theme-light .edu-item.right {
+    width: 50% !important;
+    left: 50% !important;
+    text-align: left !important;
+    padding-left: 120px !important;
+    padding-right: 0 !important;
+  }
 }
