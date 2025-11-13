@@ -1487,23 +1487,18 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 /* =================== ICON BOXES =================== */
-.icon-shine-box {
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  position: relative;
-  border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(106, 165, 255, 0.15),
-    rgba(155, 140, 255, 0.15)
-  );
-  border: 2px solid rgba(106, 165, 255, 0.4);
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(106, 165, 255, 0.2);
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto;
+.icon-shine-box i {
+  font-size: 120px !important;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .icon-shine-box i {
