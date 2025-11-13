@@ -587,7 +587,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   content:"";
   position:absolute;
   inset: 5%;
-  background-image: url('/assets/logo-ku.png.png');
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Ccircle cx="100" cy="100" r="90" fill="%23fff" stroke="%2300806d" stroke-width="3"/%3E%3Ctext x="100" y="110" font-size="28" font-weight="bold" text-anchor="middle" fill="%2300806d"%3E%E0%B8%A1.%E0%B8%81.%3C/text%3E%3C/svg%3E');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
