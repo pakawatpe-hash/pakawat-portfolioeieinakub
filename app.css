@@ -1186,6 +1186,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color:#1e293b;
 }
 
+/* ป้องกัน education timeline มีกรอบใน light mode */
+:root.theme-light .edu-item.left {
+  padding-right: 120px !important;
+  padding-left: 0 !important;
+}
+
+:root.theme-light .edu-item.right {
+  padding-left: 120px !important;
+  padding-right: 0 !important;
+}
+
 /* =================== LIGHT MODE TYPOGRAPHY =================== */
 
 /* 1. Hero */
