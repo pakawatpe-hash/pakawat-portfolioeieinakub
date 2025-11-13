@@ -1390,30 +1390,62 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   margin: 12px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
 }
 
+/* Light Mode: ปิด animation ให้ตัวหนังสือชัดเลย */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip {
-  background: linear-gradient(90deg,
-    rgba(15,23,42,0.4) 0%,
-    rgba(15,23,42,0.7) 25%,
-    #0f172a 48%,
-    #3b82f6 60%,
-    rgba(15,23,42,0.7) 75%,
-    rgba(15,23,42,0.4) 100%) !important;
-  background-size: 260% 100% !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  animation: eduTextShine 2.8s linear infinite !important;
-  box-shadow: none !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  color: #0f172a !important;
+  animation: none !important;
   display: inline-block !important;
-  padding: 0 0 10px 0 !important;
-  border-radius: 0 !important;
+  padding: 7px 16px !important;
+  border-radius: 999px !important;
   font-weight: 800 !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 12px !important;
   border: none !important;
+  box-shadow: none !important;
   text-shadow: none !important;
-  
+  opacity: 1 !important;
+}
+
+:root.theme-light .edu-title,
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-title,
+:root.theme-light #education .edu-desc,
+:root.theme-light #education .edu-row .edu-title,
+:root.theme-light #education .edu-row p {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  animation: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+:root.theme-light .edu-title,
+:root.theme-light #education .edu-title,
+:root.theme-light #education .edu-row .edu-title {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  margin: 12px 0 4px !important;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+}
+
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-desc,
+:root.theme-light #education .edu-row p {
+  color: #334155 !important;
+  opacity: 0.92 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
 }
 
 :root.theme-light .edu-chip span {
