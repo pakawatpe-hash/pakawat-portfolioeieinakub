@@ -1494,51 +1494,62 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   place-items: center;
   position: relative;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(106,165,255,.15), rgba(155,140,255,.15));
-  border: 2px solid rgba(106,165,255,.4);
+  background: linear-gradient(
+    135deg,
+    rgba(106, 165, 255, 0.15),
+    rgba(155, 140, 255, 0.15)
+  );
+  border: 2px solid rgba(106, 165, 255, 0.4);
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(106,165,255,.2);
+  box-shadow: 0 4px 16px rgba(106, 165, 255, 0.2);
 }
 
 .icon-shine-box i {
-  font-size: 48px;
+  font-size: 72px; /* <-- แก้ไขตรงนี้ให้ไอคอนใหญ่ขึ้น */
   color: #ffffff;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 2px 4px rgba(106,165,255,.3));
+  filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
 }
 
 .icon-shine-box:hover {
   transform: translateY(-2px) scale(1.03);
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 .theme-light .icon-shine-box {
-  background: linear-gradient(135deg, rgba(59,130,246,.2), rgba(139,92,246,.2)) !important;
-  border: 2px solid rgba(59,130,246,.5) !important;
-  box-shadow: 0 4px 12px rgba(59,130,246,.18);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.2),
+    rgba(139, 92, 246, 0.2)
+  ) !important;
+  border: 2px solid rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.18);
 }
 
 .theme-light .icon-shine-box i {
-  color: #000000 !important;  
-  filter: drop-shadow(0 2px 4px rgba(30,58,138,.3));
+  color: #000000 !important;
+  filter: drop-shadow(0 2px 4px rgba(30, 58, 138, 0.3));
   font-weight: 600;
 }
 
 .theme-light .icon-shine-box:nth-child(2) {
-  background: linear-gradient(135deg, rgba(139,92,246,.2), rgba(77,212,255,.2)) !important;
-  border: 2px solid rgba(139,92,246,.5) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.2),
+    rgba(77, 212, 255, 0.2)
+  ) !important;
+  border: 2px solid rgba(139, 92, 246, 0.5) !important;
 }
 
 .theme-light .icon-shine-box:hover {
-  box-shadow: 0 8px 20px rgba(59,130,246,.25);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .theme-light .icon-shine-box:hover i {
   transform: scale(1.08);
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
 }
-
 /* =================== GPA MODAL =================== */
 
 @media (max-width: 768px) {
