@@ -1652,24 +1652,29 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   padding-right: 0 !important;
 }
 
-/* Badge - gradient เหมือนโหมดมืด */
+/* Badge (ปุ่มปี) - ทำให้เหมือนโหมดมืด */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
 :root.theme-light .edu-item .edu-chip {
   display: inline-block !important;
   padding: 7px 16px !important;
+  /* 1. ทำให้พื้นหลังเป็นสีเดียวกับโหมดมืด */
   background: linear-gradient(135deg, #6a9cff, #a777ff) !important;
+  
+  /* 2. ทำให้ตัวหนังสือเป็นสีขาว */
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
+  
+  /* 3. ลบกรอบ, เงา, และเส้นขอบ */
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
+  
   border-radius: 999px !important;
   margin-bottom: 10px !important;
   font-weight: 800 !important;
 }
-
 /* หัวข้อ + คำอธิบาย - อนิเมชั่นเหมือนโหมดมืด */
 :root.theme-light .edu-title,
 :root.theme-light #education .edu-title,
