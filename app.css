@@ -1505,7 +1505,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .icon-shine-box i {
-  font-size: 50px; /* <-- แก้ไขตรงนี้ให้ไอคอนใหญ่ขึ้น */
+  font-size: 80px !important;
   color: #ffffff;
   position: relative;
   z-index: 2;
@@ -1528,6 +1528,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box i {
+  font-size: 80px !important;
   color: #000000 !important;
   filter: drop-shadow(0 2px 4px rgba(30, 58, 138, 0.3));
   font-weight: 600;
