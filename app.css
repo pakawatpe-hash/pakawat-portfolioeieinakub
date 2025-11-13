@@ -1770,7 +1770,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 /* =================== EDUCATION TIMELINE: LIGHT MODE - มี Animation =================== */
 
-/* ลบกรอบแต่เก็บตัวเลขปี + animation วิ่ง */
+/* ลบกรอบแต่เก็บตัวเลขปี + animation วิ่ง (สีเข้มขึ้น) */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
@@ -1781,12 +1781,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(15,23,42,0.4) 0%, 
-    rgba(15,23,42,0.7) 20%, 
+    rgba(15,23,42,0.5) 0%, 
+    rgba(15,23,42,0.8) 20%, 
     #0f172a 45%, 
-    #3b82f6 55%, 
-    rgba(15,23,42,0.7) 80%, 
-    rgba(15,23,42,0.4) 100%) !important;
+    #1e40af 55%, 
+    rgba(15,23,42,0.8) 80%, 
+    rgba(15,23,42,0.5) 100%) !important;
   background-size: 200% 100% !important;
   background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
@@ -1797,4 +1797,41 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   box-shadow: none !important;
   font-weight: 800 !important;
   margin-bottom: 10px !important;
+}
+
+/* หัวข้อและคำอธิบาย - มี animation วิ่ง (สีเข้มสำหรับโหมดสว่าง) */
+:root.theme-light .edu-title,
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-title,
+:root.theme-light #education .edu-desc,
+:root.theme-light #education .edu-row .edu-title,
+:root.theme-light #education .edu-row p,
+:root.theme-light .edu-item .edu-title,
+:root.theme-light .edu-item .edu-desc {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  background-image: linear-gradient(90deg, 
+    rgba(15,23,42,0.45) 0%, 
+    rgba(15,23,42,0.75) 20%, 
+    #0f172a 45%, 
+    #1e40af 55%, 
+    rgba(15,23,42,0.75) 80%, 
+    rgba(15,23,42,0.45) 100%) !important;
+  background-size: 200% 100% !important;
+  background-repeat: no-repeat !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  animation: eduLightShine 1.8s linear infinite !important;
+  will-change: background-position !important;
+  opacity: 1 !important;
+}
+
+/* Animation สำหรับโหมดสว่าง */
+@keyframes eduLightShine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
