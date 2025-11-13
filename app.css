@@ -1726,3 +1726,33 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     padding-right: 20px !important;
   }
 }
+/* =================== PROJECT CARDS CENTER FIX =================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+  justify-items: center; /* เพิ่มบรรทัดนี้ */
+  max-width: 1100px; /* จำกัดความกว้างสูงสุด */
+  margin-left: auto; /* จัดกลาง */
+  margin-right: auto; /* จัดกลาง */
+  padding: 0 20px; /* เผื่อระยะขอบ */
+}
+
+/* ถ้าการ์ดน้อยกว่า 3 ให้จัดกึ่งกลาง */
+@media (min-width: 900px) {
+  .cards {
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 320px));
+  }
+}
+
+/* Mobile - การ์ดเต็มความกว้าง */
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    padding: 0 16px;
+  }
+}
