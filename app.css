@@ -1515,6 +1515,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   display: block;
   line-height: 0;
   margin: 0;
+  transform: translateY(4px); /* เพิ่มบรรทัดนี้เพื่อดันลงมา */
 }
 
 .icon-shine-box:hover {
@@ -1553,7 +1554,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box:hover i {
-  transform: scale(1.08);
+  transform: translateY(4px) scale(1.08); /* เพิ่ม translateY ให้ hover ด้วย */
   transition: transform 0.25s ease;
 }
 /* =================== GPA MODAL =================== */
