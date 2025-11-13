@@ -593,9 +593,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .about-photo .avatar-glow::after{
   content:"";
   position:absolute;
-  inset: 8%;
+  inset: 0;
   background-image: url('assets/logo-ku.png');
-  background-size: contain;
+  background-size: 85%;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
@@ -650,7 +650,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 .about-desc p{ margin:.4rem 0 1rem; }
 .about-desc strong{ color:#fff; font-weight:700; }
-
 /* ===================== EDUCATION TIMELINE ===================== */
 .edu-section{ position:relative; padding:120px 0; overflow:hidden; }
 .edu-timeline{ position:relative; max-width:1100px; margin:80px auto 0; padding:0 24px 240px; }
