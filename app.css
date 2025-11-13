@@ -1158,7 +1158,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 .about-text,
 .stat-card,
-.edu-item,
 .card,
 .contact-card,
 .cert-card {
@@ -1166,26 +1165,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border: 1px solid transparent;   
 }
 
-
-.theme-light .edu-item,
-.theme-light .about-text,
-.theme-light .stat-card,
-.theme-light .card,
-.theme-light .contact-card,
-.theme-light .cert-card {
-  padding: 0;   
-}
-
-
 .theme-light .about-text { padding: 20px 22px; }
 .theme-light .stat-card { padding: 16px 14px; }
 .theme-light .contact-card { padding: 14px; }
 
-
-
 .theme-light .about-text,
 .theme-light .stat-card,
-.theme-light .edu-item,
 .theme-light .card,
 .theme-light .contact-card,
 .theme-light .cert-card {
@@ -1195,84 +1180,13 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
-
-.theme-light .edu-item { padding: 0; background: rgba(255,255,255,.9); }
-
-.edu-item .edu-content { padding: 0; } 
-
-
 .theme-light .stat-card .icon{
   background: rgba(0,0,0,.04);
   border-color: rgba(0,0,0,.08);
   color:#1e293b;
 }
 
-:root.theme-light .edu-item,
-:root.theme-light .edu-content,
-:root.theme-light #education .edu-item,
-:root.theme-light #education .edu-content,
-:root.theme-light .edu-section .edu-item,
-:root.theme-light .edu-section .edu-content {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-
-
-:root.theme-light .edu-item {
-  padding: 0 !important;
-  margin: 120px 0 !important;
-}
-
-:root.theme-light .edu-item.left {
-  text-align: right !important;
-  padding-right: 120px !important;
-  padding-left: 0 !important;
-}
-
-:root.theme-light .edu-item.right {
-  text-align: left !important;
-  padding-left: 120px !important;
-  padding-right: 0 !important;
-}
-
-:root.theme-light .edu-content {
-  padding: 0 !important;
-}
-
-
-
-
-
-
-
-
-:root.theme-light .edu-timeline::before {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.08)) !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-
-:root.theme-light .edu-timeline::after {
-  background: radial-gradient(circle, #3b82f6 0%, rgba(59, 130, 246, 0.6) 50%, transparent 70%) !important;
-  box-shadow: 0 0 16px rgba(59, 130, 246, 0.7), 0 0 28px rgba(59, 130, 246, 0.4) !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-
-
-:root.theme-light .edu-title {
-  margin: 12px 0 4px !important;  /* ลดจาก 12px เหลือ 6px */
-}
-
-
-
-
+/* =================== LIGHT MODE TYPOGRAPHY =================== */
 
 /* 1. Hero */
 :root.theme-light .headline.gradient {
@@ -1331,7 +1245,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: #475569 !important;
 }
 
-/* 5. Contact */
+/* 4. Contact */
 :root.theme-light .contact-card {
   background: rgba(255, 255, 255, 0.95) !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
@@ -1357,25 +1271,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: #475569 !important;
 }
 
-:root.theme-light .card p {
-  color: #475569 !important;
-}
-
-
-
-
-
-
-:root.theme-light .edu-title {
-  margin: 12px 0 4px !important;
-  font-size: 22px !important;
-  line-height: 1.2 !important;
-}
-
-:root.theme-light .edu-desc {
-  margin: 0 !important;
-  line-height: 1.6 !important;
-}
+/* =================== GALLERY GRID =================== */
 
 #galleryGrid {
   display: grid;
@@ -1388,7 +1284,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for gallery */
 #galleryGrid::-webkit-scrollbar {
   width: 8px;
 }
@@ -1408,13 +1303,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background: linear-gradient(180deg, var(--primary-2), var(--primary));
 }
 
-@media (max-width: 640px) {
-  #galleryGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Gallery image hover effect */
 #galleryGrid img {
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -1423,7 +1311,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform: scale(1.02) translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
 }
-/* ===== Gallery Image Container ===== */
+
 #galleryGrid > div {
   transition: transform .25s ease, box-shadow .25s ease;
   will-change: transform;
@@ -1438,7 +1326,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform: scale(1.05);
 }
 
-/* Placeholder gradient */
 #galleryGrid > div[data-empty] {
   background: linear-gradient(135deg, 
     rgba(106, 165, 255, 0.12), 
@@ -1446,7 +1333,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   ) !important;
 }
 
-/* Loading animation */
 @keyframes galleryPulse {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 0.9; }
@@ -1459,7 +1345,60 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 #galleryGrid > div img[src*="assets"][onload] {
   animation: none;
 }
-/* ===== About Modal Info Items ===== */
+
+.theme-light #galleryGrid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.theme-light #galleryGrid::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+}
+
+.theme-light #galleryGrid::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8b5cf6, #3b82f6);
+}
+
+@media (max-width: 640px) {
+  #galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================== ABOUT MODAL =================== */
+
+#aboutModal {
+  display: none;
+}
+
+#aboutModal.open {
+  display: flex !important;
+}
+
+#aboutModal.open .clb-backdrop,
+#aboutModal.open .clb-inner {
+  display: block;
+}
+
+#aboutModal.open .clb-inner {
+  animation: fadeInZoom .35s ease both;
+}
+
+#aboutModal img {
+  transition: transform .3s ease, filter .3s ease;
+}
+
+#aboutModal img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+#aboutModal .clb-close:hover {
+  background: rgba(255, 100, 100, .85);
+  border-color: rgba(255, 100, 100, .4);
+  transform: scale(1.1) rotate(90deg);
+  transition: all .25s ease;
+}
+
 .info-item {
   transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
   cursor: default;
@@ -1471,17 +1410,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background: rgba(255, 255, 255, .08);
 }
 
-/* Avatar ใน About Modal */
-#aboutModal img {
-  transition: transform .3s ease, filter .3s ease;
-}
-
-#aboutModal img:hover {
-  transform: scale(1.03);
-  filter: brightness(1.08);
-}
-
-/* Close button positioning */
 .clb-close {
   position: absolute;
   right: 14px;
@@ -1499,7 +1427,21 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform: scale(1.08);
 }
 
-/* Light Mode Support */
+/* Light Mode */
+.theme-light #aboutModal .clb-backdrop {
+  background: rgba(0, 0, 0, .5);
+}
+
+.theme-light #aboutModal .clb-inner {
+  background: rgba(255, 255, 255, .98);
+  border-color: rgba(0, 0, 0, .12);
+}
+
+.theme-light #aboutModal .clb-close {
+  background: rgba(0, 0, 0, .06);
+  border-color: rgba(0, 0, 0, .12);
+}
+
 .theme-light .info-item {
   background: rgba(255, 255, 255, .95);
   border: 1px solid rgba(0, 0, 0, .08);
@@ -1522,132 +1464,13 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   background: rgba(0, 0, 0, .06);
   border-color: rgba(0, 0, 0, .12);
 }
-.theme-light #galleryGrid::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-}
 
-.theme-light #galleryGrid::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
-}
-
-.theme-light #galleryGrid::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #8b5cf6, #3b82f6);
-}
 .theme-light .clb-close:hover {
   background: rgba(239, 68, 68, .9);
   border-color: rgba(239, 68, 68, .3);
 }
 
-/* Avatar ใน About Modal */
-#aboutModal img {
-  transition: transform .3s ease, filter .3s ease;
-}
-
-#aboutModal img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* Light Mode Support */
-.theme-light .info-item {
-  background: rgba(255, 255, 255, .95);
-  border: 1px solid rgba(0, 0, 0, .08);
-}
-
-.theme-light #aboutDetailContent h2 {
-  color: #0f172a;
-}
-
-.theme-light .info-item div {
-  color: #0f172a;
-}
-
-
-@media (max-width: 900px) {
-
-  .edu-item,
-  .edu-item.left,
-  .edu-item.right {
-    width: 100% !important;
-    left: 0 !important;
-    text-align: left !important;
-    padding-left: 70px !important;  /* ระยะห่างจากเส้น timeline ด้านซ้าย */
-    padding-right: 20px !important; /* ระยะห่างจากขอบขวา */
-    margin: 80px 0 !important;
-  }
-
-
-  .edu-title,
-  .edu-desc {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    white-space: normal !important;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 520px) {
-
-  .edu-item,
-  .edu-item.left,
-  .edu-item.right {
-    padding-left: 50px !important;
-    padding-right: 15px !important;
-    margin: 60px 0 !important;
-  }
-}
-
-
-/* ===== Enhanced Icon Boxes ===== */
-.icon-shine-box {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.icon-shine-box i {
-  font-size: 72px !important;
-  animation: iconGlow 2s ease-in-out infinite;
-}
-
-/* ===== About Modal  ===== */
-#aboutModal {
-  display: none;
-}
-#aboutModal.open {
-  display: flex !important;
-}
-/* Ensure backdrop and inner are visible when open */
-#aboutModal.open .clb-backdrop,
-#aboutModal.open .clb-inner {
-  display: block;
-}
-/* Animation for modal */
-#aboutModal.open .clb-inner {
-  animation: fadeInZoom .35s ease both;
-}
-/* Close button hover effect */
-#aboutModal .clb-close:hover {
-  background: rgba(255, 100, 100, .85);
-  border-color: rgba(255, 100, 100, .4);
-  transform: scale(1.1) rotate(90deg);
-  transition: all .25s ease;
-}
-/* Light mode support */
-.theme-light #aboutModal .clb-backdrop {
-  background: rgba(0, 0, 0, .5);
-}
-.theme-light #aboutModal .clb-inner {
-  background: rgba(255, 255, 255, .98);
-  border-color: rgba(0, 0, 0, .12);
-}
-.theme-light #aboutModal .clb-close {
-  background: rgba(0, 0, 0, .06);
-  border-color: rgba(0, 0, 0, .12);
-}
-
-/* ===== About Modal: Icon Boxes - Light Mode ===== */
-
+/* =================== ICON BOXES =================== */
 
 .icon-shine-box {
   aspect-ratio: 1;
@@ -1663,12 +1486,16 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 .icon-shine-box i {
   font-size: 48px;
-  color: #000000;
+  color: #ffffff;
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(106,165,255,.3));
 }
 
+.icon-shine-box:hover {
+  transform: translateY(-2px) scale(1.03);
+  transition: all .25s ease;
+}
 
 .theme-light .icon-shine-box {
   background: linear-gradient(135deg, rgba(59,130,246,.2), rgba(139,92,246,.2)) !important;
@@ -1682,20 +1509,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   font-weight: 600;
 }
 
-
 .theme-light .icon-shine-box:nth-child(2) {
   background: linear-gradient(135deg, rgba(139,92,246,.2), rgba(77,212,255,.2)) !important;
   border: 2px solid rgba(139,92,246,.5) !important;
-}
-
-.theme-light .icon-shine-box:nth-child(2) i {
-  color: #000000 !important;  
-}
-
-/* Hover effect */
-.icon-shine-box:hover {
-  transform: translateY(-2px) scale(1.03);
-  transition: all .25s ease;
 }
 
 .theme-light .icon-shine-box:hover {
@@ -1706,7 +1522,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform: scale(1.08);
   transition: transform .25s ease;
 }
-/* GPA Modal - Responsive */
+
+/* =================== GPA MODAL =================== */
+
 @media (max-width: 768px) {
   #gpaModal .clb-inner {
     max-width: 95vw !important;
@@ -1734,7 +1552,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     max-height: 60vh !important;
   }
 }
-/* ===== Avatar Flip Card: Light Mode Support ===== */
+
+/* =================== AVATAR FLIP CARD =================== */
+
 .theme-light .about-photo .avatar-glow::after{
   filter: drop-shadow(0 4px 16px rgba(0,128,109,.6));
   background-image: url('assets/logo-ku.png');
@@ -1744,7 +1564,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   filter: drop-shadow(0 6px 20px rgba(0,128,109,.75));
 }
 
-/* Mobile: disable flip on touch devices */
 @media (pointer: coarse) {
   .about-photo .avatar-glow {
     cursor: default;
@@ -1758,21 +1577,41 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     transform: rotateY(180deg);
   }
 }
-/* Mobile: disable flip on touch devices */
-@media (pointer: coarse) {
-  .about-photo .avatar-glow {
-    cursor: default;
-  }
-  .about-photo .avatar-glow:hover .avatar-img {
-    opacity: 1;
-    transform: none;
-  }
-  .about-photo .avatar-glow:hover::after {
-    opacity: 0;
-    transform: rotateY(180deg);
+
+/* =================== EDUCATION TIMELINE RESPONSIVE =================== */
+
+@media (max-width: 900px) {
+  .edu-item,
+  .edu-item.left,
+  .edu-item.right {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: left !important;
+    padding-left: 70px !important;
+    padding-right: 20px !important;
+    margin: 80px 0 !important;
   }
 
-/* =================== EDUCATION TIMELINE: LIGHT MODE = DARK MODE (100%) =================== */
+  .edu-title,
+  .edu-desc {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .edu-item,
+  .edu-item.left,
+  .edu-item.right {
+    padding-left: 50px !important;
+    padding-right: 15px !important;
+    margin: 60px 0 !important;
+  }
+}
+
+/* =================== EDUCATION TIMELINE: LIGHT MODE = DARK MODE =================== */
 
 /* ลบกรอบ/background ทั้งหมด */
 :root.theme-light .edu-item,
