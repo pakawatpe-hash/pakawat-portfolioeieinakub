@@ -1902,3 +1902,37 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     padding-right: 0 !important;
   }
 }
+/* Mobile: Light Mode Timeline */
+@media (max-width: 900px) {
+  :root.theme-light .edu-item,
+  :root.theme-light .edu-item.left,
+  :root.theme-light .edu-item.right {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: left !important;
+    padding-left: 70px !important;
+    padding-right: 20px !important;
+    margin: 80px 0 !important;
+  }
+  
+  :root.theme-light .edu-timeline::before,
+  :root.theme-light .edu-timeline::after {
+    left: 26px !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  :root.theme-light .edu-item,
+  :root.theme-light .edu-item.left,
+  :root.theme-light .edu-item.right {
+    padding-left: 50px !important;
+    padding-right: 15px !important;
+    margin: 60px 0 !important;
+  }
+  
+  :root.theme-light .edu-timeline::before,
+  :root.theme-light .edu-timeline::after {
+    left: 20px !important;
+  }
+}
