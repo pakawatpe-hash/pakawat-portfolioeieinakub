@@ -1768,9 +1768,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     transform: rotateY(180deg);
   }
 
-/* =================== EDUCATION TIMELINE: LIGHT MODE - มี Animation =================== */
+/* =================== EDUCATION TIMELINE: LIGHT MODE - Animation สีดำ =================== */
 
-/* ลบกรอบแต่เก็บตัวเลขปี + animation วิ่ง (สีเข้มขึ้น) */
+/* ตัวเลขปี - ไม่มีกรอบ + animation สีดำ */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
@@ -1781,17 +1781,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(15,23,42,0.5) 0%, 
-    rgba(15,23,42,0.8) 20%, 
-    #0f172a 45%, 
-    #1e40af 55%, 
-    rgba(15,23,42,0.8) 80%, 
-    rgba(15,23,42,0.5) 100%) !important;
+    rgba(0,0,0,0.3) 0%, 
+    rgba(0,0,0,0.6) 20%, 
+    #000000 45%, 
+    #1a1a1a 55%, 
+    rgba(0,0,0,0.6) 80%, 
+    rgba(0,0,0,0.3) 100%) !important;
   background-size: 200% 100% !important;
   background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
-  animation: eduLightShine 1.8s linear infinite !important;
+  animation: eduBlackShine 1.8s linear infinite !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
@@ -1799,7 +1799,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   margin-bottom: 10px !important;
 }
 
-/* หัวข้อและคำอธิบาย - มี animation วิ่ง (สีเข้มสำหรับโหมดสว่าง) */
+/* หัวข้อและคำอธิบาย - animation สีดำ */
 :root.theme-light .edu-title,
 :root.theme-light .edu-desc,
 :root.theme-light #education .edu-title,
@@ -1811,19 +1811,47 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, 
-    rgba(15,23,42,0.45) 0%, 
-    rgba(15,23,42,0.75) 20%, 
-    #0f172a 45%, 
-    #1e40af 55%, 
-    rgba(15,23,42,0.75) 80%, 
-    rgba(15,23,42,0.45) 100%) !important;
+    rgba(0,0,0,0.35) 0%, 
+    rgba(0,0,0,0.65) 20%, 
+    #000000 45%, 
+    #1a1a1a 55%, 
+    rgba(0,0,0,0.65) 80%, 
+    rgba(0,0,0,0.35) 100%) !important;
   background-size: 200% 100% !important;
   background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
-  animation: eduLightShine 1.8s linear infinite !important;
+  animation: eduBlackShine 1.8s linear infinite !important;
   will-change: background-position !important;
   opacity: 1 !important;
+}
+
+/* Animation สำหรับโหมดสว่าง */
+@keyframes eduBlackShine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ปรับ spacing */
+:root.theme-light .edu-title,
+:root.theme-light #education .edu-title,
+:root.theme-light .edu-item .edu-title {
+  margin: 12px 0 4px !important;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+}
+
+:root.theme-light .edu-desc,
+:root.theme-light #education .edu-desc,
+:root.theme-light .edu-item .edu-desc {
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  font-size: 15px !important;
 }
 
 /* Animation สำหรับโหมดสว่าง */
