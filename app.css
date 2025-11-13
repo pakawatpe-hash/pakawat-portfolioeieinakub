@@ -1512,10 +1512,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
-  display: block;
-  line-height: 0;
-  margin: 0;
-  transform: translateY(4px); /* เพิ่มบรรทัดนี้เพื่อดันลงมา */
+  align-self: center;
+  justify-self: center;
 }
 
 .icon-shine-box:hover {
@@ -1554,7 +1552,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box:hover i {
-  transform: translateY(4px) scale(1.08); /* เพิ่ม translateY ให้ hover ด้วย */
+  transform: scale(1.08);
   transition: transform 0.25s ease;
 }
 /* =================== GPA MODAL =================== */
