@@ -1512,8 +1512,10 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
-  /* ลบ display: flex ออก และปรับให้อยู่กึ่งกลางจริงๆ */
-  line-height: 1;
+  /* แก้ไขให้อยู่กึ่งกลางจริงๆ */
+  display: block;
+  line-height: 0;
+  vertical-align: middle;
   margin: 0;
   padding: 0;
 }
