@@ -601,14 +601,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   opacity: 0;
   transform: rotateY(180deg) scale(0.9);
   backface-visibility: hidden;
-  transition: opacity .5s ease, transform .5s ease;
+  transition: opacity .5s ease, transform .5s ease, filter .5s ease;
   z-index: 3;
-  filter: drop-shadow(0 4px 12px rgba(0,128,109,.5));
+  filter: drop-shadow(0 4px 12px rgba(0,128,109,.5)) brightness(1);
   border-radius: 50%;
 }
 
 .about-photo .avatar-glow:hover { 
-  box-shadow: 0 34px 70px rgba(0,0,0,.42); 
+  box-shadow: 
+    0 34px 70px rgba(0,0,0,.42),
+    0 0 40px rgba(0,188,140,.3),
+    0 0 60px rgba(0,188,140,.2); 
   transform: translateY(-2px);
 }
 
@@ -620,6 +623,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .about-photo .avatar-glow:hover::after{
   opacity: 1;
   transform: rotateY(0deg) scale(1);
+  filter: 
+    drop-shadow(0 0 20px rgba(0,188,140,.8))
+    drop-shadow(0 0 40px rgba(0,188,140,.6))
+    drop-shadow(0 4px 12px rgba(0,128,109,.5))
+    brightness(1.15);
+  animation: logoShine 2s ease-in-out infinite;
 }
 
 .about-photo .avatar-glow:focus-visible{ 
@@ -635,6 +644,31 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .about-photo .avatar-glow:focus-visible::after{
   opacity: 1;
   transform: rotateY(0deg) scale(1);
+  filter: 
+    drop-shadow(0 0 20px rgba(0,188,140,.8))
+    drop-shadow(0 0 40px rgba(0,188,140,.6))
+    drop-shadow(0 4px 12px rgba(0,128,109,.5))
+    brightness(1.15);
+  animation: logoShine 2s ease-in-out infinite;
+}
+
+/* Logo shine animation */
+@keyframes logoShine {
+  0%, 100% {
+    filter: 
+      drop-shadow(0 0 20px rgba(0,188,140,.8))
+      drop-shadow(0 0 40px rgba(0,188,140,.6))
+      drop-shadow(0 4px 12px rgba(0,128,109,.5))
+      brightness(1.15);
+  }
+  50% {
+    filter: 
+      drop-shadow(0 0 30px rgba(0,220,165,.95))
+      drop-shadow(0 0 60px rgba(0,220,165,.75))
+      drop-shadow(0 4px 16px rgba(0,160,130,.7))
+      brightness(1.25)
+      saturate(1.2);
+  }
 }
 
 /* About text */
