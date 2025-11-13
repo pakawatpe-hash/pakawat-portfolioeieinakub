@@ -1791,12 +1791,20 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 /* =================== EDUCATION TIMELINE: LIGHT MODE - มี Animation =================== */
 
-/* ซ่อนกรอบตัวเลขปี */
+/* ลบกรอบแต่เก็บตัวเลขปีในโหมดสว่าง */
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
 :root.theme-light .edu-item .edu-chip {
-  display: none !important;
+  display: inline-block !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: #0f172a !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-weight: 800 !important;
+  margin-bottom: 10px !important;
 }
 
 /* หัวข้อและคำอธิบาย - มี animation วิ่ง (สีเข้มสำหรับโหมดสว่าง) */
