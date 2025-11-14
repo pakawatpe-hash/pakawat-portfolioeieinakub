@@ -1499,16 +1499,17 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     rgba(106, 165, 255, 0.15),
     rgba(155, 140, 255, 0.15)
   );
-  border: 2px solid rgba(106, 165, 255, 0.4);
+  border: none;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(106, 165, 255, 0.2);
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
+  padding: 0;
 }
 
 .icon-shine-box i {
-  font-size: 90px !important;
+  font-size: 100px !important;
   color: #ffffff;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
   line-height: 1 !important;
@@ -1532,12 +1533,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     rgba(59, 130, 246, 0.2),
     rgba(139, 92, 246, 0.2)
   ) !important;
-  border: 2px solid rgba(59, 130, 246, 0.5) !important;
+  border: none !important;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.18);
 }
 
 .theme-light .icon-shine-box i {
-  font-size: 90px !important;
+  font-size: 100px !important;
   color: #000000 !important;
   filter: drop-shadow(0 2px 4px rgba(30, 58, 138, 0.3));
   font-weight: 600;
@@ -1549,7 +1550,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     rgba(139, 92, 246, 0.2),
     rgba(77, 212, 255, 0.2)
   ) !important;
-  border: 2px solid rgba(139, 92, 246, 0.5) !important;
+  border: none !important;
 }
 
 .theme-light .icon-shine-box:hover {
