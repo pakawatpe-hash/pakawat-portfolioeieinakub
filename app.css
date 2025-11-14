@@ -1489,8 +1489,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 /* =================== ICON BOXES =================== */
 .icon-shine-box {
   aspect-ratio: 1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   border-radius: 16px;
   background: linear-gradient(
@@ -1509,15 +1510,10 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .icon-shine-box i {
   font-size: 90px !important;
   color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
-  line-height: 1;
-  margin: 0;
-  padding: 0;
+  line-height: 1 !important;
+  display: block !important;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .icon-shine-box:hover {
@@ -1526,8 +1522,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .icon-shine-box:hover i {
-  transform: translate(-50%, -50%) scale(1.08);
-  transition: transform 0.25s ease;
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 12px rgba(106, 165, 255, 0.5));
 }
 
 .theme-light .icon-shine-box {
@@ -1545,10 +1541,6 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   color: #000000 !important;
   filter: drop-shadow(0 2px 4px rgba(30, 58, 138, 0.3));
   font-weight: 600;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .theme-light .icon-shine-box:nth-child(2) {
@@ -1565,8 +1557,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box:hover i {
-  transform: translate(-50%, -50%) scale(1.08);
-  transition: transform 0.25s ease;
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
 }
 /* =================== GPA MODAL =================== */
 
