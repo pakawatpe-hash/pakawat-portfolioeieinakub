@@ -1486,42 +1486,40 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border-color: rgba(239, 68, 68, .3);
 }
 
-/* =================== ICON BOXES =================== */
+.icon-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ================= ICON BOX ================= */
 .icon-shine-box {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  position: relative;
   border-radius: 16px;
   background: linear-gradient(
     135deg,
     rgba(106, 165, 255, 0.15),
     rgba(155, 140, 255, 0.15)
   );
-  border: none;
-  overflow: hidden;
   box-shadow: 0 4px 16px rgba(106, 165, 255, 0.2);
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto;
-  padding: 0;
+  overflow: hidden;
+  transition: 0.25s ease;
 }
 
 .icon-shine-box i {
-  font-size: 100px !important;
-  color: #ffffff;
+  font-size: 80px;
+  color: #fff;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
-  line-height: 0 !important;
-  display: inline-block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  vertical-align: middle !important;
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .icon-shine-box:hover {
   transform: translateY(-2px) scale(1.03);
-  transition: all 0.25s ease;
 }
 
 .icon-shine-box:hover i {
@@ -1529,39 +1527,28 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   filter: drop-shadow(0 4px 12px rgba(106, 165, 255, 0.5));
 }
 
+/* LIGHT MODE FIXED */
 .theme-light .icon-shine-box {
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.2),
-    rgba(139, 92, 246, 0.2)
+    rgba(59,130,246,0.2),
+    rgba(139,92,246,0.2)
   ) !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.18);
+  box-shadow: 0 4px 12px rgba(59,130,246,0.18);
 }
 
 .theme-light .icon-shine-box i {
-  font-size: 100px !important;
-  color: #000000 !important;
-  filter: drop-shadow(0 2px 4px rgba(30, 58, 138, 0.3));
-  font-weight: 600;
+  color: #000 !important;
+  font-size: 80px !important;
 }
 
+/* กล่องขวาใน light mode */
 .theme-light .icon-shine-box:nth-child(2) {
   background: linear-gradient(
     135deg,
-    rgba(139, 92, 246, 0.2),
-    rgba(77, 212, 255, 0.2)
+    rgba(139,92,246,0.2),
+    rgba(77,212,255,0.2)
   ) !important;
-  border: none !important;
-}
-
-.theme-light .icon-shine-box:hover {
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
-}
-
-.theme-light .icon-shine-box:hover i {
-  transform: scale(1.08);
-  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
 }
 /* =================== GPA MODAL =================== */
 
