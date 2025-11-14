@@ -711,3 +711,37 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })(); 
+/* ===== Animate cert-card and stack-chip on tab switch ===== */
+(function(){
+  var tabButtons = document.querySelectorAll('.tab[data-tab]');
+  
+  tabButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var targetTab = btn.getAttribute('data-tab');
+      
+      // Animate cert cards
+      if(targetTab === 'certs'){
+        setTimeout(function(){
+          var certCards = document.querySelectorAll('.cert-card');
+          certCards.forEach(function(card, index){
+            setTimeout(function(){
+              card.classList.add('in');
+            }, index * 100);
+          });
+        }, 50);
+      }
+      
+      // Animate stack chips
+      if(targetTab === 'stack'){
+        setTimeout(function(){
+          var stackChips = document.querySelectorAll('.stack-chip');
+          stackChips.forEach(function(chip, index){
+            setTimeout(function(){
+              chip.classList.add('in');
+            }, index * 50);
+          });
+        }, 50);
+      }
+    });
+  });
+})();
