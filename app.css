@@ -1499,20 +1499,28 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   transform: scale(1.08);
   filter: drop-shadow(0 4px 12px rgba(106, 165, 255, 0.5));
 }
+
 /* LIGHT MODE FIXED */
 .theme-light .icon-shine-box {
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
   outline: none !important;
+  border-radius: 0 !important;
 }
 .theme-light .icon-shine-box i {
   color: #000 !important;
-  font-size: 80px !important;
+  font-size: 80px !important; /* ขนาดเท่ากับ dark mode */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
+}
+.theme-light .icon-shine-box:hover i {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)) !important;
 }
 /* กล่องขวาใน light mode */
 .theme-light .icon-shine-box:nth-child(2) {
   background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* ================= RESPONSIVE - MOBILE ================= */
