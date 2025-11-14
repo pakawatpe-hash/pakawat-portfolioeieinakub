@@ -1380,7 +1380,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
 }
 
-//* =================== ABOUT MODAL =================== */
+/* =================== ABOUT MODAL =================== */
 #aboutModal {
   display: none;
 }
@@ -1481,6 +1481,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+  border: none !important;
+  outline: none !important;
   overflow: hidden;
   transition: 0.25s ease;
 }
@@ -1501,6 +1503,8 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .icon-shine-box {
   background: transparent !important;
   box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
 }
 .theme-light .icon-shine-box i {
   color: #000 !important;
@@ -1509,6 +1513,36 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 /* กล่องขวาใน light mode */
 .theme-light .icon-shine-box:nth-child(2) {
   background: transparent !important;
+}
+
+/* ================= RESPONSIVE - MOBILE ================= */
+@media (max-width: 768px) {
+  .icon-container {
+    gap: 12px;
+    max-width: 100%;
+  }
+  
+  .icon-shine-box i {
+    font-size: 60px;
+  }
+  
+  .theme-light .icon-shine-box i {
+    font-size: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-container {
+    gap: 10px;
+  }
+  
+  .icon-shine-box i {
+    font-size: 50px;
+  }
+  
+  .theme-light .icon-shine-box i {
+    font-size: 50px !important;
+  }
 }
 /* =================== GPA MODAL =================== */
 
