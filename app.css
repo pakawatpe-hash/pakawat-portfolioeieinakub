@@ -1802,7 +1802,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     0 0 0 4px rgba(59, 130, 246, 0.2);
   cursor: pointer;
   animation: eyePulse 2s ease-in-out infinite;
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 @keyframes eyePulse {
