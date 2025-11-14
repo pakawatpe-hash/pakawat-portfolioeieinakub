@@ -1540,11 +1540,11 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
   
   .icon-shine-box i {
-    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+    font-size: 80px !important; 
   }
   
   .theme-light .icon-shine-box i {
-    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+    font-size: 80px !important; 
   }
 }
 
@@ -1554,11 +1554,11 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
   
   .icon-shine-box i {
-    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+    font-size: 80px !important; /
   }
   
   .theme-light .icon-shine-box i {
-    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+    font-size: 80px !important; 
   }
 }
 
@@ -1681,7 +1681,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 /* =================== EDUCATION TIMELINE: LIGHT MODE = DARK MODE =================== */
 
-/* ลบกรอบ/background ทั้งหมด */
+
 :root.theme-light .edu-item,
 :root.theme-light .edu-content,
 :root.theme-light #education .edu-item,
@@ -1695,7 +1695,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   backdrop-filter: none !important;
 }
 
-/* ปรับ padding ให้ห่างจากเส้น timeline มากขึ้น */
+
 :root.theme-light .edu-item.left,
 :root.theme-light #education .edu-item.left {
   padding-right: 140px !important;
@@ -1708,21 +1708,21 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   padding-right: 0 !important;
 }
 
-/* Badge (ปุ่มปี) - ทำให้เหมือนโหมดมืด */
+
 :root.theme-light .edu-chip,
 :root.theme-light #education .edu-chip,
 :root.theme-light .edu-section .edu-chip,
 :root.theme-light .edu-item .edu-chip {
   display: inline-block !important;
   padding: 7px 16px !important;
-  /* 1. ทำให้พื้นหลังเป็นสีเดียวกับโหมดมืด */
+ 
   background: linear-gradient(135deg, #6a9cff, #a777ff) !important;
   
-  /* 2. ทำให้ตัวหนังสือเป็นสีขาว */
+
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   
-  /* 3. ลบกรอบ, เงา, และเส้นขอบ */
+ 
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
@@ -1731,7 +1731,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   margin-bottom: 10px !important;
   font-weight: 800 !important;
 }
-/* หัวข้อ + คำอธิบาย - อนิเมชั่นเหมือนโหมดมืด */
+
 :root.theme-light .edu-title,
 :root.theme-light #education .edu-title,
 :root.theme-light #education .edu-item .edu-title,
@@ -1789,14 +1789,14 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
   margin-top: 18px;
-  justify-items: center; /* เพิ่มบรรทัดนี้ */
-  max-width: 1100px; /* จำกัดความกว้างสูงสุด */
-  margin-left: auto; /* จัดกลาง */
-  margin-right: auto; /* จัดกลาง */
-  padding: 0 20px; /* เผื่อระยะขอบ */
+  justify-items: center; 
+  max-width: 1100px; /
+  margin-left: auto; 
+  margin-right: auto; 
+  padding: 0 20px; 
 }
 
-/* ถ้าการ์ดน้อยกว่า 3 ให้จัดกึ่งกลาง */
+
 @media (min-width: 900px) {
   .cards {
     justify-content: center;
@@ -1804,7 +1804,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
 }
 
-/* Mobile - การ์ดเต็มความกว้าง */
+
 @media (max-width: 640px) {
   .cards {
     grid-template-columns: 1fr !important;
@@ -1868,4 +1868,12 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   box-shadow: 
     0 4px 12px rgba(59, 130, 246, 0.4),
     0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+/* ================= FIX HELLO I'M COLOR ================= */
+.eyebrow {
+  color: #64748b;
+}
+
+.theme-light .eyebrow {
+  color: #0f172a !important;
 }
