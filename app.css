@@ -1879,24 +1879,22 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 /* ================= PROJECT CARDS STAGGER ANIMATION ================= */
 .cards .card {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition: none !important;
 }
 
-/* การ์ดที่ 1 - ขึ้นก่อน */
-.cards .card:nth-child(1).in {
+.cards .card.in:nth-child(1) {
   animation: slideUp 0.6s ease forwards;
   animation-delay: 0s;
 }
 
-/* การ์ดที่ 2 - ขึ้นตามมา */
-.cards .card:nth-child(2).in {
+.cards .card.in:nth-child(2) {
   animation: slideUp 0.6s ease forwards;
   animation-delay: 0.2s;
 }
 
-/* การ์ดที่ 3 - ขึ้นสุดท้าย */
-.cards .card:nth-child(3).in {
+.cards .card.in:nth-child(3) {
   animation: slideUp 0.6s ease forwards;
   animation-delay: 0.4s;
 }
@@ -1912,10 +1910,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
 }
 
-/* สำหรับ Certificates */
 .cert-card {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cert-card.in {
@@ -1929,10 +1926,9 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .cert-grid .cert-card:nth-child(5).in { animation-delay: 0.4s; }
 .cert-grid .cert-card:nth-child(6).in { animation-delay: 0.5s; }
 
-/* สำหรับ Tech Stack */
 .stack-chip {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stack-chip.in {
