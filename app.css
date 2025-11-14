@@ -1487,8 +1487,27 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 /* =================== ICON BOXES =================== */
+.icon-shine-box {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(106, 165, 255, 0.15),
+    rgba(155, 140, 255, 0.15)
+  );
+  border: 2px solid rgba(106, 165, 255, 0.4);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(106, 165, 255, 0.2);
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
 .icon-shine-box i {
-  font-size: 120px !important;
+  font-size: 90px !important;
   color: #ffffff;
   position: absolute;
   top: 50%;
@@ -1501,19 +1520,14 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   padding: 0;
 }
 
-.icon-shine-box i {
-  font-size: 120px !important;
-  color: #ffffff;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
-  align-self: center;
-  justify-self: center;
-}
-
 .icon-shine-box:hover {
   transform: translateY(-2px) scale(1.03);
   transition: all 0.25s ease;
+}
+
+.icon-shine-box:hover i {
+  transform: translate(-50%, -50%) scale(1.08);
+  transition: transform 0.25s ease;
 }
 
 .theme-light .icon-shine-box {
@@ -1527,10 +1541,14 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box i {
-  font-size: 80px !important;
+  font-size: 90px !important;
   color: #000000 !important;
   filter: drop-shadow(0 2px 4px rgba(30, 58, 138, 0.3));
   font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .theme-light .icon-shine-box:nth-child(2) {
@@ -1547,7 +1565,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 
 .theme-light .icon-shine-box:hover i {
-  transform: scale(1.08);
+  transform: translate(-50%, -50%) scale(1.08);
   transition: transform 0.25s ease;
 }
 /* =================== GPA MODAL =================== */
