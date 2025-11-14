@@ -1478,22 +1478,25 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
   border: none !important;
   outline: none !important;
-  overflow: hidden;
+  backdrop-filter: none !important;
+  overflow: visible;
   transition: 0.25s ease;
+  padding: 0 !important;
 }
 .icon-shine-box i {
-  font-size: 80px;
+  font-size: 80px !important;
   color: #fff;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
   transition: 0.25s ease;
 }
 .icon-shine-box:hover {
   transform: translateY(-2px) scale(1.03);
+  background: transparent !important;
 }
 .icon-shine-box:hover i {
   transform: scale(1.08);
@@ -1507,20 +1510,56 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   border: none !important;
   outline: none !important;
   border-radius: 0 !important;
+  backdrop-filter: none !important;
 }
 .theme-light .icon-shine-box i {
   color: #000 !important;
-  font-size: 80px !important; /* ขนาดเท่ากับ dark mode */
+  font-size: 80px !important;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
+}
+.theme-light .icon-shine-box:hover {
+  background: transparent !important;
 }
 .theme-light .icon-shine-box:hover i {
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)) !important;
 }
+
 /* กล่องขวาใน light mode */
 .theme-light .icon-shine-box:nth-child(2) {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ================= RESPONSIVE - MOBILE ================= */
+@media (max-width: 768px) {
+  .icon-container {
+    gap: 12px;
+    max-width: 100%;
+  }
+  
+  .icon-shine-box i {
+    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+  }
+  
+  .theme-light .icon-shine-box i {
+    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-container {
+    gap: 10px;
+  }
+  
+  .icon-shine-box i {
+    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+  }
+  
+  .theme-light .icon-shine-box i {
+    font-size: 80px !important; /* เท่ากับเดสก์ท็อป */
+  }
 }
 
 /* ================= RESPONSIVE - MOBILE ================= */
