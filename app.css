@@ -1489,7 +1489,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   padding: 0 !important;
 }
 .icon-shine-box i {
-  font-size: 80px !important;
+  font-size: 100px !important;
   color: #fff;
   filter: drop-shadow(0 2px 4px rgba(106, 165, 255, 0.3));
   transition: 0.25s ease;
@@ -1514,7 +1514,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 }
 .theme-light .icon-shine-box i {
   color: #000 !important;
-  font-size: 80px !important;
+  font-size: 100px !important;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
 }
 .theme-light .icon-shine-box:hover {
