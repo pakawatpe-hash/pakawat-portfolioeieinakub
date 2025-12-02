@@ -791,5 +791,21 @@ window.openProjectGallery = function(projectId) {
         }, 50);
       }
     });
+    /* ===== Project Slider Controls ===== */
+(function(){
+  const slider = document.getElementById('projectSlider');
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+
+  if(!slider || !btnPrev || !btnNext) return;
+
+  // กดปุ่มขวา เลื่อนไป 320px
+  btnNext.addEventListener('click', () => {
+    slider.scrollLeft += 320;
+  });
+
+  // กดปุ่มซ้าย เลื่อนกลับ 320px
+  btnPrev.addEventListener('click', () => {
+    slider.scrollLeft -= 320;
   });
 })();
