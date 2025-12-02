@@ -655,49 +655,47 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     contrast(1.05);
 }
 
-/* Light theme support - เหมือนเดิม */
+/* Light theme support - สีแดง-ทอง (ตามโลโก้วิทยาลัย) */
 .theme-light .about-photo .avatar-glow::before {
   background: radial-gradient(
     circle,
     transparent 45%,
-    rgba(255,255,255,.8) 50%,    /* ขาวเข้มขึ้นเพื่อให้เห็นในธีมสว่าง */
-    rgba(255,255,255,.9) 55%,
-    rgba(255,255,255,.8) 60%,
+    rgba(220, 30, 30, 0.6) 50%,    /* สีแดง */
+    rgba(255, 200, 0, 0.7) 55%,    /* สีทอง */
+    rgba(220, 30, 30, 0.6) 60%,    /* สีแดง */
     transparent 70%
   );
 }
 
 .theme-light .about-photo .avatar-glow:hover {
   box-shadow: 
-    0 34px 70px rgba(0,0,0,.15),
-    0 0 50px rgba(255,255,255,1),    /* ขาวสว่างจ้า */
-    0 0 80px rgba(255,255,255,.8),
-    0 0 120px rgba(255,255,255,.6),
-    0 0 160px rgba(255,255,255,.5);
+    0 34px 70px rgba(0,0,0,.25),
+    0 0 50px rgba(220, 30, 30, 0.8),   /* แดงเข้ม */
+    0 0 80px rgba(255, 200, 0, 0.6),   /* ทองฟุ้งๆ */
+    0 0 120px rgba(220, 30, 30, 0.4),  /* แดงจางๆ */
+    0 0 160px rgba(255, 200, 0, 0.2);  /* ทองจางๆ */
 }
 
 .theme-light .about-photo .avatar-glow:hover::after,
 .theme-light .about-photo .avatar-glow:focus-visible::after {
   filter: 
-    drop-shadow(0 0 35px rgba(255,255,255,1))
-    drop-shadow(0 0 70px rgba(255,255,255,1))
-    drop-shadow(0 0 105px rgba(255,255,255,.9))
-    drop-shadow(0 0 140px rgba(255,255,255,.7))
-    drop-shadow(0 4px 20px rgba(255,255,255,.8))
+    drop-shadow(0 0 35px rgba(220, 30, 30, 0.9))
+    drop-shadow(0 0 70px rgba(255, 200, 0, 0.8))
+    drop-shadow(0 0 105px rgba(220, 30, 30, 0.6))
+    drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3))
     brightness(1.1)
     contrast(1.1);
 }
 
-/* แก้ไขส่วนท้ายสุดของไฟล์ที่มีการกำหนดสี Avatar Flip Card อีกรอบ */
+/* แก้ไขส่วนท้ายสุด - รูปโลโก้ */
 .theme-light .about-photo .avatar-glow::after{
-  filter: drop-shadow(0 4px 16px rgba(255,255,255,.6));
-  background-image: url('assets/logo-ku.png'); /* อย่าลืมเปลี่ยนชื่อรูปตรงนี้เป็นโลโก้วิทยาลัยเทคนิคนนทบุรีนะครับ */
+  filter: drop-shadow(0 4px 16px rgba(220, 30, 30, 0.4)); /* เงาแดงจางๆ ตอนยังไม่หมุน */
+  background-image: url('assets/logo-ku.png'); 
 }
 
 .theme-light .about-photo .avatar-glow:hover::after{
-  filter: drop-shadow(0 6px 20px rgba(255,255,255,.75));
+  filter: drop-shadow(0 6px 20px rgba(255, 200, 0, 0.6)); /* เงาทองตอนหมุน */
 }
-
 /* About text */
 .about-desc{
   line-height: 1.9;
