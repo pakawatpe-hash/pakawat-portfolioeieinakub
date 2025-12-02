@@ -116,15 +116,11 @@ if (isFinePointer) {
   })();
 })();
 
-/* ===== Intro (Fixed: Auto-close if loading takes too long) ===== */
+/* ===== Intro ===== */
 (function(){
   var intro = document.getElementById('intro');
   if(!intro) return;
-  
-  // ล็อกไม่ให้เลื่อนหน้าจอ
   document.body.classList.add('intro-lock');
-  
-  // Animation พิมพ์ตัวหนังสือ (เหมือนเดิม)
   var el = intro.querySelector('.intro-title .line-2');
   if(el){
     var full = (el.textContent||'').trim(); el.textContent = '';
@@ -132,26 +128,11 @@ if (isFinePointer) {
     function step(){ el.textContent = full.slice(0, ++i); if(i < full.length) setTimeout(step, 70); }
     setTimeout(step, 260);
   }
-
-  // ฟังก์ชันปิดหน้า Intro
   function closeIntro(){
-    if(intro.classList.contains('hide')) return; // ถ้าปิดไปแล้ว ไม่ต้องทำซ้ำ
-    
-    intro.classList.add('hide'); // สั่งเฟดหาย
-    setTimeout(function(){ 
-      intro.remove(); // ลบ Element ทิ้ง
-      document.body.classList.remove('intro-lock'); // ปลดล็อกหน้าจอ
-      window.scrollTo({top:0,behavior:'auto'}); // เลื่อนไปบนสุด
-    }, 650);
+    intro.classList.add('hide');
+    setTimeout(function(){ intro.remove(); document.body.classList.remove('intro-lock'); window.scrollTo({top:0,behavior:'auto'}); }, 650);
   }
-
-  // 1. ถ้าเว็บโหลดเสร็จตามปกติ ให้รอ 2 วินาทีแล้วค่อยปิด (เพื่อให้เห็น Animation สวยๆ)
-  window.addEventListener('load', function(){ 
-    setTimeout(closeIntro, 2000); 
-  }, {once:true});
-
-  // 2. [ไม้ตาย] ถ้าผ่านไป 3.5 วินาที แล้วยังไม่ปิด (เช่น รูปโหลดไม่เสร็จ) ให้บังคับปิดทันที!
-  setTimeout(closeIntro, 3500);
+  window.addEventListener('load', function(){ setTimeout(closeIntro, 2400); }, {once:true});
 })();
 
 /* ===== Stats counter ===== */
@@ -491,29 +472,9 @@ if (isFinePointer) {
     }, {passive:true});
   }
 })();
-
-/* ===== Projects Detail System (Updated with ClassCheck & Portfolio) ===== */
+/* ===== Projects Detail System ===== */
 (function(){
   const projectData = {
-    // 1. ClassCheck (New)
-    'attendance-sys': {
-      title: 'ClassCheck',
-      description: 'เว็บแอปฯ เช็คชื่อนักเรียนออนไลน์ด้วยระบบ GPS Geofencing และการยืนยันตัวตนด้วยใบหน้า เชื่อมต่อ Real-time Database',
-      features: [
-        '📍 GPS Geofencing: จำกัดพื้นที่เช็คชื่อเฉพาะในวิทยาลัย',
-        '📸 Photo Verification: ถ่ายรูปยืนยันตัวตนพร้อมพิกัด',
-        '💬 LINE Notify: แจ้งเตือนสถานะ (มา/สาย/ลา) เข้ากลุ่มไลน์ทันที',
-        '📊 Teacher Dashboard: อาจารย์ดูยอดและจัดการข้อมูลได้',
-        '☁️ Auto-Sync: บันทึกข้อมูลลง Google Sheets อัตโนมัติ'
-      ],
-      tech: ['React', 'TypeScript', 'Firebase', 'Google Apps Script', 'LINE API'],
-      images: [
-        'assets/projects/attend-1.png', 
-        'assets/projects/attend-2.png',
-        'assets/projects/attend-3.png',
-        'assets/projects/attend-4.png'
-      ]
-    },
     'roblox-game': {
       title: 'Roblox Game - Patch Quest',
       description: 'เกมแนวไขปริศนาที่เกี่ยวข้องกับระบบคอมพิวเตอร์ พัฒนาด้วย Roblox Studio',
@@ -567,27 +528,26 @@ if (isFinePointer) {
         'assets/projects/pharma-3.jpg',
         'assets/projects/pharma-4.jpg'
       ]
-    },
-    // 5. My Portfolio (New)
-    'portfolio-site': {
-      title: 'Interactive Portfolio',
-      description: 'เว็บพอร์ตโฟลิโอส่วนตัว พัฒนาด้วย HTML, CSS, JS (No Framework) เน้น Performance และ Animation ระดับสูง',
-      features: [
-        '✨ Advanced CSS Animations (Keyframes)',
-        '🌓 Dark/Light Mode (Red-Gold Theme)',
-        '📱 Responsive & Mobile First',
-        '⚡ Performance Score 100/100',
-        '🧊 Glassmorphism Design'
-      ],
-      tech: ['HTML5', 'CSS3', 'Vanilla JS', 'Firebase'],
-      images: [
-        'assets/projects/portfolio-1.jpg', 
-        'assets/projects/portfolio-2.jpg', 
-        'assets/projects/portfolio-3.jpg', 
-        'assets/projects/portfolio-4.jpg' 
-      ]
     }
   };
+  'attendance-sys': {
+      title: 'ClassCheck',
+      description: 'เว็บแอปฯ เช็คชื่อนักเรียนออนไลน์ด้วยระบบ GPS Geofencing และการยืนยันตัวตนด้วยใบหน้า เชื่อมต่อ Real-time Database',
+      features: [
+        '📍 GPS Geofencing: จำกัดพื้นที่เช็คชื่อเฉพาะในวิทยาลัย',
+        '📸 Photo Verification: ถ่ายรูปยืนยันตัวตนพร้อมพิกัด',
+        '💬 LINE Notify: แจ้งเตือนสถานะ (มา/สาย/ลา) เข้ากลุ่มไลน์ทันที',
+        '📊 Teacher Dashboard: อาจารย์ดูยอดและจัดการข้อมูลได้',
+        '☁️ Auto-Sync: บันทึกข้อมูลลง Google Sheets อัตโนมัติ'
+      ],
+      tech: ['React', 'TypeScript', 'Firebase', 'Google Apps Script', 'LINE API'],
+      images: [
+        'assets/projects/attend-1.png', 
+        'assets/projects/attend-2.png',
+        'assets/projects/attend-3.png',
+        'assets/projects/attend-4.png'
+      ]
+    }
 
   // Modal Elements
   const projectModal = document.getElementById('projectModal');
@@ -680,7 +640,6 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })();
-
 /* ===== About Me Modal (Fixed) ===== */
 (function(){
   var avatarGlow = document.querySelector('.about-photo .avatar-glow');
@@ -770,7 +729,6 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })(); 
-
 /* ===== Animate cert-card and stack-chip on tab switch ===== */
 (function(){
   var tabButtons = document.querySelectorAll('.tab[data-tab]');
@@ -803,21 +761,5 @@ window.openProjectGallery = function(projectId) {
         }, 50);
       }
     });
-    /* ===== Project Slider Controls ===== */
-(function(){
-  const slider = document.getElementById('projectSlider');
-  const btnPrev = document.getElementById('btnPrev');
-  const btnNext = document.getElementById('btnNext');
-
-  if(!slider || !btnPrev || !btnNext) return;
-
-  // กดปุ่มขวา เลื่อนไป 320px
-  btnNext.addEventListener('click', () => {
-    slider.scrollLeft += 320;
-  });
-
-  // กดปุ่มซ้าย เลื่อนกลับ 320px
-  btnPrev.addEventListener('click', () => {
-    slider.scrollLeft -= 320;
   });
 })();
