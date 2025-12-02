@@ -1837,34 +1837,28 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .eyebrow {
   color: #0f172a !important;
 }
-/* ================= PROJECT CARDS STAGGER ANIMATION ================= */
+/* ================= PROJECT CARDS STAGGER ANIMATION (FIXED) ================= */
+
+/* 1. บังคับซ่อนก่อนเริ่มอนิเมชั่น (แก้ปัญหาการกระพริบ) */
 .cards .card {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 0 !important;
+  visibility: hidden;
+  transform: translateY(60px); /* ดันลงให้ลึกขึ้น เพื่อให้ลอยขึ้นมาชัดๆ */
+  will-change: transform, opacity;
 }
 
-
-.cards .card:nth-child(1).in {
-  animation: slideUp 0.6s ease forwards;
-  animation-delay: 0s;
+/* 2. เมื่อมีคลาส .in ให้เริ่มเล่นอนิเมชั่น */
+.cards .card.in {
+  visibility: visible;
+  /* ใช้ cubic-bezier เพื่อให้จังหวะเบรคนุ่มนวล */
+  animation: cardReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-
-.cards .card:nth-child(2).in {
-  animation: slideUp 0.6s ease forwards;
-  animation-delay: 0.2s;
-}
-
-
-.cards .card:nth-child(3).in {
-  animation: slideUp 0.6s ease forwards;
-  animation-delay: 0.4s;
-}
-
-@keyframes slideUp {
+/* 3. สร้าง Keyframes ใหม่เฉพาะ Project Cards */
+@keyframes cardReveal {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(60px);
   }
   to {
     opacity: 1;
@@ -1872,7 +1866,14 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
 }
 
+/* 4. ตั้งเวลา Delay ให้มาทีละอัน (Stagger) */
+.cards .card:nth-child(1).in { animation-delay: 0.1s; } /* รอแป๊บนึงกันกระตุก */
+.cards .card:nth-child(2).in { animation-delay: 0.3s; }
+.cards .card:nth-child(3).in { animation-delay: 0.5s; }
+/* เผื่อมีเพิ่ม */
+.cards .card:nth-child(4).in { animation-delay: 0.7s; } 
 
+/* ================= CERTIFICATES (คงเดิมตามที่แจ้งว่าปกติ) ================= */
 .cert-card {
   opacity: 0;
   transform: translateY(30px);
@@ -1889,7 +1890,19 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .cert-grid .cert-card:nth-child(5).in { animation-delay: 0.4s; }
 .cert-grid .cert-card:nth-child(6).in { animation-delay: 0.5s; }
 
+/* Keyframes เดิมสำหรับ Cert และ Stack */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* ================= TECH STACK (คงเดิมตามที่แจ้งว่าปกติ) ================= */
 .stack-chip {
   opacity: 0;
   transform: translateY(20px);
