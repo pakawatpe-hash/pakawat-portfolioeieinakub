@@ -1837,23 +1837,28 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .theme-light .eyebrow {
   color: #0f172a !important;
 }
-/* ================= PROJECT CARDS STAGGER ANIMATION (FIXED FINAL) ================= */
+/* ================= PROJECT CARDS STAGGER ANIMATION (FINAL FIX) ================= */
 
-/* 1. กำหนดค่าเริ่มต้น (เอา !important ออกเพื่อให้ Animation ทำงานได้) */
+/* 1. กำหนดค่าเริ่มต้น */
 .cards .card {
-  opacity: 0; 
-  visibility: hidden; /* ซ่อนไว้ก่อนกันกระพริบ */
-  transform: translateY(60px);
-  will-change: transform, opacity;
+  opacity: 0; /* ซ่อนไว้ก่อน */
+  transform: translateY(60px); /* ดันลงไปข้างล่าง */
+  transition: none; /* ปิด transition ชั่วคราวเพื่อไม่ให้ตีกับ animation */
 }
 
-/* 2. เมื่อมีคลาส .in ให้แสดงผลและเล่นอนิเมชั่น */
+/* 2. เมื่อมีคลาส .in ให้เล่น Animation */
 .cards .card.in {
-  visibility: visible; /* เปิดให้มองเห็น */
-  animation: cardReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  /* เติมคำว่า both ท้ายสุด: สำคัญมาก! ช่วยให้ช่วงรอ Delay มันจะคงสถานะ "ซ่อน" เอาไว้ */
+  animation: cardReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-/* 3. Keyframes: สั่งให้ลอยขึ้นและ Opacity เป็น 1 */
+/* 3. คืนค่า Transition สำหรับ Hover เฉพาะตอนที่อนิเมชั่นจบแล้ว (.in) */
+.cards .card.in:hover {
+  transform: translateY(-6px); /* ให้เด้งขึ้นเล็กน้อยตอนชี้ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* 4. Keyframes */
 @keyframes cardReveal {
   0% {
     opacity: 0;
@@ -1865,7 +1870,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
   }
 }
 
-/* 4. ตั้งเวลา Delay ให้มาทีละใบ */
+/* 5. ตั้งเวลา Delay (Stagger) */
 .cards .card:nth-child(1).in { animation-delay: 0.1s; }
 .cards .card:nth-child(2).in { animation-delay: 0.3s; }
 .cards .card:nth-child(3).in { animation-delay: 0.5s; }
