@@ -116,11 +116,15 @@ if (isFinePointer) {
   })();
 })();
 
-/* ===== Intro (with Timeout Fix) ===== */
+/* ===== Intro (Fixed: Auto-close if loading takes too long) ===== */
 (function(){
   var intro = document.getElementById('intro');
   if(!intro) return;
+  
+  // ล็อกไม่ให้เลื่อนหน้าจอ
   document.body.classList.add('intro-lock');
+  
+  // Animation พิมพ์ตัวหนังสือ (เหมือนเดิม)
   var el = intro.querySelector('.intro-title .line-2');
   if(el){
     var full = (el.textContent||'').trim(); el.textContent = '';
@@ -128,17 +132,25 @@ if (isFinePointer) {
     function step(){ el.textContent = full.slice(0, ++i); if(i < full.length) setTimeout(step, 70); }
     setTimeout(step, 260);
   }
+
+  // ฟังก์ชันปิดหน้า Intro
   function closeIntro(){
-    if(intro.classList.contains('hide')) return;
-    intro.classList.add('hide');
+    if(intro.classList.contains('hide')) return; // ถ้าปิดไปแล้ว ไม่ต้องทำซ้ำ
+    
+    intro.classList.add('hide'); // สั่งเฟดหาย
     setTimeout(function(){ 
-        intro.remove(); 
-        document.body.classList.remove('intro-lock'); 
-        window.scrollTo({top:0,behavior:'auto'}); 
+      intro.remove(); // ลบ Element ทิ้ง
+      document.body.classList.remove('intro-lock'); // ปลดล็อกหน้าจอ
+      window.scrollTo({top:0,behavior:'auto'}); // เลื่อนไปบนสุด
     }, 650);
   }
-  // ปิดเมื่อโหลดเสร็จ หรือผ่านไป 3.5 วิ (กันค้าง)
-  window.addEventListener('load', function(){ setTimeout(closeIntro, 2000); }, {once:true});
+
+  // 1. ถ้าเว็บโหลดเสร็จตามปกติ ให้รอ 2 วินาทีแล้วค่อยปิด (เพื่อให้เห็น Animation สวยๆ)
+  window.addEventListener('load', function(){ 
+    setTimeout(closeIntro, 2000); 
+  }, {once:true});
+
+  // 2. [ไม้ตาย] ถ้าผ่านไป 3.5 วินาที แล้วยังไม่ปิด (เช่น รูปโหลดไม่เสร็จ) ให้บังคับปิดทันที!
   setTimeout(closeIntro, 3500);
 })();
 
