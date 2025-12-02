@@ -1936,40 +1936,4 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .stack-grid .stack-chip:nth-child(18).in { animation-delay: 0.85s; }
 .stack-grid .stack-chip:nth-child(19).in { animation-delay: 0.9s; }
 .stack-grid .stack-chip:nth-child(20).in { animation-delay: 0.95s; }
-/* ================= SLIDER STYLE (FIXED) ================= */
-.cards.slider-mode {
-  display: flex !important;
-  grid-template-columns: none !important;
-  overflow-x: auto !important;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding-bottom: 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* for smooth mobile scroll */
-  
-  /* Hide Scrollbar */
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 
-.cards.slider-mode::-webkit-scrollbar {
-  display: none;
-}
-
-.cards.slider-mode .card {
-  min-width: 300px !important;
-  max-width: 300px !important;
-  width: 300px !important;
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  margin: 0; /* Reset margin */
-}
-
-/* Responsive Mobile */
-@media (max-width: 640px) {
-  .cards.slider-mode .card {
-    min-width: 85vw !important;
-    max-width: 85vw !important;
-    width: 85vw !important;
-  }
-}
