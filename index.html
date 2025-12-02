@@ -305,15 +305,22 @@
         <button class="tab magnetic" data-tab="stack" role="tab" aria-selected="false" aria-controls="panel-stack" id="tab-stack">Tech Stack</button>
       </div>
 
-      <div class="tab-panels">
-        <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
-          <div class="cards">
-            <article class="card glass reveal tilt glare">
-              <div class="thumb gradient-3" style="position:relative; overflow:hidden;">
-                <img src="assets/projects/attend-1.png" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'">
-                <div style="position:absolute; inset:0; display:grid; place-items:center; pointer-events:none;">
-                   <i class='bx bx-map-pin' style="font-size:64px; color:white; text-shadow:0 4px 12px rgba(0,0,0,0.3);"></i>
-                </div>
+     <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
+          
+          <div class="slider-controls" style="display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 12px; padding-right: 4px;">
+            <button id="btnPrev" class="btn tiny glass" aria-label="Previous Project" style="width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%;">
+              <i class='bx bx-chevron-left' style="font-size: 24px;"></i>
+            </button>
+            <button id="btnNext" class="btn tiny glass" aria-label="Next Project" style="width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%;">
+              <i class='bx bx-chevron-right' style="font-size: 24px;"></i>
+            </button>
+          </div>
+
+          <div class="cards slider-mode" id="projectSlider" style="display: flex; overflow-x: auto; gap: 16px; scroll-behavior: smooth; padding-bottom: 20px; scroll-snap-type: x mandatory; -ms-overflow-style: none; scrollbar-width: none;">
+            
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-3" style="position:relative; overflow:hidden; display:grid; place-items:center;">
+                <i class='bx bx-map-pin' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
               </div>
               <div class="card-head"><i class='bx bx-id-card'></i><h3>ClassCheck</h3></div>
               <p>ระบบเช็คชื่อนักเรียนยุคใหม่ ด้วย GPS + รูปถ่าย เชื่อมต่อ LINE Notify</p>
@@ -324,9 +331,11 @@
               <span class="glare-spot"></span>
             </article>
 
-            <article class="card glass reveal tilt glare">
-              <div class="thumb gradient-1 parallax" data-depth="0.15"></div>
-              <div class="card-head"><i class='bx bx-joystick'></i><h3>Roblox Game</h3></div>
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-1" style="display:grid; place-items:center;">
+                <i class='bx bx-joystick' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-game'></i><h3>Roblox Game</h3></div>
               <p>เกมแนวไขปริศนา ที่เกี่ยวกับระบบคอมพิวเตอร์</p>
               <div class="card-actions">
                 <button class="btn tiny magnetic" onclick="openProjectGallery('roblox-game')">ดูรูปภาพ</button>
@@ -335,10 +344,12 @@
               <span class="glare-spot"></span>
             </article>
 
-            <article class="card glass reveal tilt glare">
-              <div class="thumb gradient-2 parallax" data-depth="0.12"></div>
-              <div class="card-head"><i class='bx bxl-android'></i><h3>Stock App</h3></div>
-              <p>แอประบบ Android สำหรับการใช้นับสต็อกสินค้า พร้อมระบบ Barcode Scanner</p>
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-2" style="display:grid; place-items:center;">
+                <i class='bx bxl-android' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-package'></i><h3>Stock App</h3></div>
+              <p>แอประบบ Android สำหรับนับสต็อกสินค้า พร้อม Barcode Scanner</p>
               <div class="card-actions">
                 <button class="btn tiny magnetic" onclick="openProjectGallery('stock-app')">ดูรูปภาพ</button>
                 <button class="btn tiny ghost magnetic" onclick="openProjectDetail('stock-app')">รายละเอียด</button>
@@ -346,9 +357,11 @@
               <span class="glare-spot"></span>
             </article>
 
-            <article class="card glass reveal tilt glare">
-              <div class="thumb gradient-3 parallax" data-depth="0.1"></div>
-              <div class="card-head"><i class='bx bx-store'></i><h3>Dr.Pharma Shop</h3></div>
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-3" style="display:grid; place-items:center;">
+                <i class='bx bx-store' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-capsule'></i><h3>Dr.Pharma Shop</h3></div>
               <p>เว็บไซต์ E-Commerce สำหรับขายสินค้าเภสัชภัณฑ์ออนไลน์</p>
               <div class="card-actions">
                 <button class="btn tiny magnetic" onclick="openProjectGallery('drpharma')">ดูรูปภาพ</button>
@@ -357,17 +370,11 @@
               <span class="glare-spot"></span>
             </article>
 
-            <article class="card glass reveal tilt glare">
-              <div class="thumb" style="background:#0f172a; position:relative; overflow:hidden;">
-                 <img src="assets/projects/portfolio-1.jpg" style="width:100%; height:100%; object-fit:cover; opacity:0.8; transition:transform 0.5s ease;" class="hover-zoom" onerror="this.style.display='none'">
-                 <div style="position:absolute; inset:0; display:grid; place-items:center; pointer-events:none;">
-                    <i class='bx bx-layout' style="font-size:48px; color:white; text-shadow:0 4px 12px rgba(0,0,0,0.5);"></i>
-                 </div>
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-1" style="display:grid; place-items:center;">
+                <i class='bx bx-code-alt' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
               </div>
-              <div class="card-head">
-                <i class='bx bx-code-alt'></i>
-                <h3>My Portfolio</h3>
-              </div>
+              <div class="card-head"><i class='bx bx-layout'></i><h3>My Portfolio</h3></div>
               <p>เว็บไซต์นี้เขียนเอง 100% ด้วย HTML/CSS/JS เพื่อโชว์ทักษะ Frontend</p>
               <div class="card-actions">
                 <button class="btn tiny magnetic" onclick="openProjectGallery('portfolio-site')">ดูรูปภาพ</button>
@@ -377,6 +384,26 @@
             </article>
 
           </div>
+
+          <div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-modal></div>
+            <div class="clb-inner glass" style="max-width: 800px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-modal><i class='bx bx-x'></i></button>
+              <div id="modalContent" style="padding: 24px; max-height: 68vh; overflow-y: auto;"></div>
+            </div>
+          </div>
+
+          <div id="galleryModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-gallery></div>
+            <div class="clb-inner glass" style="max-width: 680px; padding: 16px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-gallery><i class='bx bx-x'></i></button>
+              <div id="galleryContent" style="padding: 24px;">
+                <h3 id="galleryTitle" style="margin: 0 0 24px; text-align: center; color: var(--ink);"></h3>
+                <div id="galleryGrid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
           <div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
             <div class="clb-backdrop" data-close-modal></div>
