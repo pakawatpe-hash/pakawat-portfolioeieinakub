@@ -1936,3 +1936,38 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 .stack-grid .stack-chip:nth-child(18).in { animation-delay: 0.85s; }
 .stack-grid .stack-chip:nth-child(19).in { animation-delay: 0.9s; }
 .stack-grid .stack-chip:nth-child(20).in { animation-delay: 0.95s; }
+/* ================= SLIDER STYLE (Horizontal Scroll) ================= */
+.cards.slider-mode {
+  display: flex !important;          /* บังคับเรียงแนวนอน */
+  grid-template-columns: none !important;
+  overflow-x: auto;                  /* ให้เลื่อนแนวนอนได้ */
+  scroll-behavior: smooth;           /* เลื่อนนุ่มๆ */
+  gap: 20px;
+  padding-bottom: 20px;              /* เผื่อที่ให้เงา */
+  scroll-snap-type: x mandatory;     /* เวลาเลื่อนให้ดูดติดการ์ด */
+  
+  /* ซ่อน Scrollbar ให้สวยงาม */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* ซ่อน Scrollbar (Chrome/Safari) */
+.cards.slider-mode::-webkit-scrollbar {
+  display: none;
+}
+
+/* กำหนดขนาดการ์ดให้เท่ากัน */
+.cards.slider-mode .card {
+  min-width: 300px;        /* ความกว้างการ์ด */
+  max-width: 300px;
+  scroll-snap-align: start; /* เวลาเลื่อนให้เริ่มที่ขอบซ้าย */
+  flex-shrink: 0;           /* ห้ามหด */
+}
+
+/* Responsive มือถือ */
+@media (max-width: 640px) {
+  .cards.slider-mode .card {
+    min-width: 85vw; /* มือถือให้เต็มจอหน่อย */
+    max-width: 85vw;
+  }
+}
