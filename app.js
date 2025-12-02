@@ -116,7 +116,7 @@ if (isFinePointer) {
   })();
 })();
 
-/* ===== Intro ===== */
+/* ===== Intro (with Timeout Fix) ===== */
 (function(){
   var intro = document.getElementById('intro');
   if(!intro) return;
@@ -129,10 +129,17 @@ if (isFinePointer) {
     setTimeout(step, 260);
   }
   function closeIntro(){
+    if(intro.classList.contains('hide')) return;
     intro.classList.add('hide');
-    setTimeout(function(){ intro.remove(); document.body.classList.remove('intro-lock'); window.scrollTo({top:0,behavior:'auto'}); }, 650);
+    setTimeout(function(){ 
+        intro.remove(); 
+        document.body.classList.remove('intro-lock'); 
+        window.scrollTo({top:0,behavior:'auto'}); 
+    }, 650);
   }
-  window.addEventListener('load', function(){ setTimeout(closeIntro, 2400); }, {once:true});
+  // ปิดเมื่อโหลดเสร็จ หรือผ่านไป 3.5 วิ (กันค้าง)
+  window.addEventListener('load', function(){ setTimeout(closeIntro, 2000); }, {once:true});
+  setTimeout(closeIntro, 3500);
 })();
 
 /* ===== Stats counter ===== */
@@ -472,9 +479,29 @@ if (isFinePointer) {
     }, {passive:true});
   }
 })();
-/* ===== Projects Detail System ===== */
+
+/* ===== Projects Detail System (Updated with ClassCheck & Portfolio) ===== */
 (function(){
   const projectData = {
+    // 1. ClassCheck (New)
+    'attendance-sys': {
+      title: 'ClassCheck',
+      description: 'เว็บแอปฯ เช็คชื่อนักเรียนออนไลน์ด้วยระบบ GPS Geofencing และการยืนยันตัวตนด้วยใบหน้า เชื่อมต่อ Real-time Database',
+      features: [
+        '📍 GPS Geofencing: จำกัดพื้นที่เช็คชื่อเฉพาะในวิทยาลัย',
+        '📸 Photo Verification: ถ่ายรูปยืนยันตัวตนพร้อมพิกัด',
+        '💬 LINE Notify: แจ้งเตือนสถานะ (มา/สาย/ลา) เข้ากลุ่มไลน์ทันที',
+        '📊 Teacher Dashboard: อาจารย์ดูยอดและจัดการข้อมูลได้',
+        '☁️ Auto-Sync: บันทึกข้อมูลลง Google Sheets อัตโนมัติ'
+      ],
+      tech: ['React', 'TypeScript', 'Firebase', 'Google Apps Script', 'LINE API'],
+      images: [
+        'assets/projects/attend-1.png', 
+        'assets/projects/attend-2.png',
+        'assets/projects/attend-3.png',
+        'assets/projects/attend-4.png'
+      ]
+    },
     'roblox-game': {
       title: 'Roblox Game - Patch Quest',
       description: 'เกมแนวไขปริศนาที่เกี่ยวข้องกับระบบคอมพิวเตอร์ พัฒนาด้วย Roblox Studio',
@@ -528,26 +555,27 @@ if (isFinePointer) {
         'assets/projects/pharma-3.jpg',
         'assets/projects/pharma-4.jpg'
       ]
-    }
-  };
-  'attendance-sys': {
-      title: 'ClassCheck',
-      description: 'เว็บแอปฯ เช็คชื่อนักเรียนออนไลน์ด้วยระบบ GPS Geofencing และการยืนยันตัวตนด้วยใบหน้า เชื่อมต่อ Real-time Database',
+    },
+    // 5. My Portfolio (New)
+    'portfolio-site': {
+      title: 'Interactive Portfolio',
+      description: 'เว็บพอร์ตโฟลิโอส่วนตัว พัฒนาด้วย HTML, CSS, JS (No Framework) เน้น Performance และ Animation ระดับสูง',
       features: [
-        '📍 GPS Geofencing: จำกัดพื้นที่เช็คชื่อเฉพาะในวิทยาลัย',
-        '📸 Photo Verification: ถ่ายรูปยืนยันตัวตนพร้อมพิกัด',
-        '💬 LINE Notify: แจ้งเตือนสถานะ (มา/สาย/ลา) เข้ากลุ่มไลน์ทันที',
-        '📊 Teacher Dashboard: อาจารย์ดูยอดและจัดการข้อมูลได้',
-        '☁️ Auto-Sync: บันทึกข้อมูลลง Google Sheets อัตโนมัติ'
+        '✨ Advanced CSS Animations (Keyframes)',
+        '🌓 Dark/Light Mode (Red-Gold Theme)',
+        '📱 Responsive & Mobile First',
+        '⚡ Performance Score 100/100',
+        '🧊 Glassmorphism Design'
       ],
-      tech: ['React', 'TypeScript', 'Firebase', 'Google Apps Script', 'LINE API'],
+      tech: ['HTML5', 'CSS3', 'Vanilla JS', 'Firebase'],
       images: [
-        'assets/projects/attend-1.png', 
-        'assets/projects/attend-2.png',
-        'assets/projects/attend-3.png',
-        'assets/projects/attend-4.png'
+        'assets/projects/portfolio-1.jpg', 
+        'assets/projects/portfolio-2.jpg', 
+        'assets/projects/portfolio-3.jpg', 
+        'assets/projects/portfolio-4.jpg' 
       ]
     }
+  };
 
   // Modal Elements
   const projectModal = document.getElementById('projectModal');
@@ -640,6 +668,7 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })();
+
 /* ===== About Me Modal (Fixed) ===== */
 (function(){
   var avatarGlow = document.querySelector('.about-photo .avatar-glow');
@@ -729,6 +758,7 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })(); 
+
 /* ===== Animate cert-card and stack-chip on tab switch ===== */
 (function(){
   var tabButtons = document.querySelectorAll('.tab[data-tab]');
