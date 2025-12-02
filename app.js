@@ -530,6 +530,24 @@ if (isFinePointer) {
       ]
     }
   };
+  'attendance-sys': {
+      title: 'ClassCheck',
+      description: 'เว็บแอปฯ เช็คชื่อนักเรียนออนไลน์ด้วยระบบ GPS Geofencing และการยืนยันตัวตนด้วยใบหน้า เชื่อมต่อ Real-time Database',
+      features: [
+        '📍 GPS Geofencing: จำกัดพื้นที่เช็คชื่อเฉพาะในวิทยาลัย',
+        '📸 Photo Verification: ถ่ายรูปยืนยันตัวตนพร้อมพิกัด',
+        '💬 LINE Notify: แจ้งเตือนสถานะ (มา/สาย/ลา) เข้ากลุ่มไลน์ทันที',
+        '📊 Teacher Dashboard: อาจารย์ดูยอดและจัดการข้อมูลได้',
+        '☁️ Auto-Sync: บันทึกข้อมูลลง Google Sheets อัตโนมัติ'
+      ],
+      tech: ['React', 'TypeScript', 'Firebase', 'Google Apps Script', 'LINE API'],
+      images: [
+        'assets/projects/attend-1.png', 
+        'assets/projects/attend-2.png',
+        'assets/projects/attend-3.png',
+        'assets/projects/attend-4.png'
+      ]
+    }
 
   // Modal Elements
   const projectModal = document.getElementById('projectModal');
