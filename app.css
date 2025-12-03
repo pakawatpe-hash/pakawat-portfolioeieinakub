@@ -1632,7 +1632,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 
 .theme-light .about-photo .avatar-glow::after{
   filter: drop-shadow(0 4px 16px rgba(0,128,109,.6));
-  background-image: url('assets/logo-ku.png');
+  background-image: url('assets/logo-non.png');
 }
 
 .theme-light .about-photo .avatar-glow:hover::after{
