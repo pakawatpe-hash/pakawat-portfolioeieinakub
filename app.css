@@ -689,7 +689,7 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
 /* แก้ไขส่วนท้ายสุด - รูปโลโก้ */
 .theme-light .about-photo .avatar-glow::after{
   filter: drop-shadow(0 4px 16px rgba(220, 30, 30, 0.4)); /* เงาแดงจางๆ ตอนยังไม่หมุน */
-  background-image: url('assets/logo-ku.png'); 
+  background-image: url('assets/logo-non.png'); 
 }
 
 .theme-light .about-photo .avatar-glow:hover::after{
