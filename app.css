@@ -1995,3 +1995,116 @@ pre{margin:0;padding:12px 14px 16px 14px;color:#c7d5ff;line-height:1.5;overflow:
     width: 85vw !important;
   }
 }
+/* ==================== NEW SLIDER BUTTON STYLES ==================== */
+
+/* คอนเทนเนอร์หลัก เพื่อให้ปุ่มอ้างอิงตำแหน่งได้ */
+.slider-container {
+  position: relative;
+  /* เพิ่ม padding ด้านข้าง เพื่อไม่ให้การ์ดบังปุ่ม */
+  padding: 0 50px; 
+  margin-top: 20px;
+}
+
+/* สไตล์ปุ่มกดเลื่อน */
+.slider-btn {
+  position: absolute;
+  top: 50%; /* ให้อยู่ตรงกลางแนวตั้ง */
+  transform: translateY(-50%); /* ดึงกลับขึ้นมา 50% เพื่อให้กลางเป๊ะ */
+  z-index: 10; /* ให้อยู่เหนือการ์ด */
+  
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(7, 11, 26, 0.6); /* พื้นหลังโปร่งแสง */
+  backdrop-filter: blur(8px); /* เบลอพื้นหลัง */
+  color: #cfe4ff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ตำแหน่งปุ่มซ้าย-ขวา */
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* Hover Effect */
+.slider-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(106, 165, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ปรับสไตล์ปุ่มใน Light Mode */
+.theme-light .slider-btn {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0,0,0,0.1);
+  color: #334155;
+}
+.theme-light .slider-btn:hover {
+  background: var(--primary); /* สีแดงของธีม */
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(211, 47, 47, 0.4);
+}
+
+/* ซ่อน Scrollbar ของสไลเดอร์ (เผื่อไว้) */
+.cards.slider-mode::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==================== MOBILE RESPONSIVE FIXES ==================== */
+
+@media (max-width: 640px) {
+  /* ปรับ padding ของ slider container ในมือถือ */
+  .slider-container {
+    padding: 0; /* มือถือพื้นที่น้อย เอา padding ออก */
+    margin-top: 10px;
+  }
+  
+  /* ปรับปุ่มให้เล็กลงและชิดขอบมากขึ้นในมือถือ */
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    background: rgba(7, 11, 26, 0.8); /* เข้มขึ้นนิดนึงให้อ่านง่าย */
+  }
+  .prev-btn { left: 5px; }
+  .next-btn { right: 5px; }
+  
+  /* ทำให้การ์ดในสไลเดอร์กว้างเกือบเต็มจอ */
+  .cards.slider-mode .card {
+    min-width: 88vw !important;
+    max-width: 88vw !important;
+  }
+}
+
+
+/* ==================== FIX COLLEGE LOGO ON MOBILE (LIGHT MODE) ==================== */
+
+/* โค้ดส่วนนี้จะทำงานเฉพาะบนอุปกรณ์ทัชสกรีน (มือถือ/แท็บเล็ต) */
+@media (pointer: coarse) {
+  
+  /* กฎเดิม: ปิดการหมุนบนมือถือ (เก็บไว้) */
+  .about-photo .avatar-glow:hover .avatar-img { opacity: 1; transform: none; }
+  .about-photo .avatar-glow:hover::after { opacity: 0; transform: rotateY(180deg); }
+
+  /* --- ส่วนที่เพิ่มใหม่: แก้บั๊กโลโก้หาย --- */
+  /* ถ้าเป็น Light Mode (.theme-light) บนมือถือ */
+  .theme-light .about-photo .avatar-glow .avatar-img {
+    opacity: 0 !important; /* ซ่อนรูปคน */
+  }
+  
+  .theme-light .about-photo .avatar-glow::after {
+    opacity: 1 !important; /* บังคับโชว์โลโก้ด้านหลัง */
+    transform: rotateY(0deg) scale(1) !important; /* หมุนโลโก้มาด้านหน้า */
+    /* เพิ่มเงาให้โลโก้ดูเด่นขึ้น */
+    filter: drop-shadow(0 4px 12px rgba(220, 30, 30, 0.4)) brightness(1.05) !important;
+    background-image: url('assets/logo-non.png') !important; /* ย้ำว่าใช้โลโก้นนท์ */
+  }
+}
