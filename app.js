@@ -116,7 +116,7 @@ if (isFinePointer) {
   })();
 })();
 
-/* ===== Intro (Fixed: Auto-Close) ===== */
+/* ===== Intro ===== */
 (function(){
   var intro = document.getElementById('intro');
   if(!intro) return;
@@ -129,19 +129,10 @@ if (isFinePointer) {
     setTimeout(step, 260);
   }
   function closeIntro(){
-    if(intro.classList.contains('hide')) return;
     intro.classList.add('hide');
-    setTimeout(function(){ 
-      intro.remove(); 
-      document.body.classList.remove('intro-lock'); 
-      window.scrollTo({top:0,behavior:'auto'}); 
-    }, 650);
+    setTimeout(function(){ intro.remove(); document.body.classList.remove('intro-lock'); window.scrollTo({top:0,behavior:'auto'}); }, 650);
   }
-  // 1. ถ้าโหลดเสร็จปกติ
-  window.addEventListener('load', function(){ setTimeout(closeIntro, 2000); }, {once:true});
-  
-  // 2. Safety: บังคับปิดถ้าผ่านไป 3.5 วิ (แก้บั๊กค้าง)
-  setTimeout(closeIntro, 3500);
+  window.addEventListener('load', function(){ setTimeout(closeIntro, 2400); }, {once:true});
 })();
 
 /* ===== Stats counter ===== */
@@ -481,30 +472,9 @@ if (isFinePointer) {
     }, {passive:true});
   }
 })();
-
-/* ===== Projects Detail System (UPDATED: 5 Projects & No Covers) ===== */
+/* ===== Projects Detail System ===== */
 (function(){
   const projectData = {
-    // 1. ClassCheck
-    'attendance-sys': {
-      title: 'ClassCheck',
-      description: 'เว็บแอปฯ เช็คชื่อนักเรียนออนไลน์ด้วยระบบ GPS Geofencing และการยืนยันตัวตนด้วยใบหน้า เชื่อมต่อ Real-time Database',
-      features: [
-        '📍 GPS Geofencing: จำกัดพื้นที่เช็คชื่อเฉพาะในวิทยาลัย',
-        '📸 Photo Verification: ถ่ายรูปยืนยันตัวตนพร้อมพิกัด',
-        '💬 LINE Notify: แจ้งเตือนสถานะ (มา/สาย/ลา) เข้ากลุ่มไลน์ทันที',
-        '📊 Teacher Dashboard: อาจารย์ดูยอดและจัดการข้อมูลได้',
-        '☁️ Auto-Sync: บันทึกข้อมูลลง Google Sheets อัตโนมัติ'
-      ],
-      tech: ['React', 'TypeScript', 'Firebase', 'Google Apps Script', 'LINE API'],
-      images: [
-        'assets/projects/attend-1.png', 
-        'assets/projects/attend-2.png', 
-        'assets/projects/attend-3.png', 
-        'assets/projects/attend-4.png'
-      ]
-    },
-    // 2. Roblox
     'roblox-game': {
       title: 'Roblox Game - Patch Quest',
       description: 'เกมแนวไขปริศนาที่เกี่ยวข้องกับระบบคอมพิวเตอร์ พัฒนาด้วย Roblox Studio',
@@ -523,7 +493,6 @@ if (isFinePointer) {
         'assets/projects/roblox-4.jpg'
       ]
     },
-    // 3. Stock App
     'stock-app': {
       title: 'Stock Management App',
       description: 'แอปพลิเคชัน Android สำหรับจัดการสต็อกสินค้า พร้อมระบบสแกน Barcode',
@@ -542,7 +511,6 @@ if (isFinePointer) {
         'assets/projects/stock-4.jpg'
       ]
     },
-    // 4. Dr.Pharma
     'drpharma': {
       title: 'Dr.Pharma',
       description: 'เว็บไซต์ E-Commerce สำหรับขายสินค้าบริษัท Dr.Pharma',
@@ -560,27 +528,26 @@ if (isFinePointer) {
         'assets/projects/pharma-3.jpg',
         'assets/projects/pharma-4.jpg'
       ]
-    },
-    // 5. Portfolio
-    'portfolio-site': {
-      title: 'Interactive Portfolio',
-      description: 'เว็บพอร์ตโฟลิโอส่วนตัว พัฒนาด้วย HTML, CSS, JS (No Framework) เน้น Performance และ Animation ระดับสูง',
-      features: [
-        '✨ Advanced CSS Animations (Keyframes)',
-        '🌓 Dark/Light Mode (Red-Gold Theme)',
-        '📱 Responsive & Mobile First',
-        '⚡ Performance Score 100/100',
-        '🧊 Glassmorphism Design'
-      ],
-      tech: ['HTML5', 'CSS3', 'Vanilla JS', 'Firebase'],
-      images: [
-        'assets/projects/portfolio-1.jpg', 
-        'assets/projects/portfolio-2.jpg', 
-        'assets/projects/portfolio-3.jpg', 
-        'assets/projects/portfolio-4.jpg' 
-      ]
     }
   };
+  'attendance-sys': {
+      title: 'ClassCheck',
+      description: 'เว็บแอปฯ เช็คชื่อนักเรียนออนไลน์ด้วยระบบ GPS Geofencing และการยืนยันตัวตนด้วยใบหน้า เชื่อมต่อ Real-time Database',
+      features: [
+        '📍 GPS Geofencing: จำกัดพื้นที่เช็คชื่อเฉพาะในวิทยาลัย',
+        '📸 Photo Verification: ถ่ายรูปยืนยันตัวตนพร้อมพิกัด',
+        '💬 LINE Notify: แจ้งเตือนสถานะ (มา/สาย/ลา) เข้ากลุ่มไลน์ทันที',
+        '📊 Teacher Dashboard: อาจารย์ดูยอดและจัดการข้อมูลได้',
+        '☁️ Auto-Sync: บันทึกข้อมูลลง Google Sheets อัตโนมัติ'
+      ],
+      tech: ['React', 'TypeScript', 'Firebase', 'Google Apps Script', 'LINE API'],
+      images: [
+        'assets/projects/attend-1.png', 
+        'assets/projects/attend-2.png',
+        'assets/projects/attend-3.png',
+        'assets/projects/attend-4.png'
+      ]
+    }
 
   // Modal Elements
   const projectModal = document.getElementById('projectModal');
@@ -762,7 +729,6 @@ window.openProjectGallery = function(projectId) {
     }
   });
 })(); 
-
 /* ===== Animate cert-card and stack-chip on tab switch ===== */
 (function(){
   var tabButtons = document.querySelectorAll('.tab[data-tab]');
@@ -796,23 +762,4 @@ window.openProjectGallery = function(projectId) {
       }
     });
   });
-})();
-
-/* ==================== SLIDER LOGIC (NEW) ==================== */
-(function(){
-  const slider = document.getElementById('projectSlider');
-  const btnPrev = document.getElementById('btnPrev');
-  const btnNext = document.getElementById('btnNext');
-
-  if(slider && btnPrev && btnNext){
-    // กดปุ่มขวา เลื่อน 320px (ขนาดการ์ด + gap)
-    btnNext.addEventListener('click', () => {
-      slider.scrollBy({ left: 320, behavior: 'smooth' });
-    });
-
-    // กดปุ่มซ้าย เลื่อนกลับ 320px
-    btnPrev.addEventListener('click', () => {
-      slider.scrollBy({ left: -320, behavior: 'smooth' });
-    });
-  }
 })();
