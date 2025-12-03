@@ -5,106 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pakawat — Portfolio</title>
 
-  <meta name="description" content="Pakawat Portfolio — Frontend/Mobile Dev • Flutter • React • ClassCheck.">
+  <meta name="description" content="Pakawat Portfolio — Frontend/Mobile Dev • Flutter • React • ClassCheck. Projects, Certificates & Contact.">
   <meta name="theme-color" content="#070b1a">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="app.css?v=35" />
-
-  <style>
-    /* Slider Container */
-    .slider-container {
-      position: relative;
-      padding: 0 50px; /* เว้นที่ให้ปุ่มด้านข้าง */
-      margin-top: 20px;
-    }
-
-    /* รางสไลด์แนวนอน */
-    .cards.slider-mode {
-      display: flex !important;
-      grid-template-columns: none !important;
-      overflow-x: auto !important;
-      scroll-behavior: smooth;
-      gap: 20px;
-      padding-bottom: 20px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      -ms-overflow-style: none;  /* IE/Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-    .cards.slider-mode::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-    
-    .cards.slider-mode .card {
-      min-width: 300px !important;
-      max-width: 300px !important;
-      width: 300px !important;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      margin: 0;
-    }
-
-    /* ปุ่มกดเลื่อน (ด้านข้าง) */
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: rgba(7, 11, 26, 0.6);
-      backdrop-filter: blur(8px);
-      color: #cfe4ff;
-      font-size: 24px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .slider-btn:hover {
-      background: var(--primary);
-      color: #fff;
-      border-color: transparent;
-      transform: translateY(-50%) scale(1.1);
-    }
-    .prev-btn { left: 0; }
-    .next-btn { right: 0; }
-
-    /* ปรับ Light Mode ให้ปุ่มดูดี */
-    .theme-light .slider-btn {
-      background: rgba(255,255,255,0.8);
-      color: #334155;
-      border-color: rgba(0,0,0,0.1);
-    }
-    .theme-light .slider-btn:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 640px) {
-      .slider-container { padding: 0; margin-top: 10px; }
-      .slider-btn { width: 36px; height: 36px; font-size: 20px; background: rgba(7,11,26,0.8); }
-      .prev-btn { left: 5px; }
-      .next-btn { right: 5px; }
-      .cards.slider-mode .card {
-        min-width: 85vw !important;
-        max-width: 85vw !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="app.css?v=29" />
 </head>
 <body>
   <div id="particles-bg"></div>
+
   <div class="cursor-blob" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
+
   <div class="progress" aria-hidden="true"><span></span></div>
+
   <div class="bg-blob b1" aria-hidden="true"></div>
   <div class="bg-blob b2" aria-hidden="true"></div>
   <div class="bg-blob b3" aria-hidden="true"></div>
@@ -127,12 +46,13 @@
     <div class="container nav-inner">
       <a class="brand" href="#home">Pakawat</a>
       <nav class="links" id="navLinks" aria-label="Primary">
-        <a href="#home" class="active">Home</a>
+        <a href="#home" class="active" aria-current="page">Home</a>
         <a href="#about">About</a>
         <a href="#work">Portfolio</a>
         <a href="#contact" class="btn small magnetic">Contact</a>
       </nav>
-      <button id="themeToggle" class="btn small theme-toggle magnetic">☀️</button>
+
+      <button id="themeToggle" class="btn small theme-toggle magnetic" aria-label="Toggle theme">☀️</button>
     </div>
   </header>
 
@@ -197,23 +117,30 @@
   <section id="about" class="section about-section lazy" aria-label="About">
     <div class="container">
       <h2 class="section-title center">About Me</h2>
-      <p class="section-sub center">Get to know me</p>
+      <p class="section-sub center">Welcome to About Me</p>
 
       <div class="about-layout">
         <article class="about-text glass reveal">
           <p class="eyebrow"><i class='bx bx-sparkles'></i> Hello, I'm</p>
           <h3 class="about-name split">Pakawat</h3>
+
           <div class="about-desc">
             <p>สวัสดีครับ ผมชื่อ <strong>นาย ภควัฒน์ เกตุนิธี</strong> ชื่อเล่นว่า <strong>เปเปอร์</strong> ครับ</p>
-            <p>ผมสนใจคอมพิวเตอร์และ Coding ตั้งแต่มัธยม ชอบการเรียนรู้เทคโนโลยีใหม่ๆ และการแก้ปัญหาที่ท้าทาย</p>
-            <p>เป้าหมายสูงสุดคือการได้เข้าศึกษาต่อที่ <span style="white-space: nowrap;"><strong>มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี คณะวิศวกรรมคอมพิวเตอร์</strong></span> เพื่อเป็น Software Engineer มืออาชีพครับ</p>
+            <p>ผมสนใจคอมพิวเตอร์ตั้งแต่ช่วงมัธยม ชอบเล่นเกมและเรียนรู้อะไรใหม่ ๆ อยู่เสมอ พอเริ่มโตขึ้นก็อยากต่อยอดสิ่งที่ชอบ เลยเริ่มศึกษาการเขียนโค้ดและเลือกที่จะเรียนต่อในสายคอมพิวเตอร์</p>
+            <p>ผมเป็นคนเรียนรู้ด้วยตัวเอง อดทน รู้จักแก้ปัญหา และไม่หนีปัญหา อีกทั้งยังเรียนรู้ได้ค่อนข้างไว</p>
+            <p>เป้าหมายของผมคือการเรียนต่อใน
+              <span style="white-space: nowrap;"><strong>มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี คณะวิศวกรรมคอมพิวเตอร์</strong></span>
+              เพื่อพัฒนาตนเองให้เก่งยิ่งขึ้น และก้าวไปสู่ความสำเร็จให้ได้เร็วที่สุดครับ (portfolio ผมกดดูที่รูปโปรไฟล์ได้นะครับ)
+            </p>
           </div>
         </article>
 
         <aside class="about-photo reveal" aria-hidden="true">
           <div class="avatar-glow tilt glare">
-            <img src="me.jpg" alt="Pakawat" class="avatar-img" loading="lazy">
-            <div class="avatar-click-hint"><i class="ph ph-cursor-click"></i></div>
+            <img src="me.jpg" alt="Pakawat photo" class="avatar-img" loading="lazy">
+            <div class="avatar-click-hint">
+              <i class="ph ph-cursor-click"></i>
+            </div>
             <span class="glare-spot" aria-hidden="true"></span>
           </div>
         </aside>
@@ -237,36 +164,97 @@
         </div>
       </div>
       
-      <div id="aboutModal" class="cert-lightbox" aria-hidden="true">
+      <div id="aboutModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
         <div class="clb-backdrop" data-close-about></div>
         <div class="clb-inner glass" style="max-width: 720px; max-height: 85vh; overflow-y: auto;">
-          <button class="clb-close btn tiny" data-close-about><i class='bx bx-x'></i></button>
+          <button class="clb-close btn tiny" aria-label="ปิด" data-close-about>
+            <i class='bx bx-x'></i>
+          </button>
           
           <div id="aboutDetailContent" style="padding: 24px; display: grid; grid-template-columns: 280px 1fr; gap: 28px; align-items: start;">
+            
             <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-              <div class="about-avatar-glow" style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 4px solid var(--primary); position: relative;">
+              <div class="about-avatar-glow" style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 4px solid var(--primary); box-shadow: 0 12px 48px rgba(106,165,255,.45), 0 0 0 8px rgba(106,165,255,.1); position: relative;">
                 <img src="me.jpg" alt="Pakawat" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="pulse-ring"></div>
+              </div>
+              
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%;">
+                <div class="icon-shine-box" style="aspect-ratio: 1; display: grid; place-items: center; position: relative; border-radius: 16px; background: linear-gradient(135deg, rgba(106,165,255,.08), rgba(155,140,255,.08)); border: 2px solid rgba(106,165,255,.3); overflow: hidden;">
+                  <i class='bx bx-code-block' style="font-size: 48px; color: #ffffff; position: relative; z-index: 2;"></i>
+                  <div class="shine-effect"></div>
+                </div>
+                <div class="icon-shine-box" style="aspect-ratio: 1; display: grid; place-items: center; position: relative; border-radius: 16px; background: linear-gradient(135deg, rgba(155,140,255,.08), rgba(77,212,255,.08)); border: 2px solid rgba(155,140,255,.3); overflow: hidden;">
+                  <i class='bx bx-laptop' style="font-size: 48px; color: #ffffff; position: relative; z-index: 2;"></i>
+                  <div class="shine-effect" style="animation-delay: 1s;"></div>
+                </div>
               </div>
             </div>
+
             <div>
               <h2 style="margin: 0 0 4px; font-size: 24px; color: var(--ink);">ภควัฒน์ เกตุนิธี</h2>
-              <p style="color: var(--muted); margin: 0 0 16px; font-size: 14px;">(เปเปอร์)</p>
+              <p style="color: var(--muted); margin: 0 0 16px; font-size: 14px;">นาย ภควัฒน์ เกตุนิธี (เปเปอร์)</p>
+
               <div style="display: grid; gap: 8px;">
-                 <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
-                    <div style="width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#6aa5ff,#9b8cff);display:grid;place-items:center;color:#fff;"><i class='bx bx-user'></i></div>
-                    <div><div style="font-size:10px;color:var(--muted);">ชื่อเล่น</div><div style="font-weight:700;color:var(--ink);">เปเปอร์</div></div>
-                 </div>
-                 <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
-                    <div style="width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#6aa5ff,#4dd4ff);display:grid;place-items:center;color:#fff;"><i class='bx bx-cake'></i></div>
-                    <div><div style="font-size:10px;color:var(--muted);">วันเกิด</div><div style="font-weight:700;color:var(--ink);">08 มกราคม 2549</div></div>
-                 </div>
-                 <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px; cursor: pointer;" onclick="openGPAModal()">
-                    <div style="width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#ff6b6b,#ff8787);display:grid;place-items:center;color:#fff;"><i class='bx bx-trophy'></i></div>
-                    <div><div style="font-size:10px;color:var(--muted);">เกรดเฉลี่ย (กดดู)</div><div style="font-weight:700;color:var(--ink);">3.74</div></div>
-                    <i class='bx bx-show' style="margin-left:auto;color:var(--primary);"></i>
-                 </div>
+                <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
+                  <div style="width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #6aa5ff, #9b8cff); display: grid; place-items: center; color: #fff; font-size: 16px; flex-shrink: 0;">
+                    <i class='bx bx-user'></i>
+                  </div>
+                  <div>
+                    <div style="font-size: 10px; color: var(--muted);">ชื่อเล่น</div>
+                    <div style="font-weight: 700; color: var(--ink); font-size: 13px;">เปเปอร์ (Paper)</div>
+                  </div>
+                </div>
+
+                <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
+                  <div style="width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #6aa5ff, #4dd4ff); display: grid; place-items: center; color: #fff; font-size: 16px; flex-shrink: 0;">
+                    <i class='bx bx-cake'></i>
+                  </div>
+                  <div>
+                    <div style="font-size: 10px; color: var(--muted);">วันเกิด</div>
+                    <div style="font-weight: 700; color: var(--ink); font-size: 13px;">08 มกราคม 2549</div>
+                  </div>
+                </div>
+
+                <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
+                  <div style="width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #9b8cff, #c084fc); display: grid; place-items: center; color: #fff; font-size: 16px; flex-shrink: 0;">
+                    <i class='bx bx-map'></i>
+                  </div>
+                  <div>
+                    <div style="font-size: 10px; color: var(--muted);">ภูมิลำเนา</div>
+                    <div style="font-weight: 700; color: var(--ink); font-size: 13px;">พระนครศรีอยุธยา</div>
+                  </div>
+                </div>
+
+                <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
+                  <div style="width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #4dd4ff, #6aa5ff); display: grid; place-items: center; color: #fff; font-size: 16px; flex-shrink: 0;">
+                    <i class='bx bx-book-open'></i>
+                  </div>
+                  <div>
+                    <div style="font-size: 10px; color: var(--muted);">การศึกษา</div>
+                    <div style="font-weight: 700; color: var(--ink); font-size: 13px;">วิทยาลัยเทคนิคนนทบุรี</div>
+                    <div style="font-size: 11px; color: var(--muted);">ปวส. 2 เทคโนโลยีธุรกิจดิจิทัล</div>
+                  </div>
+                </div>
+
+                <div class="info-item glass" style="padding: 10px 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px; cursor: pointer;" onclick="openGPAModal()">
+                  <div style="width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #ff6b6b, #ff8787); display: grid; place-items: center; color: #fff; font-size: 16px; flex-shrink: 0;">
+                    <i class='bx bx-trophy'></i>
+                  </div>
+                  <div>
+                    <div style="font-size: 10px; color: var(--muted);">เกรดเฉลี่ย</div>
+                    <div style="font-weight: 700; color: var(--ink); font-size: 13px;">3.74</div>
+                  </div>
+                  <i class='bx bx-show' style="margin-left: auto; font-size: 18px; color: var(--primary);"></i>
+                </div>
+
+              <div style="margin-top: 14px; padding: 12px; background: linear-gradient(135deg, rgba(106,165,255,.08), rgba(155,140,255,.08)); border-radius: 8px; border-left: 3px solid var(--primary);">
+                <p style="margin: 0; font-style: italic; color: var(--ink); line-height: 1.4; font-size: 12px;">
+                  "ผมเป็นคนที่ชอบเรียนรู้ด้วยตัวเอง อดทน รู้จักแก้ปัญหา และไม่หนีปัญหา"
+                </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -276,179 +264,275 @@
   <section id="education" class="section edu-section">
     <div class="container">
       <h2 class="section-title center">Education</h2>
+      <p class="section-sub center">My education timeline</p>
+
       <div class="edu-timeline">
         <div class="edu-item left reveal">
           <div class="edu-content">
             <span class="edu-chip">2010–2019</span>
             <h3 class="edu-title">โรงเรียนหงสประภาสประสิทธิ์</h3>
-            <p class="edu-desc">อนุบาล 3 - มัธยมศึกษาปีที่ 3</p>
+            <p class="edu-desc">ศึกษาตั้งแต่ อนุบาล 3 ถึง มัธยมศึกษาปีที่ 3</p>
           </div>
         </div>
+
         <div class="edu-item right reveal">
           <div class="edu-content">
             <span class="edu-chip">2020–2023</span>
             <h3 class="edu-title">วิทยาลัยเทคนิคนนทบุรี</h3>
-            <p class="edu-desc">ปวช. 1–3 (คอมพิวเตอร์ธุรกิจ)</p>
+            <p class="edu-desc">ระดับ ปวช. 1–3 สาขา คอมพิวเตอร์ธุรกิจ — จบการศึกษา</p>
           </div>
         </div>
+
         <div class="edu-item left reveal">
           <div class="edu-content">
             <span class="edu-chip">2024–ปัจจุบัน</span>
             <h3 class="edu-title">วิทยาลัยเทคนิคนนทบุรี</h3>
-            <p class="edu-desc">ปวส. 1 - 2 (เทคโนโลยีธุรกิจดิจิทัล)</p>
+            <p class="edu-desc">ระดับ ปวส. 1 สาขา เทคโนโลยีธุรกิจดิจิทัล — ระดับ ปวส. 2 สาขา เทคโนโลยีธุรกิจดิจิทัล</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="work" class="section lazy">
+  <section id="work" class="section lazy" aria-label="Portfolio">
     <div class="container">
       <h2 class="center reveal">Portfolio Showcase</h2>
-      <div class="tabs reveal">
-        <button class="tab active magnetic" data-tab="projects" id="tab-projects">Projects</button>
-        <button class="tab magnetic" data-tab="certs" id="tab-certs">Certificates</button>
-        <button class="tab magnetic" data-tab="stack" id="tab-stack">Tech Stack</button>
+      <p class="section-sub center">Explore my journey through projects, certificates, and technical expertise.</p>
+
+      <div class="tabs reveal" role="tablist" aria-label="Showcase Tabs">
+        <button class="tab active magnetic" data-tab="projects" role="tab" aria-selected="true" aria-controls="panel-projects" id="tab-projects">Projects</button>
+        <button class="tab magnetic" data-tab="certs" role="tab" aria-selected="false" aria-controls="panel-certs" id="tab-certs">Certificates</button>
+        <button class="tab magnetic" data-tab="stack" role="tab" aria-selected="false" aria-controls="panel-stack" id="tab-stack">Tech Stack</button>
       </div>
 
-      <div class="tab-panels">
-        
-        <div class="panel" id="panel-projects">
+     <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
           
-          <div class="slider-container">
-            <button class="slider-btn prev-btn" id="btnPrev"><i class='bx bx-chevron-left'></i></button>
-            <button class="slider-btn next-btn" id="btnNext"><i class='bx bx-chevron-right'></i></button>
+          <div class="slider-controls" style="display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 12px; padding-right: 4px;">
+            <button id="btnPrev" class="btn tiny glass" aria-label="Previous Project" style="width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%;">
+              <i class='bx bx-chevron-left' style="font-size: 24px;"></i>
+            </button>
+            <button id="btnNext" class="btn tiny glass" aria-label="Next Project" style="width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%;">
+              <i class='bx bx-chevron-right' style="font-size: 24px;"></i>
+            </button>
+          </div>
 
-            <div class="cards slider-mode" id="projectSlider">
-              
-              <article class="card glass reveal tilt">
-                  <div class="thumb gradient-3" style="display:grid; place-items:center; background-image: url('assets/projects/attend-1.png'); background-size: cover; background-position: center;">
-                     <div style="width:100%; height:100%; display:grid; place-items:center; background:rgba(0,0,0,0.3); backdrop-filter:blur(2px);">
-                        <i class='bx bx-map-pin' style="font-size:64px; color:white; text-shadow:0 4px 12px rgba(0,0,0,0.5);"></i>
-                     </div>
-                  </div>
-                  <div class="card-head"><i class='bx bx-id-card'></i><h3>ClassCheck</h3></div>
-                  <p>ระบบเช็คชื่อนักเรียนยุคใหม่ ด้วย GPS + รูปถ่าย เชื่อมต่อ LINE Notify</p>
-                  <div class="card-actions">
-                    <button class="btn tiny magnetic" onclick="openProjectGallery('attendance-sys')">ดูรูปภาพ</button>
-                    <button class="btn tiny ghost magnetic" onclick="openProjectDetail('attendance-sys')">รายละเอียด</button>
-                  </div>
-              </article>
+          <div class="cards slider-mode" id="projectSlider" style="display: flex; overflow-x: auto; gap: 16px; scroll-behavior: smooth; padding-bottom: 20px; scroll-snap-type: x mandatory; -ms-overflow-style: none; scrollbar-width: none;">
+            
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-3" style="position:relative; overflow:hidden; display:grid; place-items:center;">
+                <i class='bx bx-map-pin' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-id-card'></i><h3>ClassCheck</h3></div>
+              <p>ระบบเช็คชื่อนักเรียนยุคใหม่ ด้วย GPS + รูปถ่าย เชื่อมต่อ LINE Notify</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('attendance-sys')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('attendance-sys')">รายละเอียด</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
 
-              <article class="card glass reveal tilt">
-                <div class="thumb gradient-1" style="display:grid; place-items:center;">
-                   <i class='bx bx-joystick' style="font-size:64px; color:white;"></i>
-                </div>
-                <div class="card-head"><i class='bx bx-game'></i><h3>Roblox Game</h3></div>
-                <p>เกมแนวไขปริศนา ที่เกี่ยวกับระบบคอมพิวเตอร์</p>
-                <div class="card-actions">
-                  <button class="btn tiny magnetic" onclick="openProjectGallery('roblox-game')">ดูรูปภาพ</button>
-                  <button class="btn tiny ghost magnetic" onclick="openProjectDetail('roblox-game')">รายละเอียด</button>
-                </div>
-              </article>
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-1" style="display:grid; place-items:center;">
+                <i class='bx bx-joystick' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-game'></i><h3>Roblox Game</h3></div>
+              <p>เกมแนวไขปริศนา ที่เกี่ยวกับระบบคอมพิวเตอร์</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('roblox-game')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('roblox-game')">รายละเอียด</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
 
-              <article class="card glass reveal tilt">
-                <div class="thumb gradient-2" style="display:grid; place-items:center;">
-                   <i class='bx bxl-android' style="font-size:64px; color:white;"></i>
-                </div>
-                <div class="card-head"><i class='bx bx-package'></i><h3>Stock App</h3></div>
-                <p>แอประบบ Android สำหรับนับสต็อกสินค้า พร้อม Barcode Scanner</p>
-                <div class="card-actions">
-                  <button class="btn tiny magnetic" onclick="openProjectGallery('stock-app')">ดูรูปภาพ</button>
-                  <button class="btn tiny ghost magnetic" onclick="openProjectDetail('stock-app')">รายละเอียด</button>
-                </div>
-              </article>
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-2" style="display:grid; place-items:center;">
+                <i class='bx bxl-android' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-package'></i><h3>Stock App</h3></div>
+              <p>แอประบบ Android สำหรับนับสต็อกสินค้า พร้อม Barcode Scanner</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('stock-app')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('stock-app')">รายละเอียด</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
 
-              <article class="card glass reveal tilt">
-                <div class="thumb gradient-3" style="display:grid; place-items:center;">
-                   <i class='bx bx-store' style="font-size:64px; color:white;"></i>
-                </div>
-                <div class="card-head"><i class='bx bx-capsule'></i><h3>Dr.Pharma Shop</h3></div>
-                <p>เว็บไซต์ E-Commerce สำหรับขายสินค้าเภสัชภัณฑ์ออนไลน์</p>
-                <div class="card-actions">
-                  <button class="btn tiny magnetic" onclick="openProjectGallery('drpharma')">ดูรูปภาพ</button>
-                  <button class="btn tiny ghost magnetic" onclick="openProjectDetail('drpharma')">รายละเอียด</button>
-                </div>
-              </article>
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-3" style="display:grid; place-items:center;">
+                <i class='bx bx-store' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-capsule'></i><h3>Dr.Pharma Shop</h3></div>
+              <p>เว็บไซต์ E-Commerce สำหรับขายสินค้าเภสัชภัณฑ์ออนไลน์</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('drpharma')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('drpharma')">รายละเอียด</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
 
+            <article class="card glass reveal tilt" style="min-width: 300px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">
+              <div class="thumb gradient-1" style="display:grid; place-items:center;">
+                <i class='bx bx-code-alt' style="font-size:64px; color:white; opacity:0.9; text-shadow: 0 4px 12px rgba(0,0,0,0.2);"></i>
+              </div>
+              <div class="card-head"><i class='bx bx-layout'></i><h3>My Portfolio</h3></div>
+              <p>เว็บไซต์นี้เขียนเอง 100% ด้วย HTML/CSS/JS เพื่อโชว์ทักษะ Frontend</p>
+              <div class="card-actions">
+                <button class="btn tiny magnetic" onclick="openProjectGallery('portfolio-site')">ดูรูปภาพ</button>
+                <button class="btn tiny ghost magnetic" onclick="openProjectDetail('portfolio-site')">เบื้องหลัง</button>
+              </div>
+              <span class="glare-spot"></span>
+            </article>
+
+          </div>
+
+          <div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-modal></div>
+            <div class="clb-inner glass" style="max-width: 800px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-modal><i class='bx bx-x'></i></button>
+              <div id="modalContent" style="padding: 24px; max-height: 68vh; overflow-y: auto;"></div>
             </div>
           </div>
-          
-          <div id="projectModal" class="cert-lightbox"><div class="clb-backdrop" data-close-modal></div><div class="clb-inner glass" style="max-width: 800px;"><button class="clb-close btn tiny" data-close-modal><i class='bx bx-x'></i></button><div id="modalContent" style="padding: 24px; max-height: 68vh; overflow-y: auto;"></div></div></div>
-          <div id="galleryModal" class="cert-lightbox"><div class="clb-backdrop" data-close-gallery></div><div class="clb-inner glass" style="max-width: 680px; padding: 16px;"><button class="clb-close btn tiny" data-close-gallery><i class='bx bx-x'></i></button><div id="galleryContent" style="padding: 24px;"><h3 id="galleryTitle"></h3><div id="galleryGrid"></div></div></div></div>
+
+          <div id="galleryModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-gallery></div>
+            <div class="clb-inner glass" style="max-width: 680px; padding: 16px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-gallery><i class='bx bx-x'></i></button>
+              <div id="galleryContent" style="padding: 24px;">
+                <h3 id="galleryTitle" style="margin: 0 0 24px; text-align: center; color: var(--ink);"></h3>
+                <div id="galleryGrid"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="panel" id="panel-certs" hidden>
-           <div class="cert-filters"><button class="chip active" data-filter="all">ทั้งหมด</button></div>
-           <div id="certGrid" class="cert-grid"></div>
+          <div id="projectModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-modal></div>
+            <div class="clb-inner glass" style="max-width: 800px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-modal>
+                <i class='bx bx-x'></i>
+              </button>
+              <div id="modalContent" style="padding: 24px; max-height: 68vh; overflow-y: auto;"></div>
+            </div>
+          </div>
+
+          <div id="galleryModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="clb-backdrop" data-close-gallery></div>
+            <div class="clb-inner glass" style="max-width: 680px; padding: 16px;">
+              <button class="clb-close btn tiny" aria-label="ปิด" data-close-gallery>
+                <i class='bx bx-x'></i>
+              </button>
+              <div id="galleryContent" style="padding: 24px;">
+                <h3 id="galleryTitle" style="margin: 0 0 24px; text-align: center; color: var(--ink);"></h3>
+                <div id="galleryGrid"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="panel" id="panel-stack" hidden>
-           <div class="stack-grid">
-             <div class="stack-chip glass"><i class='bx bxl-flutter'></i><span>Flutter</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-python'></i><span>Python</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-java'></i><span>Java</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-html5'></i><span>HTML</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-css3'></i><span>CSS</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-github'></i><span>GitHub</span></div>
-             <div class="stack-chip glass"><i class='bx bx-bot'></i><span>AI</span></div>
-             <div class="stack-chip glass"><i class="fas fa-database"></i><span>MySQL</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-firebase'></i><span>Firebase</span></div>
-             <div class="stack-chip glass"><i class='bx bxl-android'></i><span>Android</span></div>
-             <div class="stack-chip glass"><i class="fas fa-code"></i><span>C</span></div>
-             <div class="stack-chip glass"><i class="fas fa-mobile-alt"></i><span>AppSheet</span></div>
-             <div class="stack-chip glass"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
-             <div class="stack-chip glass"><i class="fas fa-file-word"></i><span>Microsoft Office</span></div>
-             <div class="stack-chip glass"><i class="fas fa-palette"></i><span>Canva</span></div>
-             <div class="stack-chip glass"><i class="fas fa-video"></i><span>Capcut</span></div>
-             <div class="stack-chip glass"><i class="fas fa-wave-square"></i><span>Alight Motion</span></div>
-             <div class="stack-chip glass"><i class="fas fa-image"></i><span>Adobe Photoshop</span></div>
-             <div class="stack-chip glass"><i class="fas fa-server"></i><span>Database</span></div>
-           </div>
+        <div class="panel" id="panel-certs" role="tabpanel" aria-labelledby="tab-certs" hidden>
+          <div class="cert-filters">
+            <button class="chip active" data-filter="all">ทั้งหมด</button>
+          </div>
+          <div id="certGrid" class="cert-grid" aria-live="polite"></div>
+        </div>
+
+        <div class="panel" id="panel-stack" role="tabpanel" aria-labelledby="tab-stack" hidden>
+          <div class="stack-grid">
+            <div class="stack-chip glass"><i class='bx bxl-flutter'></i><span>Flutter</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-python'></i><span>Python</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-java'></i><span>Java</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-html5'></i><span>HTML</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-css3'></i><span>CSS</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-github'></i><span>GitHub</span></div>
+            <div class="stack-chip glass"><i class='bx bx-bot'></i><span>AI</span></div>
+            <div class="stack-chip glass"><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-firebase'></i><span>Firebase</span></div>
+            <div class="stack-chip glass"><i class='bx bxl-android'></i><span>Android</span></div>
+            <div class="stack-chip glass"><i class="fas fa-code"></i><span>C</span></div>
+            <div class="stack-chip glass"><i class="fas fa-mobile-alt"></i><span>AppSheet</span></div>
+            <div class="stack-chip glass"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+            <div class="stack-chip glass"><i class="fas fa-file-word"></i><span>Microsoft Office</span></div>
+            <div class="stack-chip glass"><i class="fas fa-palette"></i><span>Canva</span></div>
+            <div class="stack-chip glass"><i class="fas fa-video"></i><span>Capcut</span></div>
+            <div class="stack-chip glass"><i class="fas fa-wave-square"></i><span>Alight Motion</span></div>
+            <div class="stack-chip glass"><i class="fas fa-image"></i><span>Adobe Photoshop</span></div>
+            <div class="stack-chip glass"><i class="fas fa-server"></i><span>Database</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section lazy">
+  <section id="contact" class="section lazy" aria-label="Contact">
     <div class="container">
       <h2 class="center reveal">Contact</h2>
       <div class="contact-grid">
         <a class="contact-card glass reveal magnetic" href="mailto:pakawatpe@gmail.com"><i class='bx bx-envelope'></i> <span>pakawatpe@gmail.com</span></a>
         <a class="contact-card glass reveal magnetic" href="https://github.com/pakawatpe-hash" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i> <span>@pakawatpe-hash</span></a>
-        <a class="contact-card glass reveal magnetic" href="#"><i class='bx bxl-line'></i> <span>LINE: paezth12</span></a>
+        <a class="contact-card glass reveal magnetic" href="#"><i class='bx bxl-line'></i> <span>LINE:paezth12</span></a>
       </div>
     </div>
   </section>
 
   <footer class="foot"><div class="container">© 2025 Pakawat — Portfolio</div></footer>
 
-  <div id="certLightbox" class="cert-lightbox"><div class="clb-backdrop" data-close></div><div class="clb-inner glass"><button class="clb-close btn tiny" data-close><i class='bx bx-x'></i></button><img id="clbImg" src=""><div class="clb-tools"><a id="clbDownload" href="#" download class="btn small primary">ดาวน์โหลด</a></div></div></div>
-  <div id="gpaModal" class="cert-lightbox"><div class="clb-backdrop" data-close-gpa></div><div class="clb-inner glass"><button class="clb-close btn tiny" data-close-gpa><i class='bx bx-x'></i></button><div style="padding:20px;"><h2 style="text-align:center; color:var(--ink);">📊 ผลการเรียน</h2><div id="gpaImages" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; max-height:70vh; overflow-y:auto;"><img src="assets/gpa/gpa-1.jpg" style="width:100%; border-radius:12px;"><img src="assets/gpa/gpa-2.jpg" style="width:100%; border-radius:12px;"></div></div></div></div>
+  <div id="certLightbox" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="clb-backdrop" data-close></div>
+    <div class="clb-inner glass">
+      <button class="clb-close btn tiny" aria-label="ปิด" data-close>
+        <i class='bx bx-x'></i>
+      </button>
+      <img id="clbImg" src="" alt="Certificate preview">
+      <div class="clb-tools">
+        <a id="clbDownload" href="#" download class="btn small primary">
+          <i class='bx bx-download'></i> ดาวน์โหลด
+        </a>
+      </div>
+    </div>
+  </div>
 
-  <script src="app.js?v=28" defer></script>
+  <div id="gpaModal" class="cert-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="clb-backdrop" data-close-gpa></div>
+    <div class="clb-inner glass" style="max-width: 900px; padding: 20px;">
+      <button class="clb-close btn tiny" aria-label="ปิด" data-close-gpa>
+        <i class='bx bx-x'></i>
+      </button>
+      
+      <div style="padding: 20px;">
+        <h2 style="margin: 0 0 24px; text-align: center; color: var(--ink);">📊 ผลการเรียน (เกรดเฉลี่ย)</h2>
+        
+        <div id="gpaImages" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-height: 70vh; overflow-y: auto;">
+          <div style="border-radius: 12px; border: 2px solid var(--line); overflow: hidden; background: var(--card); cursor: pointer;" onclick="window.open('assets/gpa/gpa-1.jpg', '_blank')">
+            <img src="assets/gpa/gpa-1.jpg" alt="GPA Page 1" style="width: 100%; height: auto; display: block;" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'padding:40px; text-align:center; color:var(--muted);\'>📄<br>ยังไม่มีรูปภาพ</div>'">
+          </div>
+          
+          <div style="border-radius: 12px; border: 2px solid var(--line); overflow: hidden; background: var(--card); cursor: pointer;" onclick="window.open('assets/gpa/gpa-2.jpg', '_blank')">
+            <img src="assets/gpa/gpa-2.jpg" alt="GPA Page 2" style="width: 100%; height: auto; display: block;" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'padding:40px; text-align:center; color:var(--muted);\'>📄<br>ยังไม่มีรูปภาพ</div>'">
+          </div>
+        </div>
+        
+        <p style="margin-top: 16px; text-align: center; color: var(--muted); font-size: 13px;">
+          <i class='bx bx-info-circle'></i> คลิกที่รูปเพื่อเปิดดูแบบเต็มหน้าจอ
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=29" defer></script>
+
   <script>
-    // Theme Toggle + Slider Button Logic
     (function(){
-      // Slider Buttons
-      const slider = document.getElementById('projectSlider');
-      const btnPrev = document.getElementById('btnPrev');
-      const btnNext = document.getElementById('btnNext');
-      if(slider && btnPrev && btnNext){
-        btnNext.addEventListener('click', () => { slider.scrollBy({ left: 320, behavior: 'smooth' }); });
-        btnPrev.addEventListener('click', () => { slider.scrollBy({ left: -320, behavior: 'smooth' }); });
-      }
-
-      // Theme Toggle
       const root = document.documentElement;
       const btn  = document.getElementById('themeToggle');
       if(!btn) return;
+
       const setIcon = (isLight) => btn.textContent = isLight ? '🌙' : '☀️';
       const saved = localStorage.getItem('theme') || 'dark';
       const isLight = saved === 'light';
       root.classList.toggle('theme-light', isLight);
       setIcon(isLight);
+
       btn.addEventListener('click', () => {
         const makeLight = !root.classList.contains('theme-light');
         root.classList.toggle('theme-light', makeLight);
