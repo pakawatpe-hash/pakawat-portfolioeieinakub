@@ -528,6 +528,24 @@ if (isFinePointer) {
         'assets/projects/pharma-3.jpg',
         'assets/projects/pharma-4.jpg'
       ]
+    },
+    'classcheck': {
+      title: 'ClassCheck - ระบบเช็คชื่อ',
+      description: 'ระบบเช็คชื่อนักเรียนด้วยการถ่ายรูป พร้อมตรวจสอบ GPS และระบบลาหยุดออนไลน์',
+      features: [
+        '📸 เช็คชื่อด้วยการถ่ายรูป',
+        '📍 ตรวจสอบ GPS ต้องอยู่ในพื้นที่วิทยาลัย',
+        '⏰ แยกสถานะ "มาทันเวลา" และ "มาสาย"',
+        '📝 ระบบขอลาหยุดออนไลน์',
+        '📊 สรุปยอดและส่งไปทางไลน์ผู้ปกครอง'
+      ],
+      tech: ['React', 'TypeScript', 'Firebase', 'Google Sheets API', 'GPS'],
+      images: [
+        'assets/projects/attend-1.png',
+        'assets/projects/attend-2.png',
+        'assets/projects/attend-3.png',
+        'assets/projects/attend-4.png'
+      ]
     }
   };
 
@@ -566,30 +584,29 @@ if (isFinePointer) {
     projectModal.setAttribute('aria-hidden', 'false');
   };
 
-// Open Image Gallery Modal
-window.openProjectGallery = function(projectId) {
-  const project = projectData[projectId];
-  if (!project) return;
+  // Open Image Gallery Modal
+  window.openProjectGallery = function(projectId) {
+    const project = projectData[projectId];
+    if (!project) return;
 
-  galleryTitle.textContent = project.title + ' - Gallery';
-  
-  galleryGrid.innerHTML = project.images.map((img, index) => `
-    <div style="width: 100%; height: 180px; border-radius: 10px; border: 1px solid var(--line); overflow: hidden; position: relative; cursor: pointer; background: var(--card);" 
-         onclick="window.open('${img}', '_blank')">
-      <img src="${img}" 
-           alt="" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .2s ease;"
-           onload="this.parentElement.style.background='transparent'"
-           onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%; height:100%; display:grid; place-items:center; background:linear-gradient(135deg, rgba(106,165,255,0.15), rgba(155,140,255,0.15)); color:var(--muted); font-size:14px; flex-direction:column; gap:8px;\\'>📷<br><span style=\\'font-size:12px;\\'>รูปที่ ${index + 1}</span></div>'; this.parentElement.style.cursor='default'; this.parentElement.onclick=null;">
-    </div>
-  `).join('');
+    galleryTitle.textContent = project.title + ' - Gallery';
+    
+    galleryGrid.innerHTML = project.images.map((img, index) => `
+      <div style="width: 100%; height: 180px; border-radius: 10px; border: 1px solid var(--line); overflow: hidden; position: relative; cursor: pointer; background: var(--card);" 
+           onclick="window.open('${img}', '_blank')">
+        <img src="${img}" 
+             alt="" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .2s ease;"
+             onload="this.parentElement.style.background='transparent'"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%; height:100%; display:grid; place-items:center; background:linear-gradient(135deg, rgba(106,165,255,0.15), rgba(155,140,255,0.15)); color:var(--muted); font-size:14px; flex-direction:column; gap:8px;\\'>📷<br><span style=\\'font-size:12px;\\'>รูปที่ ${index + 1}</span></div>'; this.parentElement.style.cursor='default'; this.parentElement.onclick=null;">
+      </div>
+    `).join('');
 
-  galleryModal.classList.add('open');
-  galleryModal.setAttribute('aria-hidden', 'false');
-};
+    galleryModal.classList.add('open');
+    galleryModal.setAttribute('aria-hidden', 'false');
+  };
 
   // Close Modals
-
   function closeModal(modal) {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
